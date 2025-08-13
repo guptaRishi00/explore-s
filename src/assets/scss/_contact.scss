@@ -1,0 +1,188 @@
+// Contact Us Section Styles
+.react-contact__area {
+    .contact-content {
+        padding-right: 30px;
+        
+        .contact-title {
+            font-size: 48px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 40px;
+            text-align: center;
+            
+            span {
+                color: #ff0000;
+                text-decoration: underline;
+            }
+        }
+        
+        .contact-text {
+            .contact-question {
+                font-size: 28px;
+                font-weight: 600;
+                color: #333;
+                margin-bottom: 25px;
+                line-height: 1.3;
+            }
+            
+            .contact-description {
+                font-size: 16px;
+                color: #666;
+                line-height: 1.6;
+                margin-bottom: 30px;
+            }
+            
+            .contact-tagline {
+                font-size: 18px;
+                color: #333;
+                line-height: 1.4;
+            }
+        }
+    }
+    
+    .contact-form-wrapper {
+        background: #f8f9fa;
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        
+        .contact-form {
+            .form-group {
+                margin-bottom: 25px;
+                
+                .form-control {
+                    width: 100%;
+                    padding: 15px 20px;
+                    border: 2px solid #e9ecef;
+                    border-radius: 12px;
+                    font-size: 16px;
+                    transition: all 0.3s ease;
+                    background: #fff;
+                    
+                    &:focus {
+                        outline: none;
+                        border-color: #007bff;
+                        box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+                    }
+                    
+                    &::placeholder {
+                        color: #999;
+                    }
+                }
+                
+                .phone-input-wrapper {
+                    display: flex;
+                    align-items: center;
+                    border: 2px solid #e9ecef;
+                    border-radius: 12px;
+                    background: #fff;
+                    overflow: hidden;
+                    
+                    .country-code {
+                        display: flex;
+                        align-items: center;
+                        padding: 0 15px;
+                        background: #f8f9fa;
+                        border-right: 2px solid #e9ecef;
+                        
+                        .flag-icon {
+                            font-size: 20px;
+                            margin-right: 8px;
+                        }
+                        
+                        .code {
+                            font-weight: 600;
+                            color: #333;
+                            margin-right: 8px;
+                        }
+                        
+                        .dropdown-arrow {
+                            color: #666;
+                            font-size: 12px;
+                        }
+                    }
+                    
+                    .phone-input {
+                        border: none;
+                        border-radius: 0;
+                        flex: 1;
+                        
+                        &:focus {
+                            border-color: transparent;
+                            box-shadow: none;
+                        }
+                    }
+                }
+                
+                .message-textarea {
+                    resize: vertical;
+                    min-height: 120px;
+                }
+                
+                .submit-btn {
+                    background: #ffc107;
+                    color: #333;
+                    border: none;
+                    padding: 15px 40px;
+                    border-radius: 12px;
+                    font-size: 18px;
+                    font-weight: 600;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    min-width: 200px;
+                    
+                    &:hover {
+                        background: #e0a800;
+                        transform: translateY(-2px);
+                        box-shadow: 0 5px 15px rgba(255, 193, 7, 0.3);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Responsive adjustments
+@media (max-width: 991px) {
+    .react-contact__area {
+        .contact-content {
+            padding-right: 0;
+            margin-bottom: 40px;
+            text-align: center;
+            
+            .contact-title {
+                font-size: 36px;
+            }
+            
+            .contact-text {
+                .contact-question {
+                    font-size: 24px;
+                }
+            }
+        }
+        
+        .contact-form-wrapper {
+            padding: 30px 20px;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .react-contact__area {
+        .contact-content {
+            .contact-title {
+                font-size: 28px;
+            }
+            
+            .contact-text {
+                .contact-question {
+                    font-size: 20px;
+                }
+            }
+        }
+        
+        .contact-form-wrapper {
+            padding: 25px 15px;
+        }
+    }
+}

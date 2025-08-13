@@ -1,0 +1,19 @@
+{
+  "pageTitle": "CONTACT US",
+  "companyName": "Explore S Research Solutions",
+  "address": {
+    "label": "Office",
+    "line1": "Second Floor Plot Number 4 Minarch Tower",
+    "area": "Sector 44",
+    "city": "Gurgaon",
+    "state": "Haryana"
+  },
+  "phone": {
+    "label": "Contact No.",
+    "number": "+91-9289441168"
+  },
+  "email": {
+    "label": "Email",
+    "address": "support@exploresresearchsolutions.in"
+  }
+}

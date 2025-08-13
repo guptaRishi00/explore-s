@@ -1,0 +1,343 @@
+// Services Page Styles - Matching website aesthetics
+
+// Introduction Section
+.services-intro__area {
+    .intro-content {
+        .intro-title {
+            font-size: 42px;
+            font-weight: 700;
+            color: #00306E;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+        
+        .title-line {
+            height: 3px;
+            background: linear-gradient(90deg, #3270FC 0%, #e9ecef 100%);
+            margin: 0 auto 25px;
+            width: 80px;
+            border-radius: 2px;
+        }
+        
+        .intro-description {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #53545b;
+            margin: 0;
+            font-weight: 400;
+        }
+    }
+}
+
+// Main Services Section
+.main-services__area {
+    .section-title {
+        margin-bottom: 50px;
+        
+        .title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #00306E;
+            margin-bottom: 15px;
+            letter-spacing: -0.3px;
+        }
+        
+        .title-line {
+            height: 3px;
+            background: linear-gradient(90deg, #3270FC 0%, #e9ecef 100%);
+            margin: 0 auto;
+            width: 60px;
+            border-radius: 2px;
+        }
+    }
+    
+    .service-card {
+        background: #ffffff;
+        border-radius: 6px;
+        box-shadow: 0px 20px 40px rgba(15, 18, 22, 0.08);
+        overflow: hidden;
+        transition: all 0.3s ease;
+        border: 1px solid #f0f0f0;
+        height: 100%;
+        
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 30px 50px rgba(15, 18, 22, 0.12);
+            border-color: #3270FC;
+        }
+        
+        .service-image {
+            position: relative;
+            overflow: hidden;
+            height: 200px;
+            
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.3s ease;
+            }
+            
+            .service-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(50, 112, 252, 0.8);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+                
+                .overlay-content {
+                    svg {
+                        color: #ffffff;
+                        width: 32px;
+                        height: 32px;
+                    }
+                }
+            }
+        }
+        
+        &:hover .service-image {
+            img {
+                transform: scale(1.1);
+            }
+            
+            .service-overlay {
+                opacity: 1;
+            }
+        }
+        
+        .service-content {
+            padding: 25px;
+            
+            .service-title {
+                font-size: 20px;
+                font-weight: 600;
+                color: #00306E;
+                margin-bottom: 15px;
+                line-height: 1.4;
+                letter-spacing: -0.2px;
+            }
+            
+            .service-description {
+                font-size: 17px;
+                line-height: 1.7;
+                color: #53545b;
+                margin-bottom: 0;
+                font-weight: 400;
+            }
+        }
+    }
+}
+
+// Detailed Offerings Section
+.detailed-offerings__area {
+    .section-title {
+        margin-bottom: 50px;
+        
+        .title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #00306E;
+            margin-bottom: 15px;
+            letter-spacing: -0.3px;
+        }
+        
+        .title-line {
+            height: 3px;
+            background: linear-gradient(90deg, #3270FC 0%, #e9ecef 100%);
+            margin: 0 auto 20px;
+            width: 60px;
+            border-radius: 2px;
+        }
+        
+        .subtitle {
+            font-size: 16px;
+            color: #53545b;
+            margin: 0;
+            font-weight: 400;
+        }
+    }
+    
+    .offering-card {
+        background: #ffffff;
+        border-radius: 6px;
+        box-shadow: 0px 20px 40px rgba(15, 18, 22, 0.08);
+        overflow: hidden;
+        transition: all 0.3s ease;
+        border: 1px solid #f0f0f0;
+        height: 100%;
+        
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 30px 50px rgba(15, 18, 22, 0.12);
+            border-color: #D2093C;
+        }
+        
+        .offering-image {
+            position: relative;
+            overflow: hidden;
+            height: 180px;
+            
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.3s ease;
+            }
+            
+            .offering-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(208, 9, 60, 0.8);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+                
+                .overlay-content {
+                    svg {
+                        color: #ffffff;
+                        width: 24px;
+                        height: 24px;
+                    }
+                }
+            }
+        }
+        
+        &:hover .offering-image {
+            img {
+                transform: scale(1.1);
+            }
+            
+            .offering-overlay {
+                opacity: 1;
+            }
+        }
+        
+        .offering-content {
+            padding: 20px;
+            
+            .offering-title {
+                font-size: 18px;
+                font-weight: 600;
+                color: #00306E;
+                margin-bottom: 12px;
+                line-height: 1.4;
+                letter-spacing: -0.2px;
+            }
+            
+            .offering-description {
+                font-size: 16px;
+                line-height: 1.7;
+                color: #53545b;
+                margin-bottom: 0;
+                font-weight: 400;
+            }
+        }
+    }
+}
+
+// Responsive adjustments
+@media (max-width: 1199px) {
+    .services-intro__area {
+        .intro-content .intro-title {
+            font-size: 36px;
+        }
+    }
+    
+    .main-services__area,
+    .detailed-offerings__area {
+        .section-title .title {
+            font-size: 32px;
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .services-intro__area {
+        .intro-content .intro-title {
+            font-size: 32px;
+        }
+    }
+    
+    .main-services__area,
+    .detailed-offerings__area {
+        .section-title .title {
+            font-size: 28px;
+        }
+        
+        .service-card,
+        .offering-card {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .services-intro__area {
+        .intro-content {
+            .intro-title {
+                font-size: 28px;
+            }
+            
+            .intro-description {
+                font-size: 16px;
+            }
+        }
+    }
+    
+    .main-services__area,
+    .detailed-offerings__area {
+        .section-title .title {
+            font-size: 24px;
+        }
+        
+        .service-card,
+        .offering-card {
+            .service-content,
+            .offering-content {
+                padding: 20px;
+            }
+            
+            .service-title {
+                font-size: 18px;
+            }
+            
+            .offering-title {
+                font-size: 16px;
+            }
+            
+            .service-description {
+                font-size: 16px;
+            }
+            
+            .offering-description {
+                font-size: 15px;
+            }
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .services-intro__area {
+        .intro-content .intro-title {
+            font-size: 24px;
+        }
+    }
+    
+    .main-services__area,
+    .detailed-offerings__area {
+        .section-title .title {
+            font-size: 22px;
+        }
+    }
+}

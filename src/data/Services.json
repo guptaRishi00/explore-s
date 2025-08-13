@@ -1,0 +1,97 @@
+{
+  "introduction": "Explore S Research Solutions is committed to providing the best research writing assistance to help you achieve your academic goals. Our team of experts has years of experience in the field and is dedicated to providing personalized assistance to each client.",
+  "mainServices": [
+    {
+      "title": "Thesis Writing Assistance",
+      "description": "Comprehensive solutions to assist research scholars and students in successfully completing their thesis projects.",
+      "image": "https://images.unsplash.com/photo-1751097006268-ae4601fcb117?q=80&w=1059&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "title": "Paper Writing Assistance",
+      "description": "Services designed to help students, researchers, and professionals in crafting high-quality academic or research papers.",
+      "image": "https://images.unsplash.com/photo-1751097006268-ae4601fcb117?q=80&w=1059&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "title": "Paper Publication Assistance",
+      "description": "Designed to help researchers, scholars, and authors navigate the complex process of getting their work published in reputable academic journals or publications.",
+      "image": "https://images.unsplash.com/photo-1751097006268-ae4601fcb117?q=80&w=1059&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    }
+  ],
+  "detailedOfferings": [
+    {
+      "title": "Guides to Research Methodologies",
+      "description": "Provide detailed guides on various research methodologies like qualitative, quantitative, mixed-methods, case study, experimental, and survey research.",
+      "image": "https://images.unsplash.com/photo-1751097006268-ae4601fcb117?q=80&w=1059&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "title": "Writing Tips and Techniques",
+      "description": "Offer practical advice on effective academic writing, including structure, proper citation, avoiding plagiarism, and crafting compelling arguments.",
+      "image": "https://images.unsplash.com/photo-1751097006268-ae4601fcb117?q=80&w=1059&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "title": "Literature Review Assistance",
+      "description": "Provide guidance on conducting thorough literature reviews, including searching for literature, critical analysis, and synthesizing findings.",
+      "image": "https://images.unsplash.com/photo-1751097006268-ae4601fcb117?q=80&w=1059&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "title": "Data Analysis Support",
+      "description": "Offer assistance with data analysis techniques and software tools such as SPSS, R, Python, or NVivo.",
+      "image": "https://images.unsplash.com/photo-1751097006268-ae4601fcb117?q=80&w=1059&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "title": "Proposal Writing Services",
+      "description": "Support for crafting research proposals, including developing research questions, justifying significance, outlining methodologies, and creating timelines.",
+      "image": "https://images.unsplash.com/photo-1751097006268-ae4601fcb117?q=80&w=1059&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "title": "Editing and Proofreading Services",
+      "description": "Professional editing and proofreading to ensure clarity, coherence, and adherence to academic standards.",
+      "image": "https://images.unsplash.com/photo-1751097006268-ae4601fcb117?q=80&w=1059&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "title": "Research Ethics Guidance",
+      "description": "Provide resources on navigating ethical considerations in research, including informed consent, confidentiality, and conflicts of interest.",
+      "image": "https://images.unsplash.com/photo-1751097006268-ae4601fcb117?q=80&w=1059&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "title": "Statistical Consulting",
+      "description": "Offer consulting for study design, data collection, statistical analysis, and interpretation of results.",
+      "image": "https://images.unsplash.com/photo-1751097006268-ae4601fcb117?q=80&w=1059&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "title": "Academic Publishing Advice",
+      "description": "Guidance on the academic publishing process, including journal selection, manuscript formatting, and responding to reviewer comments.",
+      "image": "https://images.unsplash.com/photo-1751097006268-ae4601fcb117?q=80&w=1059&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "title": "Workshops and Webinars",
+      "description": "Organize online courses on various aspects of research writing, methodology, data analysis, and academic publishing.",
+      "image": "https://images.unsplash.com/photo-1751097006268-ae4601fcb117?q=80&w=1059&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "title": "Topic Selection",
+      "description": "Helping researchers choose a relevant and impactful topic for their academic projects that aligns with their interests and field requirements.",
+      "image": "https://images.unsplash.com/photo-1751097006268-ae4601fcb117?q=80&w=1059&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "title": "Dissertation Writing",
+      "description": "Assisting in the complete writing process of a dissertation, from introduction and literature review to methodology, results, and conclusion.",
+      "image": "https://images.unsplash.com/photo-1751097006268-ae4601fcb117?q=80&w=1059&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "title": "Synopsis / Research Proposal Writing",
+      "description": "Crafting concise and compelling synopses or research proposals that outline the objectives, methodology, and significance of a research project.",
+      "image": "https://images.unsplash.com/photo-1751097006268-ae4601fcb117?q=80&w=1059&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "title": "PG Report Writing",
+      "description": "Providing guidance and support in writing postgraduate reports, ensuring clarity, coherence, and adherence to academic standards.",
+      "image": "https://images.unsplash.com/photo-1751097006268-ae4601fcb117?q=80&w=1059&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "title": "Research Paper Writing (UGC/SCOPUS/SCI)",
+      "description": "Assisting in preparing research papers for publication in reputed journals indexed by UGC, SCOPUS, or SCI.",
+      "image": "https://images.unsplash.com/photo-1751097006268-ae4601fcb117?q=80&w=1059&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    }
+  ]
+}

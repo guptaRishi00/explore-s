@@ -1,0 +1,262 @@
+// Domains Page Styles - Matching website aesthetics
+
+// Introduction Section
+.domain-intro__area {
+    .intro-content {
+        .intro-title {
+            font-size: 42px;
+            font-weight: 700;
+            color: #00306E;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+        
+        .title-line {
+            height: 3px;
+            background: linear-gradient(90deg, #3270FC 0%, #e9ecef 100%);
+            margin: 0 auto 25px;
+            width: 80px;
+            border-radius: 2px;
+        }
+        
+        .intro-description {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #53545b;
+            margin: 0;
+            font-weight: 400;
+        }
+    }
+}
+
+// Domains Section
+.domains__area {
+    .section-title {
+        margin-bottom: 50px;
+        
+        .title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #00306E;
+            margin-bottom: 15px;
+            letter-spacing: -0.3px;
+        }
+        
+        .title-line {
+            height: 3px;
+            background: linear-gradient(90deg, #3270FC 0%, #e9ecef 100%);
+            margin: 0 auto 20px;
+            width: 60px;
+            border-radius: 2px;
+        }
+        
+        .subtitle {
+            font-size: 16px;
+            color: #53545b;
+            margin: 0;
+            font-weight: 400;
+        }
+    }
+    
+    .domain-card {
+        background: #ffffff;
+        border-radius: 6px;
+        box-shadow: 0px 20px 40px rgba(15, 18, 22, 0.08);
+        padding: 35px 30px;
+        transition: all 0.3s ease;
+        border: 1px solid #f0f0f0;
+        height: 100%;
+        display: flex;
+        align-items: flex-start;
+        
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 30px 50px rgba(15, 18, 22, 0.12);
+            border-color: #3270FC;
+        }
+        
+        .domain-icon {
+            flex-shrink: 0;
+            margin-right: 25px;
+            margin-top: 5px;
+            
+            .icon-wrapper {
+                width: 60px;
+                height: 60px;
+                background: linear-gradient(135deg, #3270FC 0%, #2563eb 100%);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0px 8px 25px rgba(50, 112, 252, 0.3);
+                transition: all 0.3s ease;
+                
+                &:hover {
+                    transform: scale(1.1);
+                    box-shadow: 0px 12px 30px rgba(50, 112, 252, 0.4);
+                }
+                
+                svg {
+                    color: #ffffff;
+                    width: 28px;
+                    height: 28px;
+                }
+            }
+        }
+        
+        .domain-content {
+            flex: 1;
+            
+            .domain-title {
+                font-size: 22px;
+                font-weight: 600;
+                color: #00306E;
+                margin-bottom: 15px;
+                line-height: 1.4;
+                letter-spacing: -0.2px;
+            }
+            
+            .domain-description {
+                font-size: 16px;
+                line-height: 1.7;
+                color: #53545b;
+                margin: 0;
+                font-weight: 400;
+            }
+        }
+    }
+}
+
+// Responsive adjustments
+@media (max-width: 1199px) {
+    .domain-intro__area {
+        .intro-content .intro-title {
+            font-size: 36px;
+        }
+    }
+    
+    .domains__area {
+        .section-title .title {
+            font-size: 32px;
+        }
+        
+        .domain-card {
+            padding: 30px 25px;
+            
+            .domain-icon {
+                margin-right: 20px;
+                
+                .icon-wrapper {
+                    width: 55px;
+                    height: 55px;
+                    
+                    svg {
+                        width: 26px;
+                        height: 26px;
+                    }
+                }
+            }
+            
+            .domain-content .domain-title {
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .domain-intro__area {
+        .intro-content .intro-title {
+            font-size: 32px;
+        }
+    }
+    
+    .domains__area {
+        .section-title .title {
+            font-size: 28px;
+        }
+        
+        .domain-card {
+            margin-bottom: 20px;
+            padding: 25px 20px;
+            
+            .domain-icon {
+                margin-right: 18px;
+                
+                .icon-wrapper {
+                    width: 50px;
+                    height: 50px;
+                    
+                    svg {
+                        width: 24px;
+                        height: 24px;
+                    }
+                }
+            }
+            
+            .domain-content .domain-title {
+                font-size: 19px;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .domain-intro__area {
+        .intro-content {
+            .intro-title {
+                font-size: 28px;
+            }
+            
+            .intro-description {
+                font-size: 16px;
+            }
+        }
+    }
+    
+    .domains__area {
+        .section-title .title {
+            font-size: 24px;
+        }
+        
+        .domain-card {
+            flex-direction: column;
+            text-align: center;
+            padding: 25px 20px;
+            
+            .domain-icon {
+                margin: 0 auto 20px;
+            }
+            
+            .domain-content {
+                text-align: center;
+                
+                .domain-title {
+                    font-size: 18px;
+                }
+                
+                .domain-description {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .domain-intro__area {
+        .intro-content .intro-title {
+            font-size: 24px;
+        }
+    }
+    
+    .domains__area {
+        .section-title .title {
+            font-size: 22px;
+        }
+        
+        .domain-card {
+            padding: 20px 15px;
+        }
+    }
+}
