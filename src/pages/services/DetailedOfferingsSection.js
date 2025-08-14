@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import servicesData from '../../data/Services.json';
 
 const DetailedOfferingsSection = () => {
@@ -36,6 +37,15 @@ const DetailedOfferingsSection = () => {
                                 <div className="offering-content">
                                     <h4 className="offering-title">{offering.title}</h4>
                                     <p className="offering-description">{offering.description}</p>
+                                    <div className="offering-action">
+                                        <Link to={`/service/${offering.id}`} className="view-details-btn">
+                                            View Details
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="arrow-icon">
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                <polyline points="12 5 19 12 12 19"></polyline>
+                                            </svg>
+                                        </Link>
+                                    </div>
                                 </div>
                             </div>
                         </div>

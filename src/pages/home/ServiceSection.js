@@ -22,6 +22,7 @@ const Service = () => {
             <SingleService
               itemImg={serviceImg1}
               title="Ph.D. Research Assistance"
+              btnText="View Details"
             />
           </div>
           <div
@@ -32,21 +33,30 @@ const Service = () => {
               itemImg={serviceImg2}
               title="
                     Data Analysis & Statistics                "
+              btnText="View Details"
             />
           </div>
           <div
             className="col-lg-3 wow animate__fadeInUp"
             data-wow-duration="0.7s"
           >
-            <SingleService itemImg={serviceImg3} title="
-                    Academic Writing Services                " />
+            <SingleService 
+              itemImg={serviceImg3} 
+              title="
+                    Academic Writing Services                " 
+              btnText="View Details"
+            />
           </div>
           <div
             className="col-lg-3 wow animate__fadeInUp"
             data-wow-duration="0.9s"
           >
-            <SingleService itemImg={serviceImg4} title="
-                    Publication & Review Support                " />
+            <SingleService 
+              itemImg={serviceImg4} 
+              title="
+                    Publication & Review Support                " 
+              btnText="View Details"
+            />
           </div>
         </div>
       </div>
