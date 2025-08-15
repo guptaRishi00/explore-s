@@ -5,7 +5,7 @@ import Breadcrumb from '../../components/Breadcrumb';
 import ScrollToTop from '../../components/ScrollTop';
 import ContactMain from './ContactMain';
 
-import footerLogo from '../../assets/images/logos/footer-logo.png';
+import footerLogo from '../../assets/logo.png';
 
 const Contact = () => {
 

@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import Logo from '../../assets/images/logos/footer-logo.png';
+import Logo from '../../assets/logo.png';
 
 const Footer = (props) => {
     const { footerLogo, footerClass } = props;
@@ -15,7 +15,7 @@ const Footer = (props) => {
                             <div className="col-lg-3 col-md-6 col-sm-12 md-mb-30">
                                 <div className="footer-widget footer-widget-1">
                                     <div className="footer-logo white">
-                                        <Link to="/" className="logo-text"><img src={footerLogo ? footerLogo : Logo} alt="Footer Logo" /></Link>
+                                        <Link to="/" className="logo-text"><img src={Logo} alt="Footer Logo" /></Link>
                                     </div>
                                     <h5 className="footer-subtitle">Explore S Research Solutions is your trusted partner<br/>
                                     for academic excellence. We specialize in research<br/> papers, thesis writing, and academic guidance.</h5>

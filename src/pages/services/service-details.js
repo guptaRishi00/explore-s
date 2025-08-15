@@ -6,7 +6,7 @@ import Breadcrumb from '../../components/Breadcrumb';
 import ScrollToTop from '../../components/ScrollTop';
 import servicesData from '../../data/Services.json';
 
-import footerLogo from '../../assets/images/logos/footer-logo.png';
+import footerLogo from '../../assets/logo.png';
 
 const ServiceDetails = () => {
     const { serviceId } = useParams();

@@ -4,7 +4,7 @@ import Footer from '../../components/Footer';
 import ScrollToTop from '../../components/ScrollTop';
 import AboutMain from './AboutMain';
 
-import footerLogo from '../../assets/images/logos/footer-logo.png';
+import footerLogo from '../../assets/logo.png';
 
 const About = () => {
 

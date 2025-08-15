@@ -3,7 +3,7 @@ import HomeMain from './HomeMain';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
-import footerLogo from '../../assets/images/logos/footer-logo.png';
+import footerLogo from '../../assets/logo.png';
 
 const HomePage = () => {
     return (

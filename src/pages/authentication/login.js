@@ -4,7 +4,7 @@ import Footer from '../../components/Footer';
 import LoginMain from './LoginMain';
 import ScrollToTop from '../../components/ScrollTop';
 
-import footerLogo from '../../assets/images/logos/footer-logo.png';
+import footerLogo from '../../assets/logo.png';
 
 const Login = () => {
 

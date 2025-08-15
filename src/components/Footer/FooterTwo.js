@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import Logo from '../../assets/images/logos/footer-logo.png';
+import Logo from '../../assets/logo.png';
 
 const FooterTwo = (props) => {
     const { footerLogo, footerClass, ctaSubtitle, ctaTitle, ctaBtn } = props;
@@ -28,7 +28,7 @@ const FooterTwo = (props) => {
                             <div className="col-lg-3 md-mb-30">
                                 <div className="footer-widget footer-widget-1">
                                     <div className="footer-logo white">
-                                        <Link to="index.html" className="logo-text"> <img src={footerLogo ? footerLogo : Logo} alt="logo" /></Link>
+                                        <Link to="index.html" className="logo-text"> <img src={Logo} alt="logo" /></Link>
                                     </div>
                                     <h5 className="footer-subtitle">There are course and event custom <br/>
                                     post types so you can easily create and<br/> manage course, events.</h5>

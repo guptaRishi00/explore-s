@@ -4,7 +4,7 @@ import Footer from '../../components/Footer';
 import AuthenticationMain from './AuthenticationMain';
 import ScrollToTop from '../../components/ScrollTop';
 
-import footerLogo from '../../assets/images/logos/footer-logo.png';
+import footerLogo from '../../assets/logo.png';
 
 const Authentication = () => {
 
