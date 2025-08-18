@@ -1,0 +1,346 @@
+.paynow-page {
+    .hero-banner.paynow-hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                    url('https://plus.unsplash.com/premium_photo-1681928677639-44267dea6af7?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        min-height: 500px;
+        display: flex;
+        align-items: center;
+        position: relative;
+        
+        .hero-content {
+            padding: 80px 0;
+            
+            .payment-badge {
+                display: inline-block;
+                background: rgba(0, 0, 0, 0.8);
+                color: white;
+                padding: 12px 24px;
+                border-radius: 25px;
+                margin-bottom: 30px;
+                font-weight: 500;
+                font-size: 16px;
+            }
+            
+            .hero-title {
+                color: white;
+                font-size: 3.5rem;
+                font-weight: 700;
+                margin-bottom: 25px;
+                line-height: 1.2;
+            }
+            
+            .hero-description {
+                color: white;
+                font-size: 1.2rem;
+                line-height: 1.6;
+                opacity: 0.9;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+        }
+    }
+    
+    .payment-methods-section {
+        padding: 80px 0;
+        background: #f8f9fa;
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        
+        .section-description {
+            font-size: 1.1rem;
+            color: #6c757d;
+            margin-bottom: 50px;
+        }
+        
+        .payment-methods-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            
+            .payment-method-card {
+                background: white;
+                padding: 40px 30px;
+                border-radius: 15px;
+                text-align: center;
+                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+                transition: all 0.3s ease;
+                cursor: pointer;
+                border: 3px solid transparent;
+                
+                &:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+                }
+                
+                &.selected {
+                    border-color: #007bff;
+                    background: #f8f9ff;
+                }
+                
+                .method-icon {
+                    font-size: 3rem;
+                    margin-bottom: 20px;
+                }
+                
+                .method-name {
+                    font-size: 1.3rem;
+                    font-weight: 600;
+                    color: #2c3e50;
+                    margin-bottom: 15px;
+                }
+                
+                .method-description {
+                    color: #6c757d;
+                    font-size: 0.95rem;
+                    line-height: 1.5;
+                }
+            }
+        }
+    }
+    
+    .payment-process-section {
+        padding: 80px 0;
+        background: white;
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        
+        .section-description {
+            font-size: 1.1rem;
+            color: #6c757d;
+            margin-bottom: 40px;
+        }
+        
+        .process-steps {
+            .process-step {
+                display: flex;
+                align-items: flex-start;
+                margin-bottom: 40px;
+                
+                .step-number {
+                    background: #007bff;
+                    color: white;
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 1.5rem;
+                    font-weight: 700;
+                    margin-right: 25px;
+                    flex-shrink: 0;
+                }
+                
+                .step-content {
+                    .step-title {
+                        font-size: 1.4rem;
+                        font-weight: 600;
+                        color: #2c3e50;
+                        margin-bottom: 10px;
+                    }
+                    
+                    .step-description {
+                        color: #6c757d;
+                        font-size: 1rem;
+                        line-height: 1.5;
+                    }
+                }
+            }
+        }
+        
+        .process-illustration {
+            .illustration-container {
+                position: relative;
+                height: 400px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                
+                .payment-illustration {
+                    max-width: 100%;
+                    height: auto;
+                    border-radius: 15px;
+                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+                    transition: transform 0.3s ease;
+                    
+                    &:hover {
+                        transform: scale(1.02);
+                    }
+                }
+            }
+        }
+    }
+    
+    // Bank Transfer Modal Styles
+    .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        padding: 20px;
+        transform: translateZ(0);
+    }
+    
+    .modal-content {
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        max-width: 500px;
+        width: 100%;
+        max-height: 90vh;
+        overflow: hidden;
+        animation: modalSlideIn 0.3s ease-out;
+        position: relative;
+        z-index: 10000;
+        margin: auto;
+        transform: translateY(0);
+    }
+    
+    .modal-header {
+        padding: 25px 30px 20px;
+        border-bottom: 1px solid #e9ecef;
+        
+        .modal-title {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+    }
+    
+    .modal-body {
+        padding: 30px;
+        
+        .bank-details {
+            .detail-row {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 15px 0;
+                border-bottom: 1px solid #f8f9fa;
+                
+                &:last-child {
+                    border-bottom: none;
+                }
+                
+                .detail-label {
+                    font-weight: 600;
+                    color: #2c3e50;
+                    font-size: 1rem;
+                }
+                
+                .detail-value {
+                    color: #6c757d;
+                    font-size: 1rem;
+                    font-family: 'Courier New', monospace;
+                    background: #f8f9fa;
+                    padding: 8px 12px;
+                    border-radius: 6px;
+                    border: 1px solid #e9ecef;
+                }
+            }
+        }
+    }
+    
+    .modal-footer {
+        padding: 20px 30px 25px;
+        border-top: 1px solid #e9ecef;
+        text-align: center;
+        
+        .close-button {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            
+            &:hover {
+                background: #c82333;
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(220, 53, 69, 0.3);
+            }
+        }
+    }
+    
+    @keyframes modalSlideIn {
+        from {
+            opacity: 0;
+            transform: translateY(-50px) scale(0.9);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+    
+    // Ensure modal appears above all elements
+    .modal-overlay,
+    .modal-content {
+        will-change: transform;
+        backface-visibility: hidden;
+    }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+    .paynow-page {
+        .hero-banner.paynow-hero {
+            .hero-content {
+                .hero-title {
+                    font-size: 2.5rem;
+                }
+                
+                .hero-description {
+                    font-size: 1rem;
+                }
+            }
+        }
+        
+        .payment-methods-section,
+        .payment-process-section {
+            padding: 60px 0;
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+        
+        .payment-methods-grid {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        
+        .process-steps .process-step {
+            .step-number {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+                margin-right: 20px;
+            }
+        }
+    }
+}

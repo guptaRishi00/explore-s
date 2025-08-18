@@ -25,6 +25,7 @@ import BlogDetails from '../pages/blog/blog-details';
 import Login from '../pages/authentication/login';
 import Signup from '../pages/authentication/signup';
 import Contact from '../pages/contact';
+import PayNow from '../pages/paynow';
 import Error from '../pages/404';
 import LoadTop from '../components/ScrollTop/LoadTop'
 
@@ -67,6 +68,7 @@ const App = () => {
                     <Route path="/login" element={<Login />} />
                     <Route path="/signup" element={<Signup />} />
                     <Route path="/contact" element={<Contact />} />
+                    <Route path="/paynow" element={<PayNow />} />
                     <Route path='*' element={<Error />} />
                 </Routes>
             </>

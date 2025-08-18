@@ -52,6 +52,7 @@ const Footer = (props) => {
                                             <li><Link to="/course">Research Papers</Link></li>
                                             <li><Link to="/event">Academic Events</Link></li>
                                             <li><Link to="/instructor">Our Team</Link></li>
+                                            <li><Link to="/paynow">Pay Now</Link></li>
                                         </ul>
                                     </div>
                                 </div>
