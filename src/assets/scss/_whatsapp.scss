@@ -1,0 +1,105 @@
+// _whatsapp.scss — floating site-wide WhatsApp button (bottom-left)
+// Uses WhatsApp brand green for instant recognition (intentional exception to
+// the site palette). Animated float + pulse ring; reduced-motion disables both.
+
+$wa-green: #25D366;
+
+.es-whatsapp {
+  position: fixed;
+  left: clamp(16px, 3vw, 26px);
+  bottom: clamp(16px, 3vw, 26px);
+  z-index: 1200;
+
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: $wa-green;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba($wa-green, 0.45);
+  animation: es-wa-float 2.8s ease-in-out infinite;
+  transition: box-shadow 0.2s ease;
+
+  &__icon {
+    position: relative;
+    z-index: 2;
+    display: block;
+  }
+
+  // expanding pulse ring behind the button
+  &__pulse {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: $wa-green;
+    z-index: 1;
+    animation: es-wa-pulse 2.2s ease-out infinite;
+  }
+
+  // hover tooltip label (pops to the right, since the button is bottom-left)
+  &__label {
+    position: absolute;
+    left: calc(100% + 14px);
+    top: 50%;
+    transform: translateY(-50%) scale(0.9);
+    transform-origin: left center;
+    background: $titleColor;
+    color: #fff;
+    font: 600 13px/1 $bodyfont;
+    white-space: nowrap;
+    padding: 9px 13px;
+    border-radius: 8px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+
+    &::before {
+      content: '';
+      position: absolute;
+      right: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      border: 6px solid transparent;
+      border-right-color: $titleColor;
+    }
+  }
+
+  &:hover {
+    box-shadow: 0 10px 32px rgba($wa-green, 0.6);
+
+    .es-whatsapp__label {
+      opacity: 1;
+      transform: translateY(-50%) scale(1);
+    }
+  }
+
+  &:focus-visible {
+    outline: 3px solid rgba($wa-green, 0.6);
+    outline-offset: 3px;
+  }
+
+  // hide the tooltip on touch/small screens (no hover)
+  @media (max-width: 767px) {
+    &__label { display: none; }
+  }
+}
+
+@keyframes es-wa-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
+}
+
+@keyframes es-wa-pulse {
+  0%   { transform: scale(1);   opacity: 0.55; }
+  70%  { transform: scale(1.9); opacity: 0; }
+  100% { transform: scale(1.9); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .es-whatsapp { animation: none; }
+  .es-whatsapp__pulse { animation: none; opacity: 0; }
+}

@@ -1,0 +1,182 @@
+// _modal.scss — Book a Meeting modal styles
+// Uses brand tokens from _variables.scss and _tokens.scss
+
+// While the modal is open, hide site-wide floating chrome that otherwise
+// paints over the overlay (WhatsApp button z-index 1200, back-to-top 99999).
+body.es-modal-open {
+  .es-whatsapp,
+  #backscrollUp {
+    display: none !important;
+  }
+}
+
+.es-modal__overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 37, 64, 0.6);
+  // Above all app chrome (WhatsApp 1200, back-to-top 99999) so nothing
+  // floats over the dialog. Paired with body.es-modal-open hiding above.
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+
+  &.is-open {
+    opacity: 1;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+}
+
+.es-modal {
+  background: $whiteColor;
+  border-radius: var(--es-radius);
+  box-shadow: var(--es-shadow), 0 20px 60px rgba(10, 37, 64, 0.18);
+  width: 100%;
+  max-width: 520px;
+  max-height: 90vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(24px);
+  transition: transform 0.25s ease;
+
+  .es-modal__overlay.is-open & {
+    transform: translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transform: none;
+    transition: none;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 28px 0;
+    gap: 12px;
+  }
+
+  &__title {
+    font: 700 20px/1.2 $titlefont;
+    color: $titleColor;
+    margin: 0;
+  }
+
+  &__close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 22px;
+    line-height: 1;
+    color: $bodyColor;
+    padding: 6px;
+    border-radius: 6px;
+    transition: $transition;
+    flex-shrink: 0;
+
+    &:hover,
+    &:focus-visible {
+      background: $surfaceColor;
+      color: $titleColor;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $primaryColor;
+      outline-offset: 2px;
+    }
+  }
+
+  &__body {
+    padding: 20px 28px 24px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+
+    @media (min-width: 480px) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  &__label {
+    font: 600 13px/1 $bodyfont;
+    color: $titleColor;
+  }
+
+  &__input,
+  &__textarea {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1.5px solid $hairline;
+    border-radius: 8px;
+    font: 400 15px/1.5 $bodyfont;
+    color: $titleColor;
+    background: $whiteColor;
+    transition: border-color 0.2s ease;
+    box-sizing: border-box;
+
+    &::placeholder {
+      color: lighten($bodyColor, 20%);
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $primaryColor;
+      box-shadow: 0 0 0 3px rgba($primaryColor, 0.12);
+    }
+  }
+
+  &__textarea {
+    resize: vertical;
+    min-height: 90px;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding: 0 28px 24px;
+    border-top: 1px solid $hairline;
+    padding-top: 20px;
+    margin-top: -4px;
+  }
+
+  &__note {
+    font: 400 13px/1.4 $bodyfont;
+    color: $bodyColor;
+    margin: 0;
+  }
+
+  &__success {
+    padding: 32px 28px;
+    text-align: center;
+
+    p {
+      font: 600 17px/1.5 $titlefont;
+      color: $primaryColor;
+      margin: 0;
+    }
+  }
+}

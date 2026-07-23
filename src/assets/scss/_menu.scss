@@ -30,13 +30,13 @@ body.react-one-page .react-menus > li > a {
 
 .react-menus li:hover > a ,
 .react-menus li.menu-active > a {
-    color:#0d1e50;
+    color:$titleColor;
 }
 
 
 .react-menus li ul.sub-menu li:hover > a,
 .react-menus li ul.sub-menu li.menu-active > a {
-    color:#0d1e50;
+    color:$titleColor;
 }
 
 
@@ -176,7 +176,7 @@ body.react-one-page .react-menus > li > a {
         position: absolute;
         border-left: 6px solid transparent;
         border-right: 6px solid transparent;
-        border-top: 10px solid #0d1e50;
+        border-top: 10px solid $titleColor;
         display: block;
         top: 50%;
         left: 50%;
@@ -188,8 +188,8 @@ body.react-one-page .react-menus > li > a {
         position: absolute;
         border-left: 6px solid transparent;
         border-right: 6px solid transparent;
-        border-bottom: 10px solid #0d1e50;
-        border-top: 0px solid #0d1e50;
+        border-bottom: 10px solid $titleColor;
+        border-top: 0px solid $titleColor;
         display: block;
         top: 50%;
         left: 50%;
@@ -225,10 +225,10 @@ body.react-one-page .react-menus > li > a {
     }  
     .react-menus li a:hover {
         background: #f5f3f3 !important;
-        color: #0d1e50 !important;
+        color: $titleColor !important;
     }
     .react-menus li > .react-current-page{
-        color: #3270FC !important;
+        color: #004E9E !important;
     }
     .react-menus > li:first-child {
         border-top: none;

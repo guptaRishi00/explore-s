@@ -1,0 +1,520 @@
+1. Top Header & Navigation Bar
+● Logo Text / Brand: EXPLORE S RESEARCH SOLUTIONS
+● Top Right Support:
+○ 📞 +91 9289441168
+○ ✉ support@exploresresearchsolutions.in
+● Menu Items: HOME | ABOUT | SERVICES | BECOME A PARTNER | CAREER |
+CONTACT US | BLOGS
+● Primary CTA Button: Apply Online / Enrol Now
+2. Main Hero Banner (Slider Variant)
+Main Heading:
+Empowering Academic & Career Growth Through Specialized Education
+Sub-heading:
+Your Trusted Partner for PhD & Masters Admissions, Advanced Technical
+Certifications, and Premium Research Services
+Call to Action Button:
+GET STARTED
+
+-- 1 of 24 --
+
+3. Counter Bar (Bottom Blue Strip)
+● 4,500+ ➔ Scholars Mentored & Placed
+● 32,000+ ➔ Research Papers Published
+● 12,500+ ➔ Certified Tech & Marketing Learners
+● 50,000+ ➔ Academic Careers Transformed
+
+-- 2 of 24 --
+
+1. Left Side:
+Small Yellow Tag:
+#1 ACADEMIC & SKILL DEVELOPMENT HUB
+Main Heading:
+Explore S Research Solutions – Your Trusted Partner for Advanced Research &
+Professional Growth
+Introductory Paragraph:
+At Explore S Research Solutions, we believe that high-impact academic achievements and
+industry-relevant skills go hand in hand. Whether you are navigating the rigorous journey of a
+advanced degree, mastering cutting-edge AI and technical programming, or accelerating your
+career with digital marketing, we provide the ultimate ecosystem. By combining data-driven
+methodologies with elite industry mentorship, we simplify complex paths and empower your
+future.
+
+-- 3 of 24 --
+
+Four Core Value Pillars (Grid Section):
+📌 Expert-Led Academic Guidance
+We match you with seasoned researchers, data analysts, and domain experts who guide you
+through every stage of your academic milestones—from synopsis drafting and comprehensive
+thesis writing to top-tier journal publication support.
+📌 Global Educational Pathways
+Streamline your next academic leap with our verified admission assistance. We bridge the gap
+between ambitious students and premium national or international institutions for PhD, Masters,
+and specialized Medical degree programs.
+📌 Future-Ready Technical Training
+Stay ahead of the curve with our elite skill-development programs. From Python for Research,
+Machine Learning, and MATLAB to advanced Data Science, we equip researchers and
+engineers with practical, hands-on tech expertise.
+📌 Uncompromising Quality & Data Integrity
+Built on a strong foundation of academic credibility, we guarantee 100% original work, stringent
+quality metrics, and thorough plagiarism checks using premium tools to ensure your research
+meets global standards.
+2. Right Side: Lead Generation Form
+● Form Title: Connect with Explore S Research Solutions
+● Form Subtitle: Get Expert Consultation
+Form Fields:
+1. Your Name* (Placeholder)
+2. Your Email* (Placeholder)
+3. Mobile Number* (With Country Code Dropdown)
+4. -- Choose Your Service -- (Dropdown Options below):
+○ PhD & Higher Education Admissions
+○ Thesis, Dissertation & Research Writing
+○ Data Analysis (SPSS / R / Python)
+○ AI, Machine Learning & Tech Courses
+○ Digital Marketing Masterclass
+5. -- Select Country -- (Dropdown)
+6. Type Your Message (Text Area)
+Consent Text & Button:
+● Checkbox Text: By submitting this form, you agree to receive communication from
+Explore S Research Solutions via Call, SMS, WhatsApp & Email.
+● Submit Button Text: SUBMIT REQUEST
+
+-- 4 of 24 --
+
+Global Network & Community Section
+Main Heading:
+A Global Network of 40,000+ Scholars, Engineers & Industry Experts
+Sub-heading / Description:
+A comprehensive ecosystem where over 40,000+ academicians, technology enthusiasts, and
+digital professionals have found premium mentoring, advanced technical skills, and publication
+success.
+Grid Photos & Identity Format (For Developers/Designers):
+● Format 1 (For Researchers): DR. ARTI SHARMA | 󰏝 INDIA | RESEARCH
+SCHOLAR
+● Format 2 (For Tech/AI Students): AMIT PATEL | 󰑔 USA | DATA SCIENTIST
+● Format 3 (For Admissions/Degrees): DR. JOHN DOE | 󰏅 UK | MD / PHD
+ALUMNUS
+● Format 4 (For Digital Marketing): SARAH JONES | 󰎉 AUSTRALIA | MARKETING
+STRATEGIST
+
+-- 5 of 24 --
+
+Live Bootcamp Banner Content:
+Main Bold Title:
+LIVE MASTERCLASSES & BOOTCAMPS
+Catchy Tagline:
+India's Most Interactive Live Mentorship & Skill Development Sessions
+1. Live class on research/thesis guidance
+2. Live screen of Python/MATLAB or AI Tools coding
+3. Digital marketing LIVE DASHBOARD & AD MANAGER TOOL
+Left Highlight Box:
+● Point 1:
+○ Icon: No-Recording Sign 🚫
+○ Text: Zero Pre-Recorded Boredom (100% Real-Time Interactive Learning)
+● Point 2:
+○ Icon: Live Stream/Wifi Sign 📡
+○ Text: Join Us Live (Every Weekend Intensive Slots Available)
+
+-- 6 of 24 --
+
+Bottom Center Text:
+Up-Skilling Researchers, Engineers, & Digital Marketers Globally
+Call to Action Button:
+REGISTER NOW »
+*After Clicking on this banner it will open a form like this:
+*IMPORTANT And make sure to add drop down menu to select any of these 3 things
+#Digital Marketing
+#Live Screen of PYTHON / MATLAB or AI TOOLS Coding
+#Thesis & Research Guidance
+
+-- 7 of 24 --
+
+Service (Carousel) Slider Section Header:
+● Main Heading: Comprehensive Tech-Enabled Solutions for Scholars & Professionals
+● Top Right Button: View All Services ➔
+7-Card Service Slider Content:
+Card 1: Academic Research Services
+● Yellow Tag: Research & Editorial Support
+● Card Title: End-to-End Thesis & Synopsis Solutions
+● Bullet Points:
+○ ➔ Masterful Thesis, Synopsis & Dissertation Writing
+○ ➔ Advanced Literature Review & Research Proposal Drafting
+○ ➔ Complete Plagiarism Checking & Removal via Turnitin
+● Bottom Button: Enroll Now
+Card 2: Publication & Analytics
+● Yellow Tag: Publication Guidance
+● Card Title: Research Paper Writing & Data Analysis
+● Bullet Points:
+○ ➔ High-Impact Data Analysis using SPSS, R, and Python
+○ ➔ Fast-Track Support for Scopus, UGC Care, WOS & IEEE Journals
+○ ➔ Professional Proofreading, Academic Editing & Formatting
+● Bottom Button: Enroll Now
+Card 3: Degree Admissions
+● Yellow Tag: Admission Guidance
+● Card Title: PhD, Masters & Medical Programs
+
+-- 8 of 24 --
+
+● Bullet Points:
+○ ➔ Direct Admission Guidance for National & International Universities
+○ ➔ Comprehensive Profile Evaluation & University Selection
+○ ➔ End-to-End Interview & Document Preparation Support
+● Bottom Button: Enroll Now
+Card 4: Tech & Professional Courses
+● Yellow Tag: Skill Development
+● Card Title: AI, Tech Programs & Digital Marketing
+● Bullet Points:
+○ ➔ Python for Research, MATLAB, Machine Learning & Deep Learning
+○ ➔ Advanced SPSS, R Programming & Data Science Bootcamps
+○ ➔ Live Digital Marketing Masterclass by Industry Experts
+● Bottom Button: Enroll Now
+Card 5: Data Visualization & Analytics (Technical)
+● Yellow Tag: Data Science
+● Card Title: Analytics & Visualization Bootcamp
+● Bullet Points:
+○ ➔ Advanced Predictive Modeling & Statistical Analysis
+○ ➔ Interactive Dashboards with Tableau & Power BI
+○ ➔ Practical, Hands-on Case Studies for Engineers & Researchers
+● Bottom Button: Enroll Now
+Card 6: Special Academic Skills (Research Tools)
+● Yellow Tag: Research Excellence
+● Card Title: AI Tools & Formatting for Researchers
+● Bullet Points:
+○ ➔ Master AI Tools for Academic Automation & Literature Mapping
+○ ➔ Professional Document Typesetting via LaTeX for Journals
+○ ➔ Systematic Meta-Analysis & Citation Styles Training
+● Bottom Button: Enroll Now
+Card 7: Digital Marketing Sub-Specialty (Professional)
+● Yellow Tag: Career Acceleration
+● Card Title: Digital Marketing Practitioner Course
+● Bullet Points:
+○ ➔ Advanced Search Engine Optimization (SEO) & Social Media (SMM)
+○ ➔ Live Ad Campaign Management & Performance Marketing (PPC)
+○ ➔ Mentorship by Industry Experts with Real-time Strategy Execution
+● Bottom Button: Enroll Now
+
+-- 9 of 24 --
+
+Option 1: Academic & Admission Focus (PhD & Higher
+Degrees)
+Main Typography Text:
+TRANSFORM YOUR CREDENTIALS FROM
+Hello! Mr. ➔ TO PROUDLY, [Dr.]
+Sub-text:
+Secure Your PhD, Masters, or Medical Degree Admissions with Global Institutional Alliances.
+Call to Action Button:
+ENQUIRE NOW
+Option 2: Technical & AI Focus (For Researchers &
+Engineers)
+Main Typography Text:
+UPGRADE FROM A
+Basic Coder ➔ TO AN ADVANCED [AI & Data Expert]
+Sub-text:
+Master Python for Research, MATLAB, Machine Learning & Advanced Data Analytics.
+Call to Action Button:
+EXPLORE COURSES
+
+-- 10 of 24 --
+
+Option 3: Professional Growth Focus (Digital Marketing &
+Research Services)
+Main Typography Text:
+ELEVATE FROM A
+Struggling Learner ➔ TO A CERTIFIED [Industry Professional]
+Sub-text:
+Premium End-to-End Thesis Writing Services & Expert-Led Digital Marketing Masterclasses.
+Call to Action Button:
+BOOK CONSULTATION
+
+-- 11 of 24 --
+
+Our Ecosystem Section
+Small Yellow Tag (Top):
+OUR PROCESS
+Main Heading:
+A Seamless Journey Guided by Experts at Every Milestone
+The 7-Step Milestone Flow (Icons Labels)
+1. Step 1: Aspirant / Learner
+2. Step 2: Expert Consultation
+3. Step 3: Profile Evaluation
+4. Step 4: Onboarding / Registration
+5. Step 5: Strategic Mentorship
+6. Step 6: Technical & Academic Execution
+7. Step 7: Success & Publication
+
+-- 12 of 24 --
+
+*We will replace this thing to Youtube because we don’t have App
+1. Main Banner Content (The Big Blue Box)
+Main Bold Title:
+India's Most Engaging Academic & Research YouTube Channel
+Sub-text / Video Thumbnail Labels:
+● Video 1: Expert Tips to Clear Your Viva Exam & Defense
+● Video 2: Mastering Literature Review & Reference Mapping
+● Video 3: Ultimate Guide to Assignment Structure & Writing
+● Video 4: How to Remove Plagiarism (Turnitin Blueprint)
+● Video 5: AI Tools for Researchers & Quick Automation
+● Video 6: How to Publish Your Paper in Scopus & IEEE
+2. Bottom Video Hub Text
+Section Heading:
+Your Smart Video Learning Hub
+Free Resources, Short Tutorials & Guides on Explore S Research Solutions YouTube
+Channel, follow us now youtube channel logo (link)
+
+-- 13 of 24 --
+
+Mentors Section Header
+● Small Yellow Tag: TRUSTED MENTORS
+● Main Heading: Talk to the Experts Who’ve Guided Thousands
+● Description Text: Connect with veteran research consultants, data scientists, and
+industry experts who bring years of hands-on experience and data-backed
+insights to accelerate your academic and professional journey.
+4 Main Visible Expert Cards (Left to Right)
+Card 1: Research Consultant (First Expert)
+● Rating Badge: ⭐ 4.9
+● Session Badge: 2,500+ Consultations
+● Name: [Expert Name]
+● Designation Title: Senior Research Consultant
+● Experience: 10 Years Experience
+● CTA Button: Book a Call Now
+Card 2: Tech & AI Expert (Second Expert)
+● Rating Badge: ⭐ 4.8
+● Session Badge: 1,800+ Students Trained
+● Name: [Expert Name]
+● Designation Title: AI & Machine Learning Specialist
+● Experience: 6 Years Experience
+● CTA Button: Book a Call Now
+
+-- 14 of 24 --
+
+Card 3: Data Analytics Expert (Third Expert)
+● Rating Badge: ⭐ 4.7
+● Session Badge: 3,200+ Scholars Guided
+● Name: [Expert Name]
+● Designation Title: Lead Data Analyst (SPSS / R / Python)
+● Experience: 12 Years Experience
+● CTA Button: Book a Call Now
+Card 4: Digital Marketing Practitioner (Fourth Expert)
+● Rating Badge: ⭐ 4.9
+● Session Badge: 1,500+ Professionals Mentored
+● Name: [Expert Name]
+● Designation Title: Digital Marketing Strategist
+● Experience: 8 Years Experience
+● CTA Button: Book a Call Now
+Card 5: Academic Admissions Expert
+● Rating Badge: ⭐ 4.8
+● Session Badge: 2,000+ Admissions Guided
+● Designation Title: Higher Education Admissions Head
+● Experience: 9 Years Experience
+● CTA Button: Book a Call Now
+Card 6: Quality & Editorial Expert
+● Rating Badge: ⭐ 4.6
+● Session Badge: 4,000+ Papers Reviewed
+● Designation Title: Chief Academic Editor & Formatting Specialist
+● Experience: 15 Years Experience
+● CTA Button: Book a Call Now
+#Bottom Center Yellow Button: +500 MORE
+
+-- 15 of 24 --
+
+Community Events Section Header
+● Main Heading: Our Global Academic Initiatives
+● Sub-heading / Tagline: Connect, Collaborate, and Catalyze Innovation
+4 Main Visible Image Labels (Left to Right)
+Label 1: Global Research Excellence Summit
+Label 2: Annual Scholars & Mentors Meet
+Label 3: Advanced Data Analytics & AI Conclave
+Label 4: Digital Marketing & Tech Innovation Forum
+Label 5: International Academic Publications Workshop
+Label 6: Future Technologies & Python Bootcamps
+Label 7: Higher Education Institutions & University Alliances Meet
+Bottom Center Yellow Button: Discover More ➔
+
+-- 16 of 24 --
+
+Testimonials Section Header
+● Small Yellow Tag: TRUSTED VOICES
+● Main Heading: Words of Gratitude From Our Global Alumni
+● Top Right Button: View All Happy Clients ➔
+4 Main Visible Video Testimonial Cards (Left to Right)
+Card 1 (First Video Alumnus):
+● Name: [Alumnus Name]
+● Sub-label: 󰏝 India | Research Scholar
+● Domain Target: For Thesis & Research Writing Services
+Card 2 (Second Video Alumnus):
+● Name: [Alumnus Name]
+● Sub-label: 󰑔 United States | MD / PhD Candidate
+● Domain Target: For Degree Admission Services
+Card 3 (Third Video Alumnus):
+● Name: [Alumnus Name]
+● Sub-label: 󰏅 United Kingdom | Data Scientist & AI Alumnus
+● Domain Target: For AI, Python, ML & Tech Courses
+Card 4 (Fourth Video Alumnus):
+● Name: [Alumnus Name]
+● Sub-label: 󰎉 Australia | Digital Marketing Specialist
+● Domain Target: For Digital Marketing Masterclass
+
+-- 17 of 24 --
+
+Guided Journeys Gallery Section
+Small Yellow Tag (Top):
+A GALLERY OF GUIDED JOURNEYS
+Main Heading:
+With You, On Every Step of Your Growth
+Description Paragraph:
+Whether it’s navigating complex university enrollment, providing hands-on data
+simulation support, final defense preparation, or mastering industry-grade digital
+marketing and AI tools—our expert team walks with you. We ensure your entire academic
+and professional upgrade is flawless, structured, and stress-free.
+
+-- 18 of 24 --
+
+1. Top Mini Blue Banner
+● Badge Graphic Text: Driven by Excellence
+● Main Title: Empowering Your Academic & Professional Journey
+● Sub-text: Take the definitive first step towards your research goals and skill
+upgrades today.
+● Button Text: Enquire Now
+2. Media & Newsroom Section
+● Small Blue Tag (Top): IN THE SPOTLIGHT
+● Main Yellow Badge Text: Official Newsroom
+● Logo Strip Note
+3. Text Testimonials Section (Words of Trust)
+Header & Ratings:
+● Main Heading: Words of Trust from Global Trailblazers
+● Sub-heading: Real stories from researchers, engineers, and marketers across the
+globe. These testimonials reflect true skill transformation, publication success,
+and academic precision.
+● Review Badges (Right Side Box):
+○ Google Icon: ⭐ 4.8/5
+○ Facebook Icon: ⭐ 4.9/5
+○ Justdial Icon: ⭐ 4.7/5
+
+-- 19 of 24 --
+
+The 3 Testimonial Cards (Left to Right):
+Card 1 (Focus on Thesis/Research Services):
+⭐⭐⭐⭐⭐
+"After weeks of layout delays and structure confusion with my academic draft, Explore S
+Research Solutions came to my rescue. Their consultation team worked closely with me
+to refine the synopsis and data modeling. They were always available for edits and
+structural updates until final submission. I couldn't have managed my research work
+without their precise support."
+— Dr. Amit Dubey (Research Scholar)
+Card 2 (Focus on Tech/AI & Data Science Courses):
+⭐⭐⭐⭐⭐
+"Transitioning into advanced data analytics was challenging, but their Python for
+Research and SPSS modules made it completely seamless. The practical approach, live
+weekend sessions, and industry-expert guidance helped me master machine learning
+tools faster than I expected. Highly recommended for any professional looking to
+upgrade!"
+— Dr. Michelle Gomez (Data Analyst & Consultant)
+Card 3 (Focus on Admissions & Digital Marketing):
+⭐⭐⭐⭐⭐
+"Navigating higher education admission requirements can be tricky, but the step-by-step
+profile evaluation cleared all my doubts. Simultaneously, their Digital Marketing
+masterclass gave me real-world insights into ad campaigns and performance metrics.
+The entire onboarding process felt structured and professional."
+— Siddharth Mehra (Digital Marketing Professional)
+
+-- 20 of 24 --
+
+Global Presence Section
+Small Yellow Tag (Top):
+OUR REACH
+Main Heading:
+Extending Impact Across Continents
+Description Paragraph:
+Serving scholars and professionals globally, Explore S Research Solutions is building an
+interconnected academic ecosystem. Driven by compliance, data accuracy, and
+transformative skill development, we empower international minds to reach their highest
+potential.
+Statistical Highlights (Bottom Left Corner Labels)
+1. Icon 1 (Global Globe): 35+ Countries
+2. Icon 2 (University Building): 80+ Academic Institutions
+3. Icon 3 (User/Learner Profile): 40,000+ Scholars & Professionals Empowered
+
+-- 21 of 24 --
+
+Blog Section Header
+● Small Yellow Tag: LATEST ARTICLES
+● Main Heading: Explore Recent Posts on Academic & Career Growth
+● Sub-heading / Description: Read quick, insightful articles designed to help you
+navigate advanced research, master cutting-edge technical skills, and accelerate
+your career path with confidence.
+● Top Right Button: View All Latest Blogs ➔
+3 Featured Blog Cards (Left to Right)
+Card 1: Academic & Research Focus (Left Card)
+● Image Thumbnail Main Headline:
+● THE ULTIMATE BLUEPRINT FOR A PERFECT THESIS STRUCTURE
+● Bottom Card Link Title: Step-by-Step Guide: How to Structure and Refine Your
+Academic Thesis
+Card 2: Advanced Tech & AI Focus (Center Card)
+● Image Thumbnail Main Headline:
+● PYTHON VS. MATLAB: WHICH IS BETTER FOR MODERN RESEARCH?
+● Bottom Card Link Title: Choosing the Right Technical Programming Tool for Data
+Simulation & Analytics
+Card 3: Professional/Digital Marketing Focus (Right Card)
+● Image Thumbnail Main Headline:
+● DIGITAL MARKETING IN 2026: TOP SKILLS EMPOWERING PROFESSIONALS
+● Bottom Card Link Title: How Masterclasses in Performance Marketing and AI
+Tools are Transforming Modern Careers
+
+-- 22 of 24 --
+
+1. Top Footer (Office Addresses & Brand Bio)
+Left Column (Logo & Bio):
+● Logo Text: EXPLORE S RESEARCH SOLUTIONS
+● About Text: Explore S Research Solutions is a premier global education and
+academic assistance platform. We are dedicated to empowering scholars,
+engineers, and corporate professionals through world-class research guidance,
+university admissions, and elite technical skill development.
+Center Column (Head Office Details):
+● Heading: 󰏝 Explore S Research Solutions Head Office, India
+● Company Name: Explore S Solutions Private Limited
+● Address: Second Floor, Plot Number 4, Minarch Tower, Sector 44, Gurgaon,
+Haryana
+● Email: support@exploresresearchsolutions.in
+● Phone: +91 9289441168
+
+-- 23 of 24 --
+
+2. Bottom Footer Links & Map
+Column 1: Contact us & Social Media
+● Map Location: Second Floor, Plot Number 4, Minarch Tower, Sector 44, Gurgaon,
+Haryana
+● Social Media Icons: Facebook | YouTube | Instagram | LinkedIn
+Column 2: Services
+● PhD & Higher Education Admissions
+● Thesis & Dissertation Solutions
+● Synopsis & Research Proposal Drafting
+● Advanced Data Analysis (SPSS / R / Python)
+● Research Paper Writing & Publication
+● Plagiarism Checking & Turnitin Removal
+● AI Tools & LaTeX for Researchers
+● Python, ML & MATLAB Tech Courses
+● Digital Marketing Masterclass
+Column 3: Feature Links
+● Home
+● About Us
+● Our Services
+● Knowledge Hub
+● Media & Spotlight
+● Our Experts
+● Blogs
+● Careers
+● Contact Us
+Column 4: Quick Links
+● Become a Partner
+● Privacy Policy
+● Disclaimer
+● Terms & Conditions
+● Refund Policy
+● Academic Integrity Policy
+● Client Connect
+3. Copyright Bar (The Bottom-most Black Strip)
+● Left Text: Copyright © 2026. Explore S Solutions Private Limited. All Rights
+Reserved.
+● Right Links: FAQ's | Sitemap | Disclaimer | Privacy Policy | Terms & Conditions
+
+-- 24 of 24 --
+

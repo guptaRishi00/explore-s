@@ -1,0 +1,1154 @@
+// _home.scss — homepage-specific styles
+// Mobile-first; uses brand tokens from _variables.scss
+
+.es-home {
+  overflow-x: hidden;
+}
+
+// ── Shared section helpers ───────────────────────────────────────────────────
+.es-section {
+  padding: clamp(56px, 8vw, 120px) 0;
+}
+
+.es-eyebrow {
+  font: 700 12px/1 $bodyfont;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: $accentColor;
+  display: inline-block;
+  margin-bottom: 14px;
+}
+
+.es-h2 {
+  font: 800 clamp(26px, 4vw, 44px)/1.1 $titlefont;
+  letter-spacing: -.02em;
+  color: $titleColor;
+  margin: 0 0 16px;
+}
+
+// ── Button helpers ───────────────────────────────────────────────────────────
+.es-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font: 600 15px/1 $bodyfont;
+  padding: 14px 26px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: $transition;
+
+  &--primary {
+    background: $primaryColor;
+    color: $whiteColor;
+
+    &:hover {
+      background: darken($primaryColor, 8%);
+      color: $whiteColor;
+    }
+  }
+
+  &--ghost {
+    border: 1.5px solid $primaryColor;
+    color: $primaryColor;
+
+    &:hover {
+      background: $primaryColor;
+      color: $whiteColor;
+    }
+  }
+}
+
+// ── Trust bar ────────────────────────────────────────────────────────────────
+.es-trust {
+  position: relative;
+  z-index: 2;
+
+  // Overlap hero on desktop
+  @media (min-width: 768px) {
+    margin-top: -56px;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+  }
+
+  &__card {
+    background: $surfaceColor;
+    border-radius: var(--es-radius, 16px);
+    box-shadow: var(--es-shadow, 0 4px 24px rgba(0, 0, 0, .08));
+    padding: clamp(20px, 3vw, 32px) clamp(16px, 2.5vw, 28px);
+    text-align: center;
+    border: 1px solid $hairline;
+  }
+
+  &__number-wrap {
+    display: inline-flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 2px;
+    margin-bottom: 8px;
+  }
+
+  &__number {
+    font: 800 clamp(28px, 4vw, 44px)/1 $titlefont;
+    color: $accentColor;
+    letter-spacing: -.02em;
+    display: inline-block;
+    min-width: 2ch;
+  }
+
+  &__suffix {
+    font: 800 clamp(22px, 3.2vw, 36px)/1 $titlefont;
+    color: rgba($accentColor, .85);
+    letter-spacing: -.01em;
+  }
+
+  &__label {
+    font: 500 clamp(13px, 1.4vw, 15px)/1.3 $bodyfont;
+    color: $bodyColor;
+    margin: 0;
+    letter-spacing: .01em;
+  }
+}
+
+// ── Services section ─────────────────────────────────────────────────────────
+$card-hover-lift: translateY(-6px);
+$card-accent: $primaryColor;
+
+.es-services {
+  background: $surfaceColor;
+
+  &__intro {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto clamp(40px, 5vw, 64px);
+  }
+
+  &__lead {
+    font: 400 clamp(15px, 1.5vw, 17px)/1.6 $bodyfont;
+    color: $bodyColor;
+    margin: 0;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: stretch;
+    gap: 24px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @media (min-width: 576px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (min-width: 992px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+
+// ── "Our Expertise" 3D tilt cards ────────────────────────────────────────────
+// The card tilts toward the cursor (rotateX/rotateY via CSS custom properties
+// set in JS) inside a perspective, while image / number / icon sit on separate
+// translateZ planes for real parallax depth. Reduced-motion flattens it.
+.es-xpert {
+  list-style: none;
+  height: 100%;
+  perspective: 1000px;
+
+  &__inner {
+    --rx: 0deg;
+    --ry: 0deg;
+    --glare: 0;
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: $whiteColor;
+    border: 1px solid $hairline;
+    border-radius: var(--es-radius, 16px);
+    box-shadow: 0 8px 26px rgba($titleColor, .07);
+    transform-style: preserve-3d;
+    transform: rotateX(var(--rx)) rotateY(var(--ry));
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    will-change: transform;
+
+    &:hover {
+      box-shadow: 0 32px 60px rgba($titleColor, .24);
+      border-color: transparent;
+    }
+  }
+
+  // image plane
+  &__media {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    border-radius: var(--es-radius, 16px) var(--es-radius, 16px) 0 0;
+    transform: translateZ(18px);
+
+    picture { display: block; width: 100%; height: 100%; }
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba($titleColor, 0) 42%, rgba($titleColor, .5) 100%);
+      pointer-events: none;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(.2, .7, .2, 1);
+  }
+
+  &__inner:hover &__img { transform: scale(1.09); }
+
+  // big number — pops out
+  &__num {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    font: 800 clamp(26px, 3vw, 34px)/1 $titlefont;
+    letter-spacing: -.03em;
+    color: rgba($whiteColor, .92);
+    text-shadow: 0 2px 12px rgba($titleColor, .5);
+    transform: translateZ(46px);
+  }
+
+  // cursor-tracking glare
+  &__glare {
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+    pointer-events: none;
+    border-radius: var(--es-radius, 16px);
+    background: radial-gradient(circle at var(--gx, 50%) var(--gy, 50%), rgba($whiteColor, .38), transparent 46%);
+    opacity: var(--glare, 0);
+    transition: opacity 0.3s ease;
+    mix-blend-mode: soft-light;
+    transform: translateZ(60px);
+  }
+
+  // text plane
+  &__body {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 38px clamp(20px, 2.2vw, 26px) clamp(22px, 2.2vw, 26px);
+    background: $whiteColor;
+    border-radius: 0 0 var(--es-radius, 16px) var(--es-radius, 16px);
+    transform: translateZ(28px);
+    transform-style: preserve-3d;
+  }
+
+  // floating icon chip — pops out most, overlaps the media/body seam
+  &__icon {
+    position: absolute;
+    top: -26px;
+    left: clamp(20px, 2.2vw, 26px);
+    width: 54px;
+    height: 54px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $whiteColor;
+    color: $primaryColor;
+    box-shadow: 0 12px 26px rgba($titleColor, .2);
+    transform: translateZ(52px);
+    transition: background 0.3s ease, color 0.3s ease;
+
+    svg { width: 26px; height: 26px; }
+  }
+
+  &__inner:hover &__icon { background: $primaryColor; color: $whiteColor; }
+
+  &__title {
+    margin: 0 0 8px;
+    transition: color 0.25s ease;
+  }
+
+  &__inner:hover &__title { color: $primaryColor; }
+
+  &__link {
+    margin-top: auto;
+    padding-top: 16px;
+    color: $primaryColor;
+    font-weight: 600;
+
+    svg { transition: transform 0.3s cubic-bezier(.2, .7, .2, 1); }
+  }
+
+  &__inner:hover &__link {
+    color: $accentColor;
+    svg { transform: translateX(5px); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    &__inner {
+      transform: none !important;
+      transition: box-shadow 0.3s ease;
+    }
+    &__media, &__body, &__num, &__icon, &__glare { transform: none; }
+    &__img, &__link svg { transition: none; }
+    &__inner:hover &__img { transform: none; }
+    &__glare { display: none; }
+  }
+}
+
+.es-card {
+  background: $whiteColor;
+  border-radius: var(--es-radius, 16px);
+  box-shadow: var(--es-shadow, 0 4px 24px rgba(0, 0, 0, .08));
+  border: 1px solid $hairline;
+  border-top: 3px solid $card-accent;
+  padding: clamp(24px, 3vw, 36px) clamp(20px, 2.5vw, 28px);
+  display: flex;
+  flex-direction: column;
+  transition: transform $transition, box-shadow $transition;
+
+  &:hover {
+    transform: $card-hover-lift;
+    box-shadow: 0 12px 40px rgba($primaryColor, .14);
+  }
+
+  &__icon {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba($primaryColor, .08);
+    border-radius: 10px;
+    color: $card-accent;
+    margin-bottom: 18px;
+
+    svg {
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  &__title {
+    font: 700 clamp(16px, 1.6vw, 18px)/1.25 $titlefont;
+    color: $titleColor;
+    margin: 0 0 10px;
+  }
+
+  &__desc {
+    font: 400 clamp(14px, 1.3vw, 15px)/1.6 $bodyfont;
+    color: $bodyColor;
+    margin: 0 0 auto;
+    padding-bottom: 20px;
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font: 600 14px/1 $bodyfont;
+    color: $card-accent;
+    text-decoration: none;
+    margin-top: auto;
+    transition: gap $transition, color $transition;
+
+    &:hover {
+      gap: 10px;
+      color: darken($primaryColor, 8%);
+    }
+  }
+}
+
+// ── About section ────────────────────────────────────────────────────────────
+.es-about {
+  background: $whiteColor;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(36px, 5vw, 64px);
+    align-items: center;
+
+    @media (min-width: 992px) {
+      grid-template-columns: .9fr 1.1fr;
+    }
+  }
+
+  // Image frame
+  &__media {
+    width: 100%;
+  }
+
+  &__frame {
+    border-radius: var(--es-radius, 16px);
+    box-shadow: var(--es-shadow, 0 4px 24px rgba(0, 0, 0, .08));
+    overflow: hidden;
+    line-height: 0; // collapse whitespace gap below picture element
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+
+  // Copy column
+  &__body {
+    font: 400 clamp(15px, 1.5vw, 17px)/1.7 $bodyfont;
+    color: $bodyColor;
+    margin: 0 0 28px;
+    max-width: 55ch;
+  }
+
+  // Bullet points with teal check markers
+  &__points {
+    list-style: none;
+    margin: 0 0 32px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  &__point {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font: 500 clamp(14px, 1.4vw, 16px)/1.4 $bodyfont;
+    color: $titleColor;
+  }
+
+  &__check {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba($primaryColor, .1);
+    color: $primaryColor;
+  }
+}
+
+// ── Process section ──────────────────────────────────────────────────────────
+$process-badge-size: 52px;
+$process-track-thickness: 3px;
+
+.es-process {
+  background: $surfaceColor;
+
+  &__intro {
+    text-align: center;
+    max-width: 560px;
+    margin: 0 auto clamp(40px, 5vw, 64px);
+  }
+
+  // Timeline wrapper — position:relative so the track can be absolute
+  &__timeline {
+    position: relative;
+  }
+
+  // The background track — vertical on mobile, hidden on desktop (pseudo on steps)
+  &__track {
+    position: absolute;
+    left: calc($process-badge-size / 2 - $process-track-thickness / 2);
+    top: $process-badge-size;
+    bottom: $process-badge-size;
+    width: $process-track-thickness;
+    background: $hairline;
+    border-radius: 99px;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+
+    @media (min-width: 768px) {
+      // Reposition as horizontal bar centred on the badge row
+      left: calc($process-badge-size / 2);
+      right: calc($process-badge-size / 2);
+      width: auto;
+      top: calc($process-badge-size / 2 - $process-track-thickness / 2);
+      bottom: auto;
+      height: $process-track-thickness;
+    }
+  }
+
+  // The animated fill — scaleY on mobile, scaleX on desktop (set by JS)
+  &__fill {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, $primaryColor, $accentColor);
+    border-radius: inherit;
+    box-shadow: 0 0 12px rgba($primaryColor, .5);
+    transform-origin: top center;
+    transform: scaleY(0);
+
+    @media (min-width: 768px) {
+      background: linear-gradient(90deg, $primaryColor, $accentColor);
+      transform-origin: left center;
+      transform: scaleX(0);
+    }
+  }
+
+  // Steps list
+  &__steps {
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(32px, 5vw, 56px);
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      gap: 0;
+    }
+  }
+
+  // Individual step
+  &__step {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding-left: 4px;
+
+    @media (min-width: 768px) {
+      flex: 1;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 16px;
+      padding-left: 0;
+    }
+  }
+
+  // Milestone badge — number by default, morphs into an icon once reached
+  &__badge {
+    flex-shrink: 0;
+    width: $process-badge-size;
+    height: $process-badge-size;
+    border-radius: 50%;
+    background: $whiteColor;
+    border: 2px solid $hairline;
+    color: $bodyColor;
+    display: grid;
+    place-items: center;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 0 0 6px rgba($primaryColor, .06);
+    transition: transform .5s cubic-bezier(.34,1.56,.64,1),
+                background-color .4s ease, border-color .4s ease,
+                color .4s ease, box-shadow .4s ease;
+  }
+
+  // Number + icon share the same cell so they can cross-fade
+  &__num,
+  &__icon {
+    grid-area: 1 / 1;
+    display: grid;
+    place-items: center;
+    transition: opacity .4s ease, transform .5s cubic-bezier(.34,1.56,.64,1);
+  }
+  &__num {
+    font: 700 clamp(15px, 1.5vw, 17px)/1 $titlefont;
+    letter-spacing: .04em;
+    opacity: 1;
+    transform: scale(1);
+  }
+  &__icon {
+    opacity: 0;
+    transform: scale(.4) rotate(-25deg);
+    svg { width: 46%; height: 46%; }
+  }
+
+  // Pulsing ring that fires the moment a milestone activates
+  &__ring {
+    position: absolute;
+    inset: -2px;
+    border-radius: 50%;
+    border: 2px solid $accentColor;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  // ── Active milestone state ──────────────────────────────────────────────
+  &__step.is-active &__badge {
+    background: linear-gradient(135deg, $primaryColor, $primaryDark);
+    border-color: transparent;
+    color: $whiteColor;
+    transform: scale(1.12);
+    box-shadow: 0 10px 24px -8px rgba($primaryColor, .6),
+                0 0 0 6px rgba($accentColor, .16);
+  }
+  &__step.is-active &__num {
+    opacity: 0;
+    transform: scale(.4);
+  }
+  &__step.is-active &__icon {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+    color: $accentColor;
+  }
+  &__step.is-active &__ring {
+    animation: esProcessPing .7s ease-out;
+  }
+
+  // Text content
+  &__content {
+    padding-top: 12px;
+
+    @media (min-width: 768px) {
+      padding-top: 0;
+    }
+  }
+
+  &__step-index {
+    display: inline-block;
+    font: 700 11px/1 $bodyfont;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: $bodyColor;
+    opacity: .55;
+    margin-bottom: 6px;
+    transition: color .4s ease, opacity .4s ease;
+  }
+  &__step.is-active &__step-index { color: $primaryColor; opacity: 1; }
+
+  &__step-title {
+    font: 700 clamp(16px, 1.6vw, 18px)/1.25 $titlefont;
+    color: $bodyColor;
+    margin: 0 0 14px;
+    transition: color .4s ease;
+  }
+  &__step.is-active &__step-title { color: $titleColor; }
+
+  // ── Colorful gradient icon tile below each step's text ──────────────────
+  &__art {
+    width: clamp(54px, 6vw, 68px);
+    height: clamp(54px, 6vw, 68px);
+    border-radius: 18px;
+    display: grid;
+    place-items: center;
+    color: $whiteColor;
+    background: linear-gradient(135deg, $primaryColor, $primaryDark);
+    box-shadow: 0 12px 22px -12px rgba($primaryColor, .55),
+                inset 0 1px 0 rgba(255, 255, 255, .35);
+    transform: scale(.9);
+    opacity: .9;
+    transition: transform .5s cubic-bezier(.34,1.56,.64,1),
+                opacity .4s ease, box-shadow .4s ease, filter .4s ease;
+
+    @media (min-width: 768px) { margin: 0 auto; }
+
+    // gentle top-light sheen for depth
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: radial-gradient(circle at 30% 20%, rgba(255,255,255,.35), transparent 55%);
+      pointer-events: none;
+    }
+    position: relative;
+
+    svg { width: 52%; height: 52%; filter: drop-shadow(0 1px 1px rgba(0,0,0,.18)); }
+  }
+
+  // Distinct, vibrant gradient per milestone.
+  &__step:nth-of-type(1) &__art { background: linear-gradient(135deg, #2563eb, #1e3a8a); }
+  &__step:nth-of-type(2) &__art { background: linear-gradient(135deg, #06b6d4, #0e7490); }
+  &__step:nth-of-type(3) &__art { background: linear-gradient(135deg, #8b5cf6, #6d28d9); }
+  &__step:nth-of-type(4) &__art { background: linear-gradient(135deg, #f59e0b, #ea580c); }
+  &__step:nth-of-type(5) &__art { background: linear-gradient(135deg, #ec4899, #be123c); }
+  &__step:nth-of-type(6) &__art { background: linear-gradient(135deg, #10b981, #047857); }
+  &__step:nth-of-type(7) &__art { background: linear-gradient(135deg, #ef4444, #b91c1c); }
+
+  // Pop the tile to full life once the milestone is reached.
+  &__step.is-active &__art {
+    transform: scale(1) translateY(-2px);
+    opacity: 1;
+    box-shadow: 0 18px 30px -12px rgba($primaryColor, .6),
+                inset 0 1px 0 rgba(255, 255, 255, .4);
+  }
+  &__step.is-active &__art svg { animation: esArtPop .55s cubic-bezier(.34,1.56,.64,1); }
+}
+
+@keyframes esProcessPing {
+  0%   { opacity: .7; transform: scale(1); }
+  100% { opacity: 0;  transform: scale(1.7); }
+}
+
+@keyframes esArtPop {
+  0%   { transform: scale(.5); }
+  60%  { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+// ── Domains marquee section ──────────────────────────────────────────────────
+@keyframes es-marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.es-domains {
+  background: $whiteColor;
+  overflow: hidden; // prevent horizontal page scrollbar
+
+  &__intro {
+    text-align: center;
+    margin-bottom: clamp(32px, 4vw, 52px);
+  }
+
+  // Each scrolling row: clip overflow, apply edge-fade mask
+  &__row {
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      #000 10%,
+      #000 90%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      #000 10%,
+      #000 90%,
+      transparent 100%
+    );
+    margin-bottom: 16px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    // Pause marquee on hover
+    &:hover .es-domains__track {
+      animation-play-state: paused;
+    }
+  }
+
+  // The scrolling track — must be wide enough for both copies side-by-side
+  &__track {
+    display: flex;
+    flex-wrap: nowrap;
+    width: max-content;
+    list-style: none;
+    margin: 0;
+    padding: 4px 0;
+    gap: 12px;
+  }
+
+  &__track--fwd {
+    animation: es-marquee 28s linear infinite;
+  }
+
+  &__track--rev {
+    animation: es-marquee 28s linear infinite reverse;
+  }
+
+  // Domain chip — pill shape
+  &__chip {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 22px;
+    border-radius: 999px;
+    background: $surfaceColor;
+    border: 1px solid $hairline;
+    font: 500 clamp(13px, 1.3vw, 15px)/1 $bodyfont;
+    color: $titleColor;
+    white-space: nowrap;
+    transition: color $transition, border-color $transition;
+    cursor: default;
+    user-select: none;
+
+    &:hover {
+      color: $primaryColor;
+      border-color: $primaryColor;
+    }
+  }
+
+  // Accessible list — visually hidden; visible to screen readers only
+  &__a11y {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
+}
+
+// Stop all marquee motion for reduced-motion preference
+@media (prefers-reduced-motion: reduce) {
+  .es-domains__track {
+    animation: none;
+    flex-wrap: wrap;
+  }
+}
+
+// ── Hero section ─────────────────────────────────────────────────────────────
+.es-hero {
+  position: relative;
+  padding-top: clamp(48px, 7vw, 96px);
+  overflow-x: clip; // let the video bleed right without a page scrollbar
+
+  &__grid {
+    display: grid;
+    gap: 40px;
+    grid-template-columns: 1fr;
+    align-items: center;
+  }
+
+  &__title {
+    font: 800 clamp(40px, 8vw, 84px)/1.04 $titlefont;
+    letter-spacing: -.03em;
+    color: $titleColor;
+    margin: 8px 0 18px;
+  }
+
+  &__title em {
+    color: $accentColor;
+    font-style: normal;
+  }
+
+  // Colored headline highlights
+  &__hl--gold  { color: $accentColor; }
+  &__hl--red   { color: #DE2716; }
+  &__hl--white { color: #fff; }
+
+  &__subtitle {
+    font: 400 clamp(15px, 1.6vw, 18px)/1.6 $bodyfont;
+    color: $bodyColor;
+    max-width: 52ch;
+    margin-bottom: 28px;
+  }
+
+  &__ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  &__media {
+    position: relative;
+  }
+
+  &__blob {
+    position: absolute;
+    inset: -8% -6% auto auto;
+    width: 70%;
+    aspect-ratio: 1;
+    filter: blur(40px);
+    background: radial-gradient(closest-side, rgba($primaryColor, .35), transparent);
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  &__img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    display: block;
+  }
+
+  // ── Video with custom play/pause control ──────────────────────────────
+  &__video-wrap {
+    position: relative;
+    z-index: 1;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px -30px rgba($primaryDark, .7);
+    background: #000;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+  &__video {
+    // Natural aspect ratio — the video renders at its own proportions, uncropped.
+    display: block;
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+  }
+  &__playbtn {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    width: clamp(56px, 6vw, 72px);
+    height: clamp(56px, 6vw, 72px);
+    border: none;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: $primaryColor;
+    background: rgba(255, 255, 255, .92);
+    box-shadow: 0 10px 26px -8px rgba(0, 0, 0, .5);
+    cursor: pointer;
+    transition: transform .35s cubic-bezier(.34,1.56,.64,1), opacity .35s ease, background-color .3s ease;
+
+    svg { width: 46%; height: 46%; margin-left: 2px; }
+
+    &:hover { background: #fff; transform: translate(-50%, -50%) scale(1.08); }
+    &:focus-visible { outline: 3px solid $accentColor; outline-offset: 3px; }
+  }
+
+  // Unmute pill — shown while the video auto-plays muted
+  &__unmute {
+    position: absolute;
+    left: 50%;
+    bottom: 14px;
+    transform: translateX(-50%);
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 9px 16px;
+    border: none;
+    border-radius: 999px;
+    font: 600 13px/1 $bodyfont;
+    color: $titleColor;
+    background: rgba(255, 255, 255, .92);
+    box-shadow: 0 8px 20px -6px rgba(0, 0, 0, .45);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color .2s ease, transform .2s ease;
+
+    svg { width: 16px; height: 16px; }
+
+    &:hover { background: #fff; transform: translateX(-50%) scale(1.05); }
+    &:focus-visible { outline: 3px solid $accentColor; outline-offset: 3px; }
+  }
+
+  // Once playing, keep the button but let it fade unless hovered
+  &__video-wrap.is-playing &__playbtn {
+    opacity: 0;
+  }
+  &__video-wrap.is-playing:hover &__playbtn {
+    opacity: 1;
+  }
+  &__video-wrap.is-playing &__playbtn svg { margin-left: 0; }
+
+  @media (min-width: 992px) {
+    &__grid {
+      grid-template-columns: .85fr 1.25fr;
+    }
+    // bleed the video toward the right screen edge for a bigger presence
+    &__media {
+      margin-right: max(-130px, -8vw); // caps the bleed on ultrawide screens
+    }
+  }
+}
+
+// ── Testimonials section ──────────────────────────────────────────────────────
+.es-testimonials {
+  background: $surfaceColor;
+
+  &__heading {
+    text-align: center;
+    margin-bottom: clamp(32px, 5vw, 56px);
+  }
+
+  &__slide {
+    padding: 8px 0;
+  }
+
+  &__card {
+    background: $whiteColor;
+    box-shadow: var(--es-shadow);
+    border-radius: var(--es-radius);
+    padding: clamp(28px, 4vw, 52px) clamp(24px, 5vw, 64px);
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &__icon {
+    color: rgba($primaryColor, 0.2);
+    margin-bottom: 20px;
+  }
+
+  &__quote {
+    margin: 0;
+
+    p {
+      font: 500 clamp(17px, 2.2vw, 24px)/1.55 $titlefont;
+      color: $titleColor;
+      margin: 0 0 24px;
+    }
+  }
+
+  &__author {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: center;
+  }
+
+  &__name {
+    font: 700 clamp(14px, 1.4vw, 16px)/1 $bodyfont;
+    color: $titleColor;
+    letter-spacing: .02em;
+  }
+
+  &__role {
+    font: 400 clamp(13px, 1.3vw, 14px)/1 $bodyfont;
+    color: $bodyColor;
+  }
+
+  // Teal slick dots
+  .slick-dots li button:before {
+    color: $primaryColor;
+    opacity: 0.4;
+    font-size: 10px;
+  }
+
+  .slick-dots li.slick-active button:before {
+    color: $primaryColor;
+    opacity: 1;
+  }
+
+  .slick-dots {
+    bottom: -36px;
+  }
+
+  // Bottom padding to accommodate dots
+  .slick-slider {
+    padding-bottom: 48px;
+  }
+}
+
+// ── CTA Band ─────────────────────────────────────────────────────────────────
+.es-cta {
+  // Full-bleed: break out of any parent container via negative margin trick
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(120deg, $titleColor 0%, $primaryColor 100%);
+  padding: clamp(64px, 10vw, 112px) 0;
+  color: $whiteColor;
+
+  &__decor {
+    position: absolute;
+    top: -80px;
+    right: -100px;
+    width: clamp(260px, 40vw, 480px);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: radial-gradient(closest-side, rgba($whiteColor, 0.07), transparent);
+    pointer-events: none;
+    will-change: transform;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: clamp(16px, 2.5vw, 28px);
+  }
+
+  &__title {
+    font: 700 clamp(28px, 4.5vw, 52px)/1.15 $titlefont;
+    color: $whiteColor;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+
+  &__subtitle {
+    font: 400 clamp(15px, 1.8vw, 20px)/1.6 $bodyfont;
+    color: rgba($whiteColor, 0.85);
+    margin: 0;
+    max-width: 540px;
+  }
+
+  &__btn {
+    display: inline-block;
+    background: $whiteColor;
+    color: $primaryColor;
+    font: 700 clamp(14px, 1.4vw, 16px)/1 $bodyfont;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+    padding: clamp(14px, 1.8vw, 18px) clamp(28px, 4vw, 48px);
+    border-radius: var(--es-radius);
+    transition: box-shadow 0.2s ease, background 0.2s ease;
+    will-change: transform;
+    cursor: pointer;
+
+    &:hover,
+    &:focus-visible {
+      box-shadow: 0 8px 32px rgba($titleColor, 0.35);
+      background: lighten($primaryColor, 55%);
+      outline: 2px solid rgba($whiteColor, 0.6);
+      outline-offset: 3px;
+    }
+  }
+}
+
+// ── 404 Error page ───────────────────────────────────────────────────────────
+.es-404 {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+
+  &__inner {
+    max-width: 560px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 16px;
+  }
+
+  // Decorative large number, visually behind the heading
+  &__code {
+    font: 800 clamp(96px, 18vw, 180px)/1 $titlefont;
+    color: $primaryColor;
+    opacity: 0.12;
+    margin: 0 0 -0.45em;
+    letter-spacing: -0.04em;
+    user-select: none;
+    display: block;
+  }
+
+  &__title {
+    font: 800 clamp(28px, 5vw, 48px)/1.1 $titlefont;
+    color: $titleColor;
+    letter-spacing: -0.02em;
+    margin: 0 0 20px;
+    position: relative;
+  }
+
+  &__body {
+    font: 400 17px/1.7 $bodyfont;
+    color: $bodyColor;
+    margin: 0 0 36px;
+  }
+}

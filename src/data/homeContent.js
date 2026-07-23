@@ -1,0 +1,537 @@
+// Explore S Research Solutions — homepage content (verbatim from the
+// "Detailed Content of our Website ESRS" brief). Single source of truth
+// consumed by the homepage section components.
+
+const homeContent = {
+  // 2. Main Hero Banner (Slider Variant)
+  hero: {
+    eyebrow: "#1 Academic & Skill Development Hub",
+    title: "Empowering Academic & Career Growth Through Specialized Education",
+    // Colored headline segments — `c: 'blue' | 'red'` tints those words.
+    titleSegments: [
+      { t: "Empowering " },
+      { t: "Academic & Career Growth", c: "white" },
+      { t: " Through " },
+      { t: "Specialized Education", c: "red" },
+    ],
+    subtitle:
+      "Your Trusted Partner for PhD & Masters Admissions, Advanced Technical Certifications, and Premium Research Services",
+    primaryCta: { label: "Get Started", to: "/contact" },
+    secondaryCta: { label: "Apply Online", to: "/contact" },
+    image: {
+      src: "/hero-team.jpg",
+      alt: "Explore S Research Solutions team at the Symbiosis Law School event",
+    },
+    video: {
+      src: "/hero-video.mp4",
+      poster: "/hero-video-poster.jpg",
+    },
+  },
+
+  // 3. Counter Bar (Bottom Blue Strip)
+  counters: [
+    { value: 4500, suffix: "+", label: "Scholars Mentored & Placed" },
+    { value: 32000, suffix: "+", label: "Research Papers Published" },
+    { value: 12500, suffix: "+", label: "Certified Tech & Marketing Learners" },
+    { value: 50000, suffix: "+", label: "Academic Careers Transformed" },
+  ],
+
+  // 4. About + Four Core Value Pillars
+  about: {
+    tag: "#1 Academic & Skill Development Hub",
+    title:
+      "Explore S Research Solutions – Your Trusted Partner for Advanced Research & Professional Growth",
+    // Red-highlighted segments for the heading (`c: 'red'`).
+    titleSegments: [
+      { t: "Explore S Research Solutions", c: "red" },
+      { t: " – Your Trusted Partner for " },
+      { t: "Advanced Research & Professional Growth", c: "black" },
+    ],
+    intro:
+      "At Explore S Research Solutions, we believe that high-impact academic achievements and industry-relevant skills go hand in hand. Whether you are navigating the rigorous journey of a advanced degree, mastering cutting-edge AI and technical programming, or accelerating your career with digital marketing, we provide the ultimate ecosystem. By combining data-driven methodologies with elite industry mentorship, we simplify complex paths and empower your future.",
+    pillars: [
+      {
+        icon: "guidance",
+        title: "Expert-Led Academic Guidance",
+        desc: "We match you with seasoned researchers, data analysts, and domain experts who guide you through every stage of your academic milestones—from synopsis drafting and comprehensive thesis writing to top-tier journal publication support.",
+      },
+      {
+        icon: "global",
+        title: "Global Educational Pathways",
+        desc: "Streamline your next academic leap with our verified admission assistance. We bridge the gap between ambitious students and premium national or international institutions for PhD, Masters, and specialized Medical degree programs.",
+      },
+      {
+        icon: "tech",
+        title: "Future-Ready Technical Training",
+        desc: "Stay ahead of the curve with our elite skill-development programs. From Python for Research, Machine Learning, and MATLAB to advanced Data Science, we equip researchers and engineers with practical, hands-on tech expertise.",
+      },
+      {
+        icon: "quality",
+        title: "Uncompromising Quality & Data Integrity",
+        desc: "Built on a strong foundation of academic credibility, we guarantee 100% original work, stringent quality metrics, and thorough plagiarism checks using premium tools to ensure your research meets global standards.",
+      },
+    ],
+  },
+
+  // 4. Right Side: Lead Generation Form
+  leadForm: {
+    title: "Connect with Explore S Research Solutions",
+    subtitle: "Get Expert Consultation",
+    services: [
+      "PhD & Higher Education Admissions",
+      "Thesis, Dissertation & Research Writing",
+      "Data Analysis (SPSS / R / Python)",
+      "AI, Machine Learning & Tech Courses",
+      "Digital Marketing Masterclass",
+    ],
+    countries: [
+      "India",
+      "United States",
+      "United Kingdom",
+      "Australia",
+      "Canada",
+      "UAE",
+      "Other",
+    ],
+    consent:
+      "By submitting this form, you agree to receive communication from Explore S Research Solutions via Call, SMS, WhatsApp & Email.",
+    submitLabel: "Submit Request",
+  },
+
+  // 5. Global Network & Community Section
+  community: {
+    title: "A Global Network of 40,000+ Scholars, Engineers & Industry Experts",
+    subtitle:
+      "A comprehensive ecosystem where over 40,000+ academicians, technology enthusiasts, and digital professionals have found premium mentoring, advanced technical skills, and publication success.",
+    // Real community members — avatars generated by scripts (160px WebP) in
+    // public/community/.
+    people: [
+      { name: "Yash Rathore", image: "/community/yash-rathore.webp" },
+      { name: "Raghav Sharma", image: "/community/raghav-sharma.webp" },
+      { name: "Pallav", image: "/community/pallav.webp" },
+      { name: "Isha Chaudhary", image: "/community/isha-chaudhary.webp" },
+      {
+        name: "Harshit Srivastava",
+        image: "/community/harshit-srivastava.webp",
+      },
+      { name: "Dr. Renu Bharti", image: "/community/dr-renu-bharti.webp" },
+      { name: "Dr Vani Katukam", image: "/community/dr-vani-katukam.webp" },
+      { name: "Dr Raghul", image: "/community/dr-raghul.webp" },
+      { name: "Dr Manya Gupta", image: "/community/dr-manya-gupta.webp" },
+      { name: "Ashish", image: "/community/ashish.webp" },
+      { name: "Arti Sharma", image: "/community/arti-sharma.webp" },
+      { name: "Anupama Tomar", image: "/community/anupama-tomar.webp" },
+      { name: "Ansh", image: "/community/ansh.webp" },
+      { name: "Anjali Gautam", image: "/community/anjali-gautam.webp" },
+      { name: "Aditya Pal", image: "/community/aditya-pal.webp" },
+    ],
+  },
+
+  // 6/7. Live Bootcamp Banner carousel — each slide links to the registration form.
+  bootcamp: {
+    // Microsoft Form opened when any banner is clicked. Leave '' to fall back to /contact.
+    formUrl:
+      "https://forms.cloud.microsoft/pages/responsepage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAN__6RI1LRURVJGVk9GREhTMkk5QUNNSlVZWVE4UkpBSS4u&origin=lprLink&route=shorturl",
+  },
+
+  // 8/9. Service (Carousel) Slider — 7 cards
+  services: {
+    title: "Comprehensive Tech-Enabled Solutions for Scholars & Professionals",
+    titleAccent: "Tech-Enabled Solutions",
+    viewAll: { label: "View All Services", to: "/services" },
+    cards: [
+      {
+        tag: "Research & Editorial Support",
+        title: "End-to-End Thesis & Synopsis Solutions",
+        points: [
+          "Masterful Thesis, Synopsis & Dissertation Writing",
+          "Advanced Literature Review & Research Proposal Drafting",
+          "Complete Plagiarism Checking & Removal via Turnitin",
+        ],
+        cta: { label: "Enroll Now", to: "/contact" },
+      },
+      {
+        tag: "Publication Guidance",
+        title: "Research Paper Writing & Data Analysis",
+        points: [
+          "High-Impact Data Analysis using SPSS, R, and Python",
+          "Fast-Track Support for Scopus, UGC Care, WOS & IEEE Journals",
+          "Professional Proofreading, Academic Editing & Formatting",
+        ],
+        cta: { label: "Enroll Now", to: "/contact" },
+      },
+      {
+        tag: "Admission Guidance",
+        title: "PhD, Masters & Medical Programs",
+        points: [
+          "Direct Admission Guidance for National & International Universities",
+          "Comprehensive Profile Evaluation & University Selection",
+          "End-to-End Interview & Document Preparation Support",
+        ],
+        cta: { label: "Enroll Now", to: "/contact" },
+      },
+      {
+        tag: "Skill Development",
+        title: "AI, Tech Programs & Digital Marketing",
+        points: [
+          "Python for Research, MATLAB, Machine Learning & Deep Learning",
+          "Advanced SPSS, R Programming & Data Science Bootcamps",
+          "Live Digital Marketing Masterclass by Industry Experts",
+        ],
+        cta: { label: "Enroll Now", to: "/contact" },
+      },
+      {
+        tag: "Data Science",
+        title: "Analytics & Visualization Bootcamp",
+        points: [
+          "Advanced Predictive Modeling & Statistical Analysis",
+          "Interactive Dashboards with Tableau & Power BI",
+          "Practical, Hands-on Case Studies for Engineers & Researchers",
+        ],
+        cta: { label: "Enroll Now", to: "/contact" },
+      },
+      {
+        tag: "Research Excellence",
+        title: "AI Tools & Formatting for Researchers",
+        points: [
+          "Master AI Tools for Academic Automation & Literature Mapping",
+          "Professional Document Typesetting via LaTeX for Journals",
+          "Systematic Meta-Analysis & Citation Styles Training",
+        ],
+        cta: { label: "Enroll Now", to: "/contact" },
+      },
+      {
+        tag: "Career Acceleration",
+        title: "Digital Marketing Practitioner Course",
+        points: [
+          "Advanced Search Engine Optimization (SEO) & Social Media (SMM)",
+          "Live Ad Campaign Management & Performance Marketing (PPC)",
+          "Mentorship by Industry Experts with Real-time Strategy Execution",
+        ],
+        cta: { label: "Enroll Now", to: "/contact" },
+      },
+    ],
+  },
+
+  // 10/11. Transformation Banner carousel — images carry their own CTA; each
+  // slide links to the route matching its baked-in button. `alt` maps to the image.
+  transformations: [
+    {
+      img: "phd-masters-medical",
+      alt: "Transform your credentials from Mr. to Dr. — PhD, Masters & Medical admissions",
+      to: "/contact",
+    },
+    {
+      img: "ai-courses",
+      alt: "Upgrade from a Basic Coder to an Advanced AI & Data Expert",
+      to: "/services",
+    },
+    {
+      img: "thesis-digital-marketing",
+      alt: "Elevate from a Struggling Learner to a Certified Industry Professional",
+      to: "/contact",
+    },
+  ],
+
+  // 12. Our Ecosystem / Process — 7 steps
+  process: {
+    tag: "Our Process",
+    title: "A Seamless Journey Guided by Experts at Every Milestone",
+    steps: [
+      { n: "01", title: "Aspirant / Learner", icon: "learner" },
+      { n: "02", title: "Expert Consultation", icon: "consult" },
+      { n: "03", title: "Profile Evaluation", icon: "evaluate" },
+      { n: "04", title: "Onboarding / Registration", icon: "onboard" },
+      { n: "05", title: "Strategic Mentorship", icon: "mentor" },
+      { n: "06", title: "Technical & Academic Execution", icon: "execute" },
+      { n: "07", title: "Success & Publication", icon: "success" },
+    ],
+  },
+
+  // 13. YouTube Learning Hub — real channel videos, embedded on click.
+  // `short: true` renders a portrait (9:16) card; order matters for the grid:
+  // two Shorts flank a 2×2 block of landscape videos on desktop.
+  youtube: {
+    title: "India's Most Engaging Academic & Research YouTube Channel",
+    heading: "Your Smart Video Learning Hub",
+    subtitle:
+      "Free Resources, Short Tutorials & Guides on Explore S Research Solutions YouTube Channel — follow us now.",
+    channelUrl: "https://www.youtube.com/@ExploreSResearchSolutions",
+    videos: [
+      {
+        id: "L95NriDOmTA",
+        short: true,
+        title: "When PhD & Thesis Writing Feels Overwhelming",
+      },
+      {
+        id: "dLtfZd3mN5U",
+        title: "Are You Scared of Your Medical Thesis?",
+      },
+      {
+        id: "2NbZ1nKgf2g",
+        title: "Research Paper Publication — Journal Selection to Acceptance",
+      },
+      {
+        id: "qNRN0eg7pnM",
+        short: true,
+        title: "Every Great Researcher Starts with a Dream",
+      },
+      {
+        id: "5jG25I0yO7M",
+        title: "How to Write a Synopsis or Research Proposal (2026 Guide)",
+      },
+      {
+        id: "jkY34C1VYlA",
+        title: "Doing Research Alone vs. With the Right Mentorship",
+      },
+    ],
+  },
+
+  // 14/15. Mentors
+  mentors: {
+    tag: "Trusted Mentors",
+    title: "Talk to the Experts Who've Guided Thousands",
+    desc: "Connect with veteran research consultants, data scientists, and industry experts who bring years of hands-on experience and data-backed insights to accelerate your academic and professional journey.",
+    cards: [
+      {
+        rating: "4.9",
+        sessions: "2,500+ Consultations",
+        name: "Dr. Renu Bharti",
+        image: "/community/dr-renu-bharti.webp",
+        role: "Senior Research Consultant",
+        experience: "10 Years Experience",
+      },
+      {
+        rating: "4.8",
+        sessions: "1,800+ Students Trained",
+        name: "Anupama Tomar",
+        image: "/community/anupama-tomar.webp",
+        role: "AI & Machine Learning Specialist",
+        experience: "6 Years Experience",
+      },
+      {
+        rating: "4.7",
+        sessions: "3,200+ Scholars Guided",
+        name: "Dr. Manya Gupta",
+        image: "/community/dr-manya-gupta.webp",
+        role: "Lead Data Analyst (SPSS / R / Python)",
+        experience: "12 Years Experience",
+      },
+      {
+        rating: "4.9",
+        sessions: "1,500+ Professionals Mentored",
+        name: "Aditya Pal",
+        image: "/community/aditya-pal.webp",
+        role: "Digital Marketing Strategist",
+        experience: "8 Years Experience",
+      },
+      {
+        rating: "4.8",
+        sessions: "2,000+ Admissions Guided",
+        name: "Pallav",
+        image: "/community/pallav.webp",
+        role: "Higher Education Admissions Head",
+        experience: "9 Years Experience",
+      },
+      {
+        rating: "4.6",
+        sessions: "4,000+ Papers Reviewed",
+        name: "Dr. Vani Katukam",
+        image: "/community/dr-vani-katukam.webp",
+        role: "Chief Academic Editor & Formatting Specialist",
+        experience: "15 Years Experience",
+      },
+    ],
+    more: "+500 More",
+  },
+
+  // 16. Community Events
+  events: {
+    title: "Our Global Academic Initiatives",
+    subtitle: "Connect, Collaborate, and Catalyze Innovation",
+    labels: [
+      "Global Research Excellence Summit",
+      "Annual Scholars & Mentors Meet",
+      "Advanced Data Analytics & AI Conclave",
+      "Digital Marketing & Tech Innovation Forum",
+    ],
+    // Mosaic gallery — `wide` tiles span 2 columns (landscape), `tall` tiles
+    // span 2 rows (portrait). Videos play in place on click.
+    gallery: [
+      {
+        type: "image",
+        src: "/initiatives/event-photo-1.webp",
+        alt: "Explore S team at an academic initiative event",
+        wide: true,
+      },
+      {
+        type: "video",
+        src: "/initiatives/event-reel-1.mp4",
+        poster: "/initiatives/event-reel-1.jpg",
+        alt: "Event highlights reel",
+        tall: true,
+      },
+      {
+        type: "image",
+        src: "/initiatives/event-photo-3.webp",
+        alt: "Scholars connecting at an Explore S event",
+        tall: true,
+      },
+      {
+        type: "image",
+        src: "/initiatives/event-photo-2.webp",
+        alt: "Explore S community gathering",
+        wide: true,
+      },
+      {
+        type: "video",
+        src: "/testimonials/testimonial-1.mp4",
+        poster: "/testimonials/testimonial-1.jpg",
+        alt: "Scholar sharing their Explore S experience",
+        tall: true,
+      },
+      {
+        type: "image",
+        src: "/initiatives/event-photo-4.webp",
+        alt: "Explore S initiative highlights",
+        wide: true,
+      },
+      {
+        type: "video",
+        src: "/initiatives/event-reel-2.mp4",
+        poster: "/initiatives/event-reel-2.jpg",
+        alt: "Community event moments",
+        tall: true,
+      },
+    ],
+    cta: { label: "Discover More", to: "/contact" },
+  },
+
+  // 17. Video Testimonials
+  // Video testimonial carousel. Add a YouTube `videoId` (e.g. "dLtfZd3mN5U")
+  // to any card and it automatically gets the real thumbnail + click-to-play
+  // embed; cards without one render a styled quote card.
+  videoTestimonials: {
+    tag: "Trusted Voices",
+    title: "Success Stories from Our Scholars",
+    viewAll: { label: "View All Happy Clients", to: "/contact" },
+    cards: [
+      {
+        src: "/testimonials/testimonial-1.mp4",
+        poster: "/testimonials/testimonial-1.jpg",
+      },
+      {
+        src: "/testimonials/feedbacks.mp4",
+        poster: "/testimonials/feedbacks.jpg",
+      },
+      {
+        src: "/testimonials/experience-of-scholar.mp4",
+        poster: "/testimonials/experience-of-scholar.jpg",
+      },
+      {
+        src: "/testimonials/ansh-testimonial.mp4",
+        poster: "/testimonials/ansh-testimonial.jpg",
+      },
+    ],
+  },
+
+  // 18. Guided Journeys Gallery
+  gallery: {
+    tag: "A Gallery of Guided Journeys",
+    title: "With You, On Every Step of Your Growth",
+    desc: "Whether it’s navigating complex university enrollment, providing hands-on data simulation support, final defense preparation, or mastering industry-grade digital marketing and AI tools—our expert team walks with you. We ensure your entire academic and professional upgrade is flawless, structured, and stress-free.",
+  },
+
+  // 19/20. Newsroom + Text Testimonials
+  newsroom: {
+    bannerBadge: "Driven by Excellence",
+    bannerTitle: "Empowering Your Academic & Professional Journey",
+    bannerSub:
+      "Take the definitive first step towards your research goals and skill upgrades today.",
+    bannerCta: { label: "Enquire Now", to: "/contact" },
+    spotlightTag: "In the Spotlight",
+    spotlightBadge: "Official Newsroom",
+  },
+  textTestimonials: {
+    title: "Words of Trust from Global Trailblazers",
+    subtitle:
+      "Real stories from researchers, engineers, and marketers across the globe. These testimonials reflect true skill transformation, publication success, and academic precision.",
+    ratings: [
+      { platform: "Google", score: "4.8/5" },
+      { platform: "Facebook", score: "4.9/5" },
+      { platform: "Justdial", score: "4.7/5" },
+    ],
+    cards: [
+      {
+        quote:
+          "After weeks of layout delays and structure confusion with my academic draft, Explore S Research Solutions came to my rescue. Their consultation team worked closely with me to refine the synopsis and data modeling. They were always available for edits and structural updates until final submission. I couldn't have managed my research work without their precise support.",
+        name: "Dr. Amit Dubey",
+        role: "Research Scholar",
+      },
+      {
+        quote:
+          "Transitioning into advanced data analytics was challenging, but their Python for Research and SPSS modules made it completely seamless. The practical approach, live weekend sessions, and industry-expert guidance helped me master machine learning tools faster than I expected. Highly recommended for any professional looking to upgrade!",
+        name: "Dr. Michelle Gomez",
+        role: "Data Analyst & Consultant",
+      },
+      {
+        quote:
+          "Navigating higher education admission requirements can be tricky, but the step-by-step profile evaluation cleared all my doubts. Simultaneously, their Digital Marketing masterclass gave me real-world insights into ad campaigns and performance metrics. The entire onboarding process felt structured and professional.",
+        name: "Siddharth Mehra",
+        role: "Digital Marketing Professional",
+      },
+    ],
+  },
+
+  // 21. Global Presence
+  globalPresence: {
+    tag: "Our Reach",
+    title: "Extending Impact Across Continents",
+    desc: "Serving scholars and professionals globally, Explore S Research Solutions is building an interconnected academic ecosystem. Driven by compliance, data accuracy, and transformative skill development, we empower international minds to reach their highest potential.",
+    stats: [
+      { icon: "flaticon-worldwide", value: "35+", label: "Countries" },
+      {
+        icon: "flaticon-university",
+        value: "80+",
+        label: "Academic Institutions",
+      },
+      {
+        icon: "flaticon-student",
+        value: "40,000+",
+        label: "Scholars & Professionals Empowered",
+      },
+    ],
+  },
+
+  // 22. Blog
+  blog: {
+    tag: "Latest Articles",
+    title: "Explore Recent Posts on Academic & Career Growth",
+    subtitle:
+      "Read quick, insightful articles designed to help you navigate advanced research, master cutting-edge technical skills, and accelerate your career path with confidence.",
+    viewAll: { label: "View All Latest Blogs", to: "/blogs" },
+    cards: [
+      {
+        headline: "The Ultimate Blueprint for a Perfect Thesis Structure",
+        title:
+          "Step-by-Step Guide: How to Structure and Refine Your Academic Thesis",
+        category: "Academic & Research",
+      },
+      {
+        headline: "Python vs. MATLAB: Which is Better for Modern Research?",
+        title:
+          "Choosing the Right Technical Programming Tool for Data Simulation & Analytics",
+        category: "Advanced Tech & AI",
+      },
+      {
+        headline:
+          "Digital Marketing in 2026: Top Skills Empowering Professionals",
+        title:
+          "How Masterclasses in Performance Marketing and AI Tools are Transforming Modern Careers",
+        category: "Professional Growth",
+      },
+    ],
+  },
+};
+
+export default homeContent;

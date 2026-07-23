@@ -1,0 +1,363 @@
+// ── Events & Collaborations ─────────────────────────────────────────────────
+.es-events {
+  background: $whiteColor;
+
+  &__intro {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 3rem;
+  }
+
+  &__lead {
+    color: $bodyColor;
+    font-family: $bodyfont;
+    margin-top: 0.75rem;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    @media (min-width: 640px) { grid-template-columns: repeat(2, 1fr); }
+    @media (min-width: 1024px) { grid-template-columns: repeat(2, 1fr); }
+    @media (min-width: 1200px) { grid-template-columns: repeat(4, 1fr); }
+  }
+}
+
+.es-event-card {
+  background: $whiteColor;
+  border-radius: var(--es-radius, 12px);
+  box-shadow: var(--es-shadow, 0 2px 16px rgba(0,0,0,.07));
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba($primaryColor, 0.15);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+    &:hover { transform: none; }
+  }
+
+  &__media {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+
+    picture {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+
+      @media (prefers-reduced-motion: reduce) { transition: none; }
+    }
+  }
+
+  &:hover &__media img {
+    transform: scale(1.06);
+    @media (prefers-reduced-motion: reduce) { transform: none; }
+  }
+
+  &__badge {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba($primaryColor, 0.92);
+    color: $whiteColor;
+    font-family: $bodyfont;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+
+    &--accent { background: rgba($accentColor, 0.92); }
+  }
+
+  &__body {
+    padding: 1.25rem 1.25rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  &__meta {
+    font-family: $bodyfont;
+    font-size: 0.78rem;
+    color: $bodyColor;
+    margin-bottom: 0.5rem;
+  }
+
+  h3 {
+    font-family: $titlefont;
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    color: $titleColor;
+    font-weight: 700;
+    margin: 0 0 0.6rem;
+    line-height: 1.3;
+  }
+
+  &__blurb {
+    font-family: $bodyfont;
+    font-size: 0.875rem;
+    color: $bodyColor;
+    line-height: 1.6;
+    flex: 1;
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin-top: 1rem;
+    font-family: $bodyfont;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: $primaryColor;
+    text-decoration: none;
+    transition: color 0.2s ease, gap 0.2s ease;
+
+    &:hover { color: $accentColor; gap: 0.55rem; }
+    &:focus-visible { outline: 2px solid $primaryColor; outline-offset: 2px; border-radius: 2px; }
+
+    @media (prefers-reduced-motion: reduce) { transition: none; }
+  }
+}
+
+// ── Gallery / Happy Moments ──────────────────────────────────────────────────
+@keyframes es-gallery-fwd {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes es-gallery-rev {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+.es-gallery {
+  background: $surfaceColor;
+  overflow: hidden; // prevent page h-scroll
+
+  &__intro {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 2.5rem;
+  }
+
+  &__lead { color: $bodyColor; font-family: $bodyfont; margin-top: 0.75rem; }
+
+  // Edge-fade masks on each row
+  &__row {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 1rem;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 80px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    &::before { left: 0;  background: linear-gradient(to right, $surfaceColor, transparent); }
+    &::after  { right: 0; background: linear-gradient(to left,  $surfaceColor, transparent); }
+
+    &:hover .es-gallery__track { animation-play-state: paused; }
+  }
+
+  &__track {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: max-content;
+    animation: es-gallery-fwd 32s linear infinite;
+
+    &--rev { animation: es-gallery-rev 36s linear infinite; }
+  }
+
+  &__tile {
+    position: relative;
+    width: 220px;
+    flex-shrink: 0;
+    border-radius: var(--es-radius, 12px);
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+
+    picture {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    // Caption overlay on hover
+    &:hover .es-gallery__caption,
+    &:focus-within .es-gallery__caption {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  &__caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba($titleColor, 0.85), transparent);
+    color: $whiteColor;
+    font-family: $bodyfont;
+    font-size: 0.78rem;
+    font-weight: 500;
+    padding: 1.5rem 0.75rem 0.6rem;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+
+    @media (prefers-reduced-motion: reduce) {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+
+  // Static fallback grid when reduced-motion is preferred
+  &__static {
+    display: none;
+  }
+
+  // Reduced-motion: hide marquee, show static grid
+  @media (prefers-reduced-motion: reduce) {
+    &__row { display: none; }
+    &__track { animation: none; }
+    &__static {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 1rem;
+      padding: 0;
+      list-style: none;
+      margin: 0;
+    }
+  }
+}
+
+// ── Google Rating Band ────────────────────────────────────────────────────────
+.es-grating {
+  background: linear-gradient(135deg, $surfaceColor 0%, lighten($surfaceColor, 2%) 100%);
+  border-top: 1px solid $hairline;
+  border-bottom: 1px solid $hairline;
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    text-align: center;
+    padding: 2.5rem 2rem;
+    background: $whiteColor;
+    border-radius: var(--es-radius, 12px);
+    box-shadow: var(--es-shadow, 0 2px 16px rgba(0,0,0,.07));
+    max-width: 480px;
+    width: 100%;
+
+    @media (min-width: 640px) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      text-align: left;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-shrink: 0;
+  }
+
+  &__score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media (min-width: 640px) { align-items: flex-start; }
+  }
+
+  &__number {
+    font-family: $titlefont;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 800;
+    color: $titleColor;
+    line-height: 1;
+  }
+
+  &__stars {
+    display: flex;
+    gap: 2px;
+    margin: 0.25rem 0;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  &__reviews {
+    font-family: $bodyfont;
+    font-size: 0.85rem;
+    color: $bodyColor;
+  }
+
+  &__label {
+    font-family: $bodyfont;
+    font-size: 0.95rem;
+    color: $titleColor;
+    font-weight: 500;
+
+    @media (min-width: 640px) {
+      border-left: 2px solid $hairline;
+      padding-left: 1.5rem;
+    }
+  }
+
+  &__cta {
+    margin-top: 0.5rem;
+    @media (min-width: 640px) { margin-top: 0; }
+  }
+}

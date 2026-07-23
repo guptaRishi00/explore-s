@@ -5,29 +5,26 @@ import Preloader from "../components/Preloader";
 //Custom Components
 
 import Home from '../pages/home';
-import HomeTwo from '../pages/home-2';
-import HomeThree from '../pages/home-3';
 import About from '../pages/about';
 import Services from '../pages/services';
 import ServiceDetails from '../pages/services/service-details';
 import Domain from '../pages/domain';
-import Course from '../pages/course';
-import CourseList from '../pages/course/course-list';
-import CourseDetails from '../pages/course/course-details';
-import CourseSidebar from '../pages/course/course-sidebar';
-import Instructor from '../pages/instructor';
-import InstructorDetails from '../pages/instructor/instructor-details';
-import Event from '../pages/event';
-import EventSidebar from '../pages/event/event-sidebar';
-import EventDetails from '../pages/event/event-details';
-import Blog from '../pages/blog';
-import BlogDetails from '../pages/blog/blog-details';
-import Login from '../pages/authentication/login';
-import Signup from '../pages/authentication/signup';
 import Contact from '../pages/contact';
 import PayNow from '../pages/paynow';
+import PrivacyPolicy from '../pages/legal/PrivacyPolicy';
+import Terms from '../pages/legal/Terms';
+import Disclaimer from '../pages/legal/Disclaimer';
+import RefundPolicy from '../pages/legal/RefundPolicy';
+import AcademicIntegrity from '../pages/legal/AcademicIntegrity';
+import BecomeAPartner from '../pages/become-a-partner';
+import Career from '../pages/career';
+import Blogs from '../pages/blogs';
 import Error from '../pages/404';
 import LoadTop from '../components/ScrollTop/LoadTop'
+import ScrollToHash from '../components/ScrollTop/ScrollToHash'
+import WhatsAppButton from '../components/WhatsAppButton';
+import LiveChat from '../components/LiveChat';
+import BookMeetingModal from '../components/BookMeetingModal';
 
 
 const App = () => {
@@ -46,31 +43,28 @@ const App = () => {
             }
             <>
                 <LoadTop />
+                <ScrollToHash />
                 <Routes>
                     <Route path="/" exact element={<Home />} />
-                    <Route path="/home-2" element={<HomeTwo />} />
-                    <Route path="/home-3" element={<HomeThree />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/services" element={<Services />} />
                     <Route path="/service/:serviceId" element={<ServiceDetails />} />
                     <Route path="/domain" element={<Domain />} />
-                    <Route path="/course" exact element={<Course />} />
-                    <Route path="/course-list" exact element={<CourseList />} />
-                    <Route path="/course/:id" element={<CourseDetails />} />
-                    <Route path="/course-sidebar" element={<CourseSidebar />} />
-                    <Route path="/event" exact element={<Event />} />
-                    <Route path="/event/:id" element={<EventDetails />} />
-                    <Route path="/event-sidebar" element={<EventSidebar />} />
-                    <Route path="/blog" exact element={<Blog />} />
-                    <Route path="/blog/:id" element={<BlogDetails />} />
-                    <Route path="/instructor" exact element={<Instructor />} />
-                    <Route path="/instructor/:id" exact element={<InstructorDetails />} />
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/signup" element={<Signup />} />
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/paynow" element={<PayNow />} />
+                    <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                    <Route path="/terms" element={<Terms />} />
+                    <Route path="/disclaimer" element={<Disclaimer />} />
+                    <Route path="/refund-policy" element={<RefundPolicy />} />
+                    <Route path="/academic-integrity" element={<AcademicIntegrity />} />
+                    <Route path="/become-a-partner" element={<BecomeAPartner />} />
+                    <Route path="/career" element={<Career />} />
+                    <Route path="/blogs" element={<Blogs />} />
                     <Route path='*' element={<Error />} />
                 </Routes>
+                <WhatsAppButton />
+                <LiveChat />
+                <BookMeetingModal />
             </>
         </div>
     );

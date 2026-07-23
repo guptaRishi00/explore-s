@@ -46,7 +46,7 @@
                                 flex-shrink: 0;
                                 margin-right: 12px;
                                 margin-top: 2px;
-                                color: #3270FC;
+                                color: #004E9E;
                                 width: 18px;
                                 height: 18px;
                             }
@@ -59,7 +59,7 @@
                                 line-height: 1.5;
                                 
                                 &:hover {
-                                    color: #3270FC;
+                                    color: #004E9E;
                                 }
                             }
                             
@@ -90,7 +90,7 @@
                             left: 0;
                             width: 30px;
                             height: 2px;
-                            background: #3270FC;
+                            background: #004E9E;
                         }
                     }
                     
@@ -113,7 +113,7 @@
                                     padding-left: 0;
                                     
                                     &:hover {
-                                        color: #3270FC;
+                                        color: #004E9E;
                                         padding-left: 8px;
                                     }
                                     
@@ -141,7 +141,7 @@
                             left: 0;
                             width: 30px;
                             height: 2px;
-                            background: #3270FC;
+                            background: #004E9E;
                         }
                     }
                     
@@ -171,8 +171,8 @@
                                 
                                 &:focus {
                                     outline: none;
-                                    border-color: #3270FC;
-                                    box-shadow: 0 0 0 2px rgba(50, 112, 252, 0.1);
+                                    border-color: #004E9E;
+                                    box-shadow: 0 0 0 2px rgba(0, 78, 158, 0.1);
                                 }
                                 
                                 &::placeholder {
@@ -187,7 +187,7 @@
                                 top: 0;
                                 height: 100%;
                                 width: 50px;
-                                background: #3270FC;
+                                background: #004E9E;
                                 border: none;
                                 border-radius: 0 6px 6px 0;
                                 color: #fff;
@@ -195,7 +195,7 @@
                                 transition: all 0.3s ease;
                                 
                                 &:hover {
-                                    background: #2563eb;
+                                    background: #003D7A;
                                 }
                                 
                                 i {
@@ -236,12 +236,12 @@
                 font-weight: 400;
                 
                 a {
-                    color: #3270FC;
+                    color: #004E9E;
                     text-decoration: none;
                     font-weight: 500;
                     
                     &:hover {
-                        color: #2563eb;
+                        color: #003D7A;
                     }
                 }
             }
@@ -276,7 +276,7 @@
                             transition: all 0.3s ease;
                             
                             &:hover {
-                                background: #3270FC;
+                                background: #004E9E;
                                 transform: translateY(-2px);
                             }
                             

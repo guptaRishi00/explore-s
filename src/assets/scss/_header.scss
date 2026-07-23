@@ -1,0 +1,414 @@
+// _header.scss — ES Header redesign (mobile-first)
+// Uses brand tokens from _variables.scss only — no hardcoded colours.
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+// ── Topbar ────────────────────────────────────────────────────────────────────
+.es-topbar {
+  background: $titleColor;
+  color: rgba($whiteColor, 0.85);
+  font: 500 13px/1 $bodyfont;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 9px 0;
+    gap: 8px;
+  }
+
+  &__contact {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    flex-wrap: wrap;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    svg {
+      width: 15px;
+      height: 15px;
+      flex-shrink: 0;
+      stroke: $accentColor;
+    }
+
+    a {
+      color: rgba($whiteColor, 0.85);
+      text-decoration: none;
+      transition: color 0.2s;
+
+      &:hover {
+        color: $whiteColor;
+      }
+
+      &:focus-visible {
+        outline: 2px solid $accentColor;
+        outline-offset: 2px;
+        border-radius: 3px;
+      }
+    }
+  }
+
+  // country flag before each phone number
+  &__flag {
+    font-size: 14px;
+    line-height: 1;
+    flex-shrink: 0;
+    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.25));
+  }
+
+  &__tagline {
+    color: rgba($whiteColor, 0.6);
+    font-size: 12.5px;
+    margin: 0;
+  }
+
+  @media (max-width: 767px) {
+    &__inner {
+      justify-content: center;
+      text-align: center;
+    }
+
+    &__contact {
+      gap: 14px;
+      font-size: 12px;
+    }
+
+    &__tagline {
+      display: none;
+    }
+  }
+}
+
+// ── Nav bar ───────────────────────────────────────────────────────────────────
+.es-nav {
+  background: $whiteColor;
+  border-bottom: 1px solid $hairline;
+  transition: box-shadow 0.3s ease, padding 0.3s ease;
+
+  &--fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 6px 24px rgba($titleColor, 0.10);
+    border-bottom-color: transparent;
+
+    .es-nav__inner {
+      padding: 8px 0;
+    }
+
+    .es-nav__logo img {
+      height: 58px;
+    }
+
+    @media (max-width: 991px) {
+      .es-nav__logo img {
+        height: 48px;
+      }
+    }
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 12px 0;
+    flex-wrap: wrap;
+  }
+
+  // ── Logo ─────────────────────────────────────────────────────────────────
+  &__logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    flex-shrink: 0;
+
+    img {
+      height: 82px;
+      width: auto;
+      display: block;
+      transition: height 0.3s ease;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $primaryColor;
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+  }
+
+  @media (max-width: 991px) {
+    &__logo img {
+      height: 56px;
+    }
+  }
+
+  // ── Hamburger ─────────────────────────────────────────────────────────────
+  &__toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 42px;
+    height: 42px;
+    padding: 6px;
+    background: none;
+    border: 1.5px solid $hairline;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: border-color 0.2s;
+
+    span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: $titleColor;
+      border-radius: 2px;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+
+    &:hover {
+      border-color: $primaryColor;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $primaryColor;
+      outline-offset: 2px;
+    }
+
+    &.is-open {
+      border-color: $primaryColor;
+
+      span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+      span:nth-child(2) {
+        opacity: 0;
+      }
+      span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+    }
+
+    @media (max-width: 991px) {
+      display: flex;
+    }
+  }
+
+  // ── Menu container ────────────────────────────────────────────────────────
+  &__menu {
+    display: none;
+
+    @media (min-width: 992px) {
+      display: flex !important;
+      align-items: center;
+      gap: 6px;
+    }
+
+    &.is-open {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      width: 100%;
+      padding-bottom: 14px;
+      border-top: 1px solid $hairline;
+      animation: esSlideDown 0.25s ease forwards;
+    }
+  }
+
+  // ── Nav links ─────────────────────────────────────────────────────────────
+  &__links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: 992px) {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    > li {
+      > a {
+        display: block;
+        padding: 10px 14px;
+        font: 600 15px/1 $bodyfont;
+        color: $titleColor;
+        text-decoration: none;
+        border-radius: 6px;
+        position: relative;
+        transition: color 0.2s;
+        white-space: nowrap;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 4px;
+          left: 14px;
+          right: 14px;
+          height: 2px;
+          background: $accentColor;
+          width: 0;
+          transition: width 0.25s ease;
+        }
+
+        &:hover {
+          color: $primaryColor;
+
+          &::after {
+            width: calc(100% - 28px);
+          }
+        }
+
+        &:focus-visible {
+          outline: 2px solid $primaryColor;
+          outline-offset: 2px;
+        }
+      }
+
+      &.menu-active > a {
+        color: $primaryColor;
+
+        &::after {
+          width: calc(100% - 28px);
+        }
+      }
+
+      @media (max-width: 991px) {
+        > a {
+          border-radius: 0;
+          border-bottom: 1px solid $hairline;
+          padding: 12px 14px;
+
+          &::after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  // ── Drawer contact (mobile-only) ──────────────────────────────────────────
+  &__drawer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px 14px;
+    border-top: 1px solid $hairline;
+    margin-top: 4px;
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba($titleColor, 0.65);
+      text-decoration: none;
+      font: 500 13px/1.4 $bodyfont;
+      transition: color 0.2s;
+
+      svg {
+        stroke: $accentColor;
+        flex-shrink: 0;
+      }
+
+      &:hover {
+        color: $primaryColor;
+      }
+
+      &:focus-visible {
+        outline: 2px solid $primaryColor;
+        outline-offset: 2px;
+        border-radius: 3px;
+      }
+    }
+
+    @media (min-width: 992px) {
+      display: none;
+    }
+  }
+
+  // ── CTA buttons (Apply Online / Pay Now) ──────────────────────────────────
+  &__cta {
+    display: inline-block;
+    background: $ctaRed;
+    color: $whiteColor;
+    font: 600 14px/1 $bodyfont;
+    padding: 11px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.2s, transform 0.2s;
+    margin-left: 6px;
+
+    &:hover {
+      background: darken($ctaRed, 8%);
+      transform: translateY(-1px);
+      color: $whiteColor;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $ctaRed;
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 991px) {
+      display: block;
+      width: 100%;
+      text-align: center;
+      margin-left: 0;
+      margin-top: 12px;
+      padding: 13px 24px;
+      border-radius: 8px;
+    }
+
+    &--yellow {
+      background: $yellowColor;
+      color: $titleColor;
+
+      &:hover {
+        background: darken($yellowColor, 8%);
+        color: $titleColor;
+      }
+
+      &:focus-visible {
+        outline: 2px solid $yellowColor;
+      }
+    }
+  }
+}
+
+// ── Slide-down animation ──────────────────────────────────────────────────────
+@keyframes esSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// ── Global overflow guard ─────────────────────────────────────────────────────
+.es-header {
+  overflow: hidden;
+  overflow: clip;
+}
