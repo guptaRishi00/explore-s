@@ -1,27 +1,23 @@
 import React from "react";
 
-import AboutPart from './AboutSection'
-import MissionVisionSection from './MissionVisionSection'
-import Testimonial from './TestimonialSection'
-import Feature from './FeatureSection'
-import Instructor from './InstructorSection'
+import AboutPart from './AboutSection';
+import MissionVisionSection from './MissionVisionSection';
+import Testimonial from './TestimonialSection';
 
 const AboutMain = () => {
+  return (
+    <>
+      <AboutPart />
 
+      <MissionVisionSection />
 
-    return (
-        <>
-            <AboutPart />
-            
-            <MissionVisionSection />
-            
-            {/* <Feature /> */}
-            
-            {/* <Instructor /> */}
+      {/* <Feature /> */}
 
-            <Testimonial />
-        </>
-    )
-}
+      {/* <Instructor /> */}
+
+      <Testimonial />
+    </>
+  );
+};
 
 export default AboutMain;

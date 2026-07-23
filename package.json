@@ -12,6 +12,7 @@
     "bootstrap": "^5.2.3",
     "core-js": "^3.27.1",
     "emailjs-com": "^3.2.0",
+    "gsap": "^3.15.0",
     "react": "^18.2.0",
     "react-accessible-accordion": "^5.0.0",
     "react-countup": "^6.4.0",
@@ -26,14 +27,14 @@
     "react-tabs": "^6.0.0",
     "react-visibility-sensor": "^5.1.1",
     "sass": "^1.90.0",
-    "web-vitals": "^2.1.4",
-    "wowjs": "^1.1.3"
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "CI=false react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "optimize:images": "node scripts/optimize-images.js"
   },
   "eslintConfig": {
     "extends": [
@@ -52,5 +53,14 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "^gsap/ScrollTrigger$": "gsap/dist/ScrollTrigger.js",
+      "^gsap$": "gsap/dist/gsap.js"
+    }
+  },
+  "devDependencies": {
+    "sharp": "^0.35.2"
   }
 }

@@ -1,44 +1,85 @@
-import React from 'react';
+import React, { useRef, useLayoutEffect } from 'react';
 import { Link } from 'react-router-dom';
-
-// Images removed as video is used instead.
+import { fadeUp } from '../../utils/animations';
 
 const AboutPart = () => {
+  const rootRef = useRef(null);
 
-    return (
-        <div className="about__area about__area_one p-relative pt---100 pb---120">
-            <div className="container"> 
-        <div className="row align-items-start">
-          <div className="col-lg-6">
-            <div className="about__image wow animate__fadeInUp" data-wow-duration="0.3s">
-              <video 
-                src="/3.mp4" 
-                autoPlay 
-                loop 
-                muted 
-                style={{ width: '100%', height: '750px', objectFit: 'cover', borderRadius: '1px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}
+  useLayoutEffect(() => {
+    // Guard: ScrollTrigger needs window.matchMedia — skip in tests / SSR
+    if (typeof window === 'undefined' || typeof window.matchMedia !== 'function') return;
+    const ctx = fadeUp(rootRef.current, '[data-about-rise]', { stagger: 0.1 });
+    return () => ctx?.revert?.();
+  }, []);
+
+  return (
+    <section className="es-section es-about-intro" ref={rootRef} aria-label="About Explore S">
+      <div className="container">
+        <div className="es-about__grid">
+          {/* ── Video column ── */}
+          <div className="es-about__media" data-about-rise>
+            <div className="es-about__frame">
+              <video
+                src="/3.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="es-about__img"
+                aria-label="Explore S Research Solutions overview"
               />
             </div>
           </div>
-          <div className="col-lg-6">
-            <div className="about__content" style={{ paddingTop: '0px' }}>
-                            <h2 className="about__title wow animate__fadeInUp" data-wow-duration="0.3s">Welcome to <br/> <em>Explore S Research Solutions</em></h2>
-                            <p className="about__paragraph wow animate__fadeInUp" data-wow-duration="0.5s">Discover the difference with personalized, expert research assistance at Explore S Research Solutions.</p>
-                            <p className="about__paragraph2 wow animate__fadeInUp" data-wow-duration="0.7s"> Have questions?  <Link to="/contact"> Get Free Consultation </Link></p>
-                            <p className="wow animate__fadeInUp" data-wow-duration="0.9s">Welcome to Explore S Research Solutions, your trusted partner in academic excellence. We are dedicated to providing top-tier research writing assistance to help you achieve your academic goals. Our team of seasoned experts brings years of experience across a broad spectrum of disciplines, ensuring that you receive personalized, high-quality support tailored to your unique needs.</p>
-                            <ul>
-                                <li><Link to="/contact" className="more-about wow animate__fadeInUp" data-wow-duration="1.2s"> Contact Us <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></Link></li>
-                                <li className="last-li wow animate__fadeInUp" data-wow-duration="1.3s">
-                                    <em>Get Support</em>
-                                    <a href="mailto:support@exploresresearchsolutions.in">support@exploresresearchsolutions.in</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+
+          {/* ── Copy column ── */}
+          <div className="es-about-intro__copy">
+            <span className="es-eyebrow" data-about-rise>About us</span>
+            <h1 className="es-about-intro__h1" data-about-rise>
+              Welcome to <em>Explore S Research Solutions</em>
+            </h1>
+            <p className="es-about__body" data-about-rise>
+              Discover the difference with personalized, expert research assistance at Explore S Research Solutions.
+            </p>
+            <p className="es-about__body" data-about-rise>
+              Welcome to Explore S Research Solutions, your trusted partner in academic excellence. We are dedicated to providing top-tier research writing assistance to help you achieve your academic goals. Our team of seasoned experts brings years of experience across a broad spectrum of disciplines, ensuring that you receive personalized, high-quality support tailored to your unique needs.
+            </p>
+            <div className="es-about-intro__ctas" data-about-rise>
+              <Link to="/contact" className="es-btn es-btn--primary">
+                Contact Us{' '}
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </Link>
+              <Link to="/contact" className="es-btn es-btn--ghost">
+                Get Free Consultation
+              </Link>
             </div>
+            <p className="es-about-intro__contact" data-about-rise>
+              <em>Get Support:</em>{' '}
+              <a href="mailto:support@exploresresearchsolutions.in">
+                support@exploresresearchsolutions.in
+              </a>
+            </p>
+            <div className="es-about-intro__chips" data-about-rise>
+              <span className="es-about-intro__chip">
+                <span className="es-about-intro__chip-dot" aria-hidden="true"></span>
+                PhD-level Experts
+              </span>
+              <span className="es-about-intro__chip">
+                <span className="es-about-intro__chip-dot" aria-hidden="true"></span>
+                Confidential
+              </span>
+              <span className="es-about-intro__chip">
+                <span className="es-about-intro__chip-dot" aria-hidden="true"></span>
+                On-time Delivery
+              </span>
+            </div>
+          </div>
         </div>
-    );
-}
+      </div>
+    </section>
+  );
+};
 
 export default AboutPart;

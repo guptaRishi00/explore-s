@@ -1,262 +1,249 @@
-// Domains Page Styles - Matching website aesthetics
+// _domains.scss — Domain page styles
+// Uses tokens from _variables.scss; reuses .es-section / .es-eyebrow from _home.scss
+// NOTE: .es-domains* (homepage marquee) lives in _home.scss — do NOT add or override those here.
 
-// Introduction Section
-.domain-intro__area {
-    .intro-content {
-        .intro-title {
-            font-size: 42px;
-            font-weight: 700;
-            color: #00306E;
-            margin-bottom: 20px;
-            letter-spacing: -0.5px;
-        }
-        
-        .title-line {
-            height: 3px;
-            background: linear-gradient(90deg, #3270FC 0%, #e9ecef 100%);
-            margin: 0 auto 25px;
-            width: 80px;
-            border-radius: 2px;
-        }
-        
-        .intro-description {
-            font-size: 18px;
-            line-height: 1.7;
-            color: #53545b;
-            margin: 0;
-            font-weight: 400;
-        }
-    }
+// ── Hero ───────────────────────────────────────────────────────────────────────
+.domain-page__hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(160deg, $surfaceColor 0%, rgba($primaryColor, 0.06) 100%);
+  text-align: center;
 }
 
-// Domains Section
-.domains__area {
-    .section-title {
-        margin-bottom: 50px;
-        
-        .title {
-            font-size: 36px;
-            font-weight: 700;
-            color: #00306E;
-            margin-bottom: 15px;
-            letter-spacing: -0.3px;
-        }
-        
-        .title-line {
-            height: 3px;
-            background: linear-gradient(90deg, #3270FC 0%, #e9ecef 100%);
-            margin: 0 auto 20px;
-            width: 60px;
-            border-radius: 2px;
-        }
-        
-        .subtitle {
-            font-size: 16px;
-            color: #53545b;
-            margin: 0;
-            font-weight: 400;
-        }
-    }
-    
-    .domain-card {
-        background: #ffffff;
-        border-radius: 6px;
-        box-shadow: 0px 20px 40px rgba(15, 18, 22, 0.08);
-        padding: 35px 30px;
-        transition: all 0.3s ease;
-        border: 1px solid #f0f0f0;
-        height: 100%;
-        display: flex;
-        align-items: flex-start;
-        
-        &:hover {
-            transform: translateY(-5px);
-            box-shadow: 0px 30px 50px rgba(15, 18, 22, 0.12);
-            border-color: #3270FC;
-        }
-        
-        .domain-icon {
-            flex-shrink: 0;
-            margin-right: 25px;
-            margin-top: 5px;
-            
-            .icon-wrapper {
-                width: 60px;
-                height: 60px;
-                background: linear-gradient(135deg, #3270FC 0%, #2563eb 100%);
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                box-shadow: 0px 8px 25px rgba(50, 112, 252, 0.3);
-                transition: all 0.3s ease;
-                
-                &:hover {
-                    transform: scale(1.1);
-                    box-shadow: 0px 12px 30px rgba(50, 112, 252, 0.4);
-                }
-                
-                svg {
-                    color: #ffffff;
-                    width: 28px;
-                    height: 28px;
-                }
-            }
-        }
-        
-        .domain-content {
-            flex: 1;
-            
-            .domain-title {
-                font-size: 22px;
-                font-weight: 600;
-                color: #00306E;
-                margin-bottom: 15px;
-                line-height: 1.4;
-                letter-spacing: -0.2px;
-            }
-            
-            .domain-description {
-                font-size: 16px;
-                line-height: 1.7;
-                color: #53545b;
-                margin: 0;
-                font-weight: 400;
-            }
-        }
-    }
+// Decorative soft-blur brand blob behind the heading
+.domain-page__hero-blob {
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 560px;
+  height: 560px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba($primaryColor, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  filter: blur(56px);
 }
 
-// Responsive adjustments
-@media (max-width: 1199px) {
-    .domain-intro__area {
-        .intro-content .intro-title {
-            font-size: 36px;
-        }
-    }
-    
-    .domains__area {
-        .section-title .title {
-            font-size: 32px;
-        }
-        
-        .domain-card {
-            padding: 30px 25px;
-            
-            .domain-icon {
-                margin-right: 20px;
-                
-                .icon-wrapper {
-                    width: 55px;
-                    height: 55px;
-                    
-                    svg {
-                        width: 26px;
-                        height: 26px;
-                    }
-                }
-            }
-            
-            .domain-content .domain-title {
-                font-size: 20px;
-            }
-        }
-    }
+.domain-page__hero-inner {
+  position: relative;
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-@media (max-width: 991px) {
-    .domain-intro__area {
-        .intro-content .intro-title {
-            font-size: 32px;
-        }
-    }
-    
-    .domains__area {
-        .section-title .title {
-            font-size: 28px;
-        }
-        
-        .domain-card {
-            margin-bottom: 20px;
-            padding: 25px 20px;
-            
-            .domain-icon {
-                margin-right: 18px;
-                
-                .icon-wrapper {
-                    width: 50px;
-                    height: 50px;
-                    
-                    svg {
-                        width: 24px;
-                        height: 24px;
-                    }
-                }
-            }
-            
-            .domain-content .domain-title {
-                font-size: 19px;
-            }
-        }
-    }
+.domain-page__hero-h1 {
+  font: 800 clamp(32px, 5vw, 56px)/1.1 $titlefont;
+  letter-spacing: -0.02em;
+  color: $titleColor;
+  margin: 0 0 20px;
 }
 
-@media (max-width: 767px) {
-    .domain-intro__area {
-        .intro-content {
-            .intro-title {
-                font-size: 28px;
-            }
-            
-            .intro-description {
-                font-size: 16px;
-            }
-        }
-    }
-    
-    .domains__area {
-        .section-title .title {
-            font-size: 24px;
-        }
-        
-        .domain-card {
-            flex-direction: column;
-            text-align: center;
-            padding: 25px 20px;
-            
-            .domain-icon {
-                margin: 0 auto 20px;
-            }
-            
-            .domain-content {
-                text-align: center;
-                
-                .domain-title {
-                    font-size: 18px;
-                }
-                
-                .domain-description {
-                    font-size: 15px;
-                }
-            }
-        }
-    }
+.domain-page__accent {
+  color: $accentColor;
 }
 
-@media (max-width: 575px) {
-    .domain-intro__area {
-        .intro-content .intro-title {
-            font-size: 24px;
-        }
+.domain-page__lead {
+  font: 400 clamp(15px, 1.5vw, 17px)/1.75 $bodyfont;
+  color: $bodyColor;
+  max-width: 58ch;
+  margin: 0 auto 36px;
+}
+
+// ── Trust / stat chips ─────────────────────────────────────────────────────────
+.domain-page__chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.domain-page__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font: 600 13px/1 $bodyfont;
+  color: $titleColor;
+  background: $whiteColor;
+  border: 1.5px solid $hairline;
+  border-radius: 100px;
+  padding: 9px 18px;
+  box-shadow: 0 2px 8px rgba($primaryColor, 0.07);
+  white-space: nowrap;
+}
+
+.domain-page__chip-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: $accentColor;
+  flex-shrink: 0;
+}
+
+// ── Domains grid section ───────────────────────────────────────────────────────
+.domain-page__grid-section {
+  background: $whiteColor;
+}
+
+.domain-page__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: stretch;
+
+  @media (min-width: 600px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: 992px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  > li {
+    display: flex;
+  }
+}
+
+// ── Domain card ────────────────────────────────────────────────────────────────
+.domain-page__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: $whiteColor;
+  border: 1.5px solid $hairline;
+  border-radius: var(--es-radius, 16px);
+  padding: 32px 28px 28px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+  // Top accent bar — grows left-to-right on hover
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, $primaryColor 0%, $accentColor 100%);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s ease;
+  }
+
+  &:hover,
+  &:focus-within {
+    box-shadow: 0 16px 48px rgba($titleColor, 0.12), 0 4px 16px rgba($primaryColor, 0.08);
+    transform: translateY(-8px);
+
+    &::before {
+      transform: scaleX(1);
     }
-    
-    .domains__area {
-        .section-title .title {
-            font-size: 22px;
-        }
-        
-        .domain-card {
-            padding: 20px 15px;
-        }
+
+    .domain-page__card-icon-chip {
+      background: $primaryColor;
+      color: $whiteColor;
+      transform: rotate(6deg) scale(1.06);
     }
+
+    .domain-page__card-index {
+      color: rgba($accentColor, 0.18);
+    }
+
+    .domain-page__card-title {
+      color: $primaryColor;
+    }
+
+    .domain-page__card-arrow {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+
+// Faint oversized editorial index numeral (01–07)
+.domain-page__card-index {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  font: 800 68px/1 $titlefont;
+  color: rgba($titleColor, 0.05);
+  letter-spacing: -0.04em;
+  pointer-events: none;
+  user-select: none;
+  transition: color 0.3s ease;
+  line-height: 1;
+}
+
+// Icon chip — 60 × 60 rounded tile
+.domain-page__card-icon-chip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 14px;
+  background: rgba($primaryColor, 0.09);
+  color: $primaryColor;
+  flex-shrink: 0;
+  margin-bottom: 20px;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.domain-page__card-body {
+  flex: 1;
+}
+
+.domain-page__card-title {
+  font: 700 18px/1.3 $titlefont;
+  color: $titleColor;
+  margin: 0 0 10px;
+  transition: color 0.3s ease;
+}
+
+.domain-page__card-desc {
+  font: 400 14px/1.7 $bodyfont;
+  color: $bodyColor;
+  margin: 0;
+}
+
+// Slide-in arrow — appears on hover/focus
+.domain-page__card-arrow {
+  display: inline-block;
+  margin-top: 18px;
+  font-size: 18px;
+  color: $primaryColor;
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  align-self: flex-start;
+}
+
+// ── Reduced motion — disable all transitions and transforms ────────────────────
+@media (prefers-reduced-motion: reduce) {
+  .domain-page__hero-blob {
+    display: none;
+  }
+
+  .domain-page__card,
+  .domain-page__card::before,
+  .domain-page__card-icon-chip,
+  .domain-page__card-index,
+  .domain-page__card-title,
+  .domain-page__card-arrow {
+    transition: none !important;
+  }
+
+  .domain-page__card:hover,
+  .domain-page__card:focus-within {
+    transform: none;
+
+    .domain-page__card-icon-chip {
+      transform: none;
+    }
+  }
 }

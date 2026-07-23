@@ -1,1208 +1,1116 @@
-// Services Page Styles - Matching website aesthetics
+// _services.scss — Services page & Service Detail styles
+// Mobile-first. Uses brand tokens from _variables.scss.
+// Do NOT redefine: .es-section, .es-eyebrow, .es-h2, .es-btn, .es-card (see _home.scss).
 
-// Introduction Section
-.services-intro__area {
-    .intro-content {
-        .intro-title {
-            font-size: 42px;
-            font-weight: 700;
-            color: #00306E;
-            margin-bottom: 20px;
-            letter-spacing: -0.5px;
-        }
-        
-        .title-line {
-            height: 3px;
-            background: linear-gradient(90deg, #3270FC 0%, #e9ecef 100%);
-            margin: 0 auto 25px;
-            width: 80px;
-            border-radius: 2px;
-        }
-        
-        .intro-description {
-            font-size: 18px;
-            line-height: 1.7;
-            color: #53545b;
-            margin: 0;
-            font-weight: 400;
-        }
-    }
+// ── Intro banner (ServicesMain → IntroductionSection) ────────────────────────
+// Matches the Domain page hero (gradient + blur blob + accent headline + chips)
+.es-svc-banner {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(160deg, $surfaceColor 0%, rgba($primaryColor, 0.06) 100%);
+  text-align: center;
+
+  &__blob {
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 560px;
+    height: 560px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba($primaryColor, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+    filter: blur(56px);
+  }
+
+  &__inner {
+    position: relative;
+    max-width: 760px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__h1 {
+    font: 800 clamp(32px, 5vw, 56px)/1.1 $titlefont;
+    letter-spacing: -0.02em;
+    color: $titleColor;
+    margin: 0 0 20px;
+  }
+
+  &__accent {
+    color: $accentColor;
+  }
+
+  &__lead {
+    font: 400 clamp(15px, 1.5vw, 17px)/1.75 $bodyfont;
+    color: $bodyColor;
+    max-width: 58ch;
+    margin: 0 auto 36px;
+  }
+
+  &__chips {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  &__chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font: 600 13px/1 $bodyfont;
+    color: $titleColor;
+    background: $whiteColor;
+    border: 1.5px solid $hairline;
+    border-radius: 100px;
+    padding: 9px 18px;
+    box-shadow: 0 2px 8px rgba($primaryColor, 0.07);
+    white-space: nowrap;
+  }
+
+  &__chip-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: $accentColor;
+    flex-shrink: 0;
+  }
 }
 
-// Main Services Section
-.main-services__area {
-    .section-title {
-        margin-bottom: 50px;
-        
-        .title {
-            font-size: 36px;
-            font-weight: 700;
-            color: #00306E;
-            margin-bottom: 15px;
-            letter-spacing: -0.3px;
-        }
-        
-        .title-line {
-            height: 3px;
-            background: linear-gradient(90deg, #3270FC 0%, #e9ecef 100%);
-            margin: 0 auto;
-            width: 60px;
-            border-radius: 2px;
-        }
-    }
-    
-    .service-card {
-        background: #ffffff;
-        border-radius: 6px;
-        box-shadow: 0px 20px 40px rgba(15, 18, 22, 0.08);
-        overflow: hidden;
-        transition: all 0.3s ease;
-        border: 1px solid #f0f0f0;
-        height: 100%;
-        
-        &:hover {
-            transform: translateY(-5px);
-            box-shadow: 0px 30px 50px rgba(15, 18, 22, 0.12);
-            border-color: #3270FC;
-        }
-        
-        .service-image {
-            position: relative;
-            overflow: hidden;
-            height: 200px;
-            
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                transition: transform 0.3s ease;
-            }
-            
-            .service-overlay {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(50, 112, 252, 0.8);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                opacity: 0;
-                transition: opacity 0.3s ease;
-                
-                .overlay-content {
-                    svg {
-                        color: #ffffff;
-                        width: 32px;
-                        height: 32px;
-                    }
-                }
-            }
-        }
-        
-        &:hover .service-image {
-            img {
-                transform: scale(1.1);
-            }
-            
-            .service-overlay {
-                opacity: 1;
-            }
-        }
-        
-        .service-content {
-            padding: 25px;
-            
-            .service-title {
-                font-size: 20px;
-                font-weight: 600;
-                color: #00306E;
-                margin-bottom: 15px;
-                line-height: 1.4;
-                letter-spacing: -0.2px;
-            }
-            
-            .service-description {
-                font-size: 17px;
-                line-height: 1.7;
-                color: #53545b;
-                margin-bottom: 20px;
-                font-weight: 400;
-            }
-            
-            .service-action {
-                .view-details-btn {
-                    display: inline-flex;
-                    align-items: center;
-                    gap: 10px;
-                    padding: 14px 28px;
-                    background: linear-gradient(135deg, #3270FC 0%, #5B8CFF 100%);
-                    color: #ffffff !important;
-                    text-decoration: none;
-                    border-radius: 30px;
-                    font-weight: 600;
-                    font-size: 15px;
-                    transition: all 0.3s ease;
-                    box-shadow: 0 6px 20px rgba(50, 112, 252, 0.25);
-                    border: none;
-                    outline: none;
-                    cursor: pointer;
-                    white-space: nowrap;
-                    
-                    &:hover {
-                        background: linear-gradient(135deg, #2B5FD9 0%, #4A7BE8 100%);
-                        transform: translateY(-3px);
-                        box-shadow: 0 8px 25px rgba(50, 112, 252, 0.35);
-                        color: #ffffff !important;
-                        text-decoration: none;
-                    }
-                    
-                    &:active {
-                        transform: translateY(-1px);
-                    }
-                    
-                    .arrow-icon {
-                        width: 18px;
-                        height: 18px;
-                        transition: transform 0.3s ease;
-                        stroke-width: 2.5px;
-                    }
-                    
-                    &:hover .arrow-icon {
-                        transform: translateX(4px);
-                    }
-                }
-            }
-        }
-    }
+// ── Shared section intro (heading + lead copy block) ─────────────────────────
+.es-svc-intro {
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto clamp(40px, 5vw, 64px);
+
+  &__lead {
+    font: 400 clamp(14px, 1.4vw, 16px)/1.6 $bodyfont;
+    color: $bodyColor;
+    margin: 0;
+  }
 }
 
-// Detailed Offerings Section
-.detailed-offerings__area {
-    .section-title {
-        margin-bottom: 50px;
-        
-        .title {
-            font-size: 36px;
-            font-weight: 700;
-            color: #00306E;
-            margin-bottom: 15px;
-            letter-spacing: -0.3px;
-        }
-        
-        .title-line {
-            height: 3px;
-            background: linear-gradient(90deg, #3270FC 0%, #e9ecef 100%);
-            margin: 0 auto 20px;
-            width: 60px;
-            border-radius: 2px;
-        }
-        
-        .subtitle {
-            font-size: 16px;
-            color: #53545b;
-            margin: 0;
-            font-weight: 400;
-        }
+// ── Main services section ────────────────────────────────────────────────────
+.es-svc-main {
+  background: $whiteColor;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: stretch;
+    gap: 24px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @media (min-width: 576px) {
+      grid-template-columns: 1fr 1fr;
     }
-    
-    .offering-card {
-        background: #ffffff;
-        border-radius: 6px;
-        box-shadow: 0px 20px 40px rgba(15, 18, 22, 0.08);
-        overflow: hidden;
-        transition: all 0.3s ease;
-        border: 1px solid #f0f0f0;
-        height: 100%;
-        
-        &:hover {
-            transform: translateY(-5px);
-            box-shadow: 0px 30px 50px rgba(15, 18, 22, 0.12);
-            border-color: #D2093C;
-        }
-        
-        .offering-image {
-            position: relative;
-            overflow: hidden;
-            height: 180px;
-            
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                transition: transform 0.3s ease;
-            }
-            
-            .offering-overlay {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(208, 9, 60, 0.8);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                opacity: 0;
-                transition: opacity 0.3s ease;
-                
-                .overlay-content {
-                    svg {
-                        color: #ffffff;
-                        width: 24px;
-                        height: 24px;
-                    }
-                }
-            }
-        }
-        
-        &:hover .offering-image {
-            img {
-                transform: scale(1.1);
-            }
-            
-            .offering-overlay {
-                opacity: 1;
-            }
-        }
-        
-        .offering-content {
-            padding: 20px;
-            
-            .offering-title {
-                font-size: 18px;
-                font-weight: 600;
-                color: #00306E;
-                margin-bottom: 12px;
-                line-height: 1.4;
-                letter-spacing: -0.2px;
-            }
-            
-            .offering-description {
-                font-size: 16px;
-                line-height: 1.7;
-                color: #53545b;
-                margin-bottom: 20px;
-                font-weight: 400;
-            }
-            
-            .offering-action {
-                .view-details-btn {
-                    display: inline-flex;
-                    align-items: center;
-                    gap: 10px;
-                    padding: 14px 28px;
-                    background: linear-gradient(135deg, #D2093C 0%, #E6395C 100%);
-                    color: #ffffff !important;
-                    text-decoration: none;
-                    border-radius: 30px;
-                    font-weight: 600;
-                    font-size: 15px;
-                    transition: all 0.3s ease;
-                    box-shadow: 0 6px 20px rgba(208, 9, 60, 0.25);
-                    border: none;
-                    outline: none;
-                    cursor: pointer;
-                    white-space: nowrap;
-                    
-                    &:hover {
-                        background: linear-gradient(135deg, #B80732 0%, #C92A4A 100%);
-                        transform: translateY(-3px);
-                        box-shadow: 0 8px 25px rgba(208, 9, 60, 0.35);
-                        color: #ffffff !important;
-                        text-decoration: none;
-                    }
-                    
-                    &:active {
-                        transform: translateY(-1px);
-                    }
-                    
-                    .arrow-icon {
-                        width: 18px;
-                        height: 18px;
-                        transition: transform 0.3s ease;
-                        stroke-width: 2.5px;
-                    }
-                    
-                    &:hover .arrow-icon {
-                        transform: translateX(4px);
-                    }
-                }
-            }
-        }
+
+    @media (min-width: 992px) {
+      grid-template-columns: repeat(3, 1fr);
     }
+  }
 }
 
-// Service Details Page
+// es-card modifier: editorial service card with image header,
+// floating icon chip, numbered marker, and an animated accent bar.
+.es-svc-card {
+  padding: 0; // override es-card padding; image is at top
+  position: relative;
+  height: 100%;               // fill the grid cell → all three cards equal height
+  overflow: visible;          // let the icon chip overlap the image
+  border: 1px solid $hairline;
+  border-top: 1px solid $hairline; // override base es-card 3px accent border-top
+  border-radius: var(--es-radius, 16px);
+  transition: transform 0.35s cubic-bezier(.2, .7, .2, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+
+  // top accent bar (grows on hover) — the signature detail
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 4px;
+    width: 34%;
+    background: linear-gradient(90deg, $primaryColor, $accentColor);
+    border-radius: var(--es-radius, 16px) 0 8px 0;
+    transition: width 0.4s cubic-bezier(.2, .7, .2, 1);
+    z-index: 3;
+  }
+
+  &__media {
+    position: relative;
+    border-radius: var(--es-radius, 16px) var(--es-radius, 16px) 0 0;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+
+    // ResponsiveImage renders a <picture> (inline by default) — force it to
+    // fill the fixed-ratio box so all three media are exactly the same height.
+    picture {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    // dark scrim at the bottom so the floating chip + number read clearly
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba($titleColor, 0) 45%, rgba($titleColor, .55) 100%);
+      pointer-events: none;
+      z-index: 1;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(.2, .7, .2, 1);
+  }
+
+  // big numbered marker (services read as a set: 01 / 02 / 03)
+  &__num {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    z-index: 2;
+    font: 800 clamp(30px, 4vw, 42px)/1 $titlefont;
+    letter-spacing: -.03em;
+    color: rgba($whiteColor, .85);
+    text-shadow: 0 2px 10px rgba($titleColor, .4);
+  }
+
+  &__body {
+    padding: 40px clamp(20px, 2.5vw, 28px) clamp(22px, 2.5vw, 28px);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    position: relative;
+  }
+
+  // floating icon chip overlapping the media / body seam
+  .es-card__icon {
+    position: absolute;
+    top: -28px;
+    left: clamp(20px, 2.5vw, 28px);
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $whiteColor;
+    color: $primaryColor;
+    box-shadow: 0 10px 24px rgba($titleColor, .18);
+    transition: background 0.35s ease, color 0.35s ease, transform 0.35s ease;
+
+    svg { width: 26px; height: 26px; }
+  }
+
+  .es-card__title {
+    margin-top: 0;
+    transition: color 0.25s ease;
+  }
+  .es-card__desc { flex: 1; }
+  .es-card__link {
+    margin-top: auto;
+    padding-top: 18px;
+    color: $primaryColor;
+    font-weight: 600;
+
+    svg { transition: transform 0.3s cubic-bezier(.2, .7, .2, 1); }
+  }
+
+  // ── hover state — the whole card comes alive ──────────────────────────────
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 22px 48px rgba($titleColor, .16);
+    border-color: transparent;
+
+    &::before { width: 100%; }
+
+    .es-svc-card__img { transform: scale(1.08); }
+
+    .es-card__icon {
+      background: $primaryColor;
+      color: $whiteColor;
+      transform: translateY(-4px) rotate(-4deg);
+    }
+
+    .es-card__title { color: $primaryColor; }
+
+    .es-card__link {
+      color: $accentColor;
+      svg { transform: translateX(5px); }
+    }
+  }
+
+  &:focus-within {
+    box-shadow: 0 22px 48px rgba($titleColor, .16);
+    &::before { width: 100%; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    &, &::before, &__img, .es-card__icon, .es-card__link svg { transition: none; }
+    &:hover { transform: none; }
+    &:hover .es-svc-card__img { transform: none; }
+  }
+}
+
+// ── Detailed offerings section ───────────────────────────────────────────────
+.es-svc-offerings {
+  background: $surfaceColor;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @media (min-width: 576px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (min-width: 992px) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+  }
+}
+
+.es-svc-offering {
+  // Inherits .es-card (white, flex column). Image header + floating icon +
+  // numbered marker over the image, with a rich hover.
+  position: relative;
+  height: 100%;
+  padding: 0;                 // image sits flush at the top
+  overflow: hidden;           // clip image zoom to the rounded corners
+  border: 1px solid $hairline;
+  border-top: 1px solid $hairline; // override base es-card 3px accent border-top
+  border-radius: var(--es-radius, 16px);
+  transition: transform 0.32s cubic-bezier(.2, .7, .2, 1), box-shadow 0.32s ease,
+    border-color 0.32s ease, background 0.32s ease;
+
+  // soft brand glow that blooms from the top-right corner on hover — the signature
+  &__glow {
+    position: absolute;
+    bottom: -70px;
+    right: -70px;
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba($primaryColor, .18), transparent 70%);
+    opacity: 0;
+    transform: scale(.6);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  // ── image header ──────────────────────────────────────────────────────────
+  &__media {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+
+    // ResponsiveImage renders an inline <picture> — force it to fill the frame
+    picture { display: block; width: 100%; height: 100%; }
+
+    // bottom scrim so the numeral reads clearly
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba($titleColor, 0) 40%, rgba($titleColor, .6) 100%);
+      pointer-events: none;
+      z-index: 1;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(.2, .7, .2, 1);
+  }
+
+  // numbered marker over the image (top-right)
+  &__index {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    z-index: 2;
+    font: 800 clamp(24px, 3vw, 32px)/1 $titlefont;
+    letter-spacing: -.03em;
+    color: rgba($whiteColor, .9);
+    text-shadow: 0 2px 10px rgba($titleColor, .45);
+    transition: color 0.32s ease;
+  }
+
+  // ── body ──────────────────────────────────────────────────────────────────
+  &__body {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 34px clamp(18px, 2vw, 24px) clamp(20px, 2vw, 24px);
+    background: $whiteColor;
+    transition: background 0.32s ease;
+  }
+
+  // floating icon chip overlapping the image / body seam
+  &__icon {
+    position: absolute;
+    top: -26px;
+    left: clamp(18px, 2vw, 24px);
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $whiteColor;
+    color: $primaryColor;
+    box-shadow: 0 10px 22px rgba($titleColor, .18);
+    z-index: 3;
+    transition: background 0.32s ease, color 0.32s ease, transform 0.32s ease;
+
+    svg { width: 24px; height: 24px; }
+  }
+
+  &__title {
+    margin: 0 0 10px;
+    font-size: clamp(16px, 1.5vw, 18px);
+    transition: color 0.25s ease;
+  }
+
+  .es-card__desc {
+    flex: 1;
+    font-size: 14.5px;
+  }
+
+  &__link {
+    margin-top: auto;
+    padding-top: 16px;
+    color: $primaryColor;
+    font-weight: 600;
+
+    svg { transition: transform 0.3s cubic-bezier(.2, .7, .2, 1); }
+  }
+
+  // ── hover ─────────────────────────────────────────────────────────────────
+  &:hover,
+  &:focus-within {
+    transform: translateY(-8px);
+    border-color: transparent;
+    box-shadow: 0 22px 46px rgba($titleColor, .16);
+
+    .es-svc-offering__glow { opacity: 1; transform: scale(1); }
+    .es-svc-offering__img { transform: scale(1.09); }
+    .es-svc-offering__body { background: linear-gradient(180deg, $whiteColor, rgba($primaryColor, .04)); }
+
+    .es-svc-offering__icon {
+      background: $primaryColor;
+      color: $whiteColor;
+      transform: translateY(-3px) rotate(-4deg);
+    }
+
+    .es-svc-offering__title { color: $primaryColor; }
+
+    .es-svc-offering__link {
+      color: $accentColor;
+      svg { transform: translateX(5px); }
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    &, &__glow, &__img, &__icon, &__link svg { transition: none; }
+    &:hover, &:focus-within { transform: none; }
+    &:hover .es-svc-offering__img { transform: none; }
+  }
+}
+
+// ── Service Detail page — full redesign ──────────────────────────────────────
+// Layout classes: .svc-hero, .svc-layout, .svc-sidebar, .svc-cta-band, etc.
+// All colours are brand tokens only — no raw hex values.
+
 .service-details__area {
-    // Hero Section
-    .service-hero {
-        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-        padding: 80px 60px;
-        border-radius: 16px;
-        margin-bottom: 80px;
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-        
-        .hero-title {
-            font-size: 42px;
-            font-weight: 700;
-            color: #00306E;
-            line-height: 1.3;
-            letter-spacing: -0.5px;
-            margin-bottom: 30px;
-        }
-        
-        .hero-description {
-            font-size: 20px;
-            line-height: 1.7;
-            color: #53545b;
-            margin-bottom: 0;
-            max-width: 90%;
-        }
-        
-        .hero-image {
-            img {
-                border-radius: 12px;
-                box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
-            }
-        }
-    }
-    
-    .service-details__content {
-        .section-title {
-            font-size: 32px;
-            font-weight: 600;
-            color: #00306E;
-            margin-bottom: 40px;
-            position: relative;
-            padding-bottom: 20px;
-            
-            &:after {
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 80px;
-                height: 4px;
-                background: linear-gradient(90deg, #3270FC 0%, #e9ecef 100%);
-                border-radius: 2px;
-            }
-        }
-        
-        // Offerings Section
-        .service-offerings {
-            margin-bottom: 80px;
-            
-            .offerings-grid {
-                .offering-item {
-                    display: flex;
-                    align-items: flex-start;
-                    gap: 30px;
-                    padding: 35px;
-                    background: #ffffff;
-                    border-radius: 12px;
-                    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
-                    border: 1px solid #f0f0f0;
-                    transition: all 0.3s ease;
-                    margin-bottom: 30px;
-                    
-                    &:hover {
-                        transform: translateY(-5px);
-                        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
-                        border-color: #3270FC;
-                    }
-                    
-                    .offering-icon {
-                        .icon-number {
-                            width: 60px;
-                            height: 60px;
-                            background: linear-gradient(135deg, #3270FC 0%, #5B8CFF 100%);
-                            color: #ffffff;
-                            border-radius: 50%;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            font-weight: 600;
-                            font-size: 20px;
-                            flex-shrink: 0;
-                            box-shadow: 0 4px 15px rgba(50, 112, 252, 0.3);
-                        }
-                    }
-                    
-                    .offering-content {
-                        .offering-title {
-                            font-size: 22px;
-                            font-weight: 600;
-                            color: #00306E;
-                            margin-bottom: 16px;
-                            line-height: 1.4;
-                        }
-                        
-                        .offering-description {
-                            font-size: 17px;
-                            line-height: 1.7;
-                            color: #53545b;
-                            margin: 0;
-                        }
-                    }
-                }
-            }
-        }
-        
-        // Types Section
-        .service-types {
-            margin-bottom: 80px;
-            
-            .types-grid {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 30px;
-                
-                @media (max-width: 1200px) {
-                    grid-template-columns: repeat(2, 1fr);
-                }
-                
-                @media (max-width: 768px) {
-                    grid-template-columns: 1fr;
-                }
-                
-                .type-card {
-                    background: #ffffff;
-                    padding: 35px;
-                    border-radius: 12px;
-                    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
-                    border: 1px solid #f0f0f0;
-                    transition: all 0.3s ease;
-                    text-align: center;
-                    
-                    &:hover {
-                        transform: translateY(-5px);
-                        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
-                        border-color: #D2093C;
-                    }
-                    
-                    .type-name {
-                        font-size: 20px;
-                        font-weight: 600;
-                        color: #00306E;
-                        margin-bottom: 16px;
-                        line-height: 1.4;
-                    }
-                    
-                    .type-description {
-                        font-size: 16px;
-                        line-height: 1.6;
-                        color: #53545b;
-                        margin: 0;
-                    }
-                }
-            }
-        }
-        
-        // Why Choose Us Section
-        .why-choose-us {
-            margin-bottom: 80px;
-            
-            .reasons-grid {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 35px;
-                
-                @media (max-width: 768px) {
-                    grid-template-columns: 1fr;
-                }
-                
-                .reason-item {
-                    display: flex;
-                    align-items: flex-start;
-                    gap: 25px;
-                    padding: 35px;
-                    background: #ffffff;
-                    border-radius: 12px;
-                    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
-                    border: 1px solid #f0f0f0;
-                    transition: all 0.3s ease;
-                    
-                    &:hover {
-                        transform: translateY(-5px);
-                        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
-                        border-color: #3270FC;
-                    }
-                    
-                    .reason-icon {
-                        width: 60px;
-                        height: 60px;
-                        background: linear-gradient(135deg, #D2093C 0%, #E6395C 100%);
-                        border-radius: 50%;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        flex-shrink: 0;
-                        box-shadow: 0 4px 15px rgba(208, 9, 60, 0.3);
-                        
-                        svg {
-                            color: #ffffff;
-                            width: 28px;
-                            height: 28px;
-                        }
-                    }
-                    
-                    .reason-content {
-                        .reason-title {
-                            font-size: 20px;
-                            font-weight: 600;
-                            color: #00306E;
-                            margin-bottom: 12px;
-                            line-height: 1.4;
-                        }
-                        
-                        .reason-description {
-                            font-size: 16px;
-                            line-height: 1.6;
-                            color: #53545b;
-                            margin: 0;
-                        }
-                    }
-                }
-            }
-        }
-        
-        // CTA Section
-        .service-cta {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            padding: 70px 50px;
-            border-radius: 16px;
-            text-align: center;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-            margin-left: -15px;
-            margin-right: -15px;
-            width: calc(100% + 30px);
-            
-            .cta-title {
-                font-size: 32px;
-                font-weight: 600;
-                color: #00306E;
-                margin-bottom: 25px;
-            }
-            
-            .cta-text {
-                font-size: 20px;
-                line-height: 1.6;
-                color: #53545b;
-                margin-bottom: 40px;
-                max-width: 700px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-            
-            .contact-btn {
-                display: inline-flex;
-                align-items: center;
-                gap: 12px;
-                padding: 18px 35px;
-                background: linear-gradient(135deg, #3270FC 0%, #5B8CFF 100%);
-                color: #ffffff;
-                text-decoration: none;
-                border-radius: 35px;
-                font-weight: 600;
-                font-size: 18px;
-                transition: all 0.3s ease;
-                box-shadow: 0 8px 30px rgba(50, 112, 252, 0.3);
-                
-                &:hover {
-                    background: linear-gradient(135deg, #2B5FD9 0%, #4A7BE8 100%);
-                    transform: translateY(-3px);
-                    box-shadow: 0 12px 40px rgba(50, 112, 252, 0.4);
-                    color: #ffffff;
-                    text-decoration: none;
-                }
-                
-                svg {
-                    transition: transform 0.3s ease;
-                }
-                
-                &:hover svg {
-                    transform: translateX(5px);
-                }
-            }
-        }
-    }
-    
-    .service-sidebar {
-        .sidebar-widget {
-            background: #ffffff;
-            border-radius: 12px;
-            padding: 35px;
-            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
-            border: 1px solid #f0f0f0;
-            margin-bottom: 30px;
-            
-            &:last-child {
-                margin-bottom: 0;
-            }
-            
-            .widget-title {
-                font-size: 22px;
-                font-weight: 600;
-                color: #00306E;
-                margin-bottom: 25px;
-                padding-bottom: 20px;
-                border-bottom: 2px solid #f0f0f0;
-            }
-            
-            .service-info {
-                .info-item {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    padding: 16px 0;
-                    border-bottom: 1px solid #f5f5f5;
-                    
-                    &:last-child {
-                        border-bottom: none;
-                    }
-                    
-                    .label {
-                        font-weight: 500;
-                        color: #53545b;
-                        font-size: 15px;
-                    }
-                    
-                    .value {
-                        font-weight: 600;
-                        color: #3270FC;
-                        font-size: 15px;
-                    }
-                }
-            }
-            
-            .contact-info {
-                .contact-item {
-                    display: flex;
-                    align-items: center;
-                    gap: 20px;
-                    padding: 20px 0;
-                    border-bottom: 1px solid #f5f5f5;
-                    
-                    &:last-child {
-                        border-bottom: none;
-                    }
-                    
-                    .contact-icon {
-                        width: 50px;
-                        height: 50px;
-                        background: linear-gradient(135deg, #3270FC 0%, #5B8CFF 100%);
-                        border-radius: 50%;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        flex-shrink: 0;
-                        box-shadow: 0 4px 15px rgba(50, 112, 252, 0.3);
-                        
-                        svg {
-                            color: #ffffff;
-                            width: 20px;
-                            height: 20px;
-                        }
-                    }
-                    
-                    .contact-text {
-                        display: flex;
-                        flex-direction: column;
-                        
-                        .label {
-                            font-size: 12px;
-                            color: #999;
-                            text-transform: uppercase;
-                            letter-spacing: 0.5px;
-                            margin-bottom: 4px;
-                        }
-                        
-                        .value {
-                            font-size: 15px;
-                            font-weight: 600;
-                            color: #00306E;
-                        }
-                    }
-                }
-            }
-            
-            .benefits-list {
-                list-style: none;
-                padding: 0;
-                margin: 0;
-                
-                li {
-                    position: relative;
-                    padding-left: 30px;
-                    margin-bottom: 16px;
-                    font-size: 16px;
-                    line-height: 1.6;
-                    color: #53545b;
-                    
-                    &:before {
-                        content: '→';
-                        position: absolute;
-                        left: 0;
-                        top: 0;
-                        color: #3270FC;
-                        font-weight: 600;
-                        font-size: 18px;
-                    }
-                }
-            }
-            
-            .help-text {
-                font-size: 16px;
-                line-height: 1.6;
-                color: #53545b;
-                margin-bottom: 25px;
-            }
-            
-            .help-btn {
-                display: inline-block;
-                padding: 15px 30px;
-                background: linear-gradient(135deg, #D2093C 0%, #E6395C 100%);
-                color: #ffffff;
-                text-decoration: none;
-                border-radius: 30px;
-                font-weight: 500;
-                font-size: 15px;
-                transition: all 0.3s ease;
-                box-shadow: 0 6px 20px rgba(208, 9, 60, 0.3);
-                
-                &:hover {
-                    background: linear-gradient(135deg, #B80732 0%, #C92A4A 100%);
-                    transform: translateY(-2px);
-                    box-shadow: 0 8px 25px rgba(208, 9, 60, 0.4);
-                    color: #ffffff;
-                    text-decoration: none;
-                }
-            }
-        }
-    }
-    
-    .related-services {
-        margin-top: 100px;
-        
-        .section-title {
-            font-size: 32px;
-            font-weight: 600;
-            color: #00306E;
-            text-align: center;
-            margin-bottom: 50px;
-            position: relative;
-            padding-bottom: 20px;
-            
-            &:after {
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 80px;
-                height: 4px;
-                background: linear-gradient(90deg, #3270FC 0%, #e9ecef 100%);
-                border-radius: 2px;
-            }
-        }
-        
-        .related-service-card {
-            background: #ffffff;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            border: 1px solid #f0f0f0;
-            height: 100%;
-            
-            &:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
-                border-color: #3270FC;
-            }
-            
-            .service-image {
-                height: 180px;
-                overflow: hidden;
-                
-                img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    transition: transform 0.3s ease;
-                }
-            }
-            
-            &:hover .service-image img {
-                transform: scale(1.1);
-            }
-            
-            .service-content {
-                padding: 25px;
-                
-                .service-title {
-                    font-size: 18px;
-                    font-weight: 600;
-                    color: #00306E;
-                    margin-bottom: 12px;
-                    line-height: 1.4;
-                }
-                
-                .service-description {
-                    font-size: 15px;
-                    line-height: 1.6;
-                    color: #53545b;
-                    margin-bottom: 20px;
-                }
-                
-                .view-details-btn {
-                    display: inline-flex;
-                    align-items: center;
-                    gap: 8px;
-                    padding: 10px 20px;
-                    background: linear-gradient(135deg, #3270FC 0%, #5B8CFF 100%);
-                    color: #ffffff;
-                    text-decoration: none;
-                    border-radius: 25px;
-                    font-weight: 500;
-                    font-size: 13px;
-                    transition: all 0.3s ease;
-                    box-shadow: 0 4px 15px rgba(50, 112, 252, 0.3);
-                    
-                    &:hover {
-                        background: linear-gradient(135deg, #2B5FD9 0%, #4A7BE8 100%);
-                        transform: translateY(-2px);
-                        box-shadow: 0 6px 20px rgba(50, 112, 252, 0.4);
-                        color: #ffffff;
-                        text-decoration: none;
-                    }
-                    
-                    .arrow-icon {
-                        transition: transform 0.3s ease;
-                    }
-                    
-                    &:hover .arrow-icon {
-                        transform: translateX(3px);
-                    }
-                }
-            }
-        }
-    }
+  // contain horizontal bleed from all inner panels
+  overflow-x: hidden;
 }
 
-// Home page service section styling
+// ── Shared section heading used across the detail page ────────────────────────
+.svc-h2 {
+  font: 700 clamp(22px, 2.8vw, 34px)/1.2 $titlefont;
+  letter-spacing: -.02em;
+  color: $titleColor;
+  margin: 0 0 32px;
+  position: relative;
+  padding-bottom: 18px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 48px;
+    height: 3px;
+    background: linear-gradient(90deg, $primaryColor, $accentColor);
+    border-radius: 2px;
+  }
+}
+
+.svc-related-heading {
+  text-align: center;
+  margin-bottom: 40px;
+
+  &::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+// ── Ghost / secondary button (hero "Call us") ─────────────────────────────────
+.svc-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font: 600 15px/1 $bodyfont;
+  padding: 13px 24px;
+  border-radius: 10px;
+  border: 2px solid $primaryColor;
+  color: $primaryColor;
+  text-decoration: none;
+  transition: $transition;
+
+  &:hover,
+  &:focus-visible {
+    background: $primaryColor;
+    color: $whiteColor;
+  }
+
+  @media (prefers-reduced-motion: reduce) { transition: none; }
+}
+
+// ── 1. HERO ───────────────────────────────────────────────────────────────────
+.svc-hero {
+  background: linear-gradient(160deg, $surfaceColor 70%, rgba($primaryColor, .06) 100%);
+  padding: clamp(56px, 8vw, 100px) 0;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
+    align-items: center;
+
+    @media (min-width: 768px) {
+      grid-template-columns: 1.05fr .95fr;
+      gap: 64px;
+    }
+  }
+
+  // Left column
+  &__left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__title {
+    font: 800 clamp(28px, 4vw, 48px)/1.15 $titlefont;
+    letter-spacing: -.025em;
+    color: $titleColor;
+    margin: 0 0 20px;
+  }
+
+  &__lead {
+    font: 400 clamp(16px, 1.5vw, 18px)/1.75 $bodyfont;
+    color: $bodyColor;
+    margin: 0 0 28px;
+    max-width: 58ch;
+  }
+
+  // Trust chips row
+  .svc-trust-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 32px;
+  }
+
+  .svc-trust-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font: 600 12px/1 $bodyfont;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: $primaryColor;
+    background: rgba($primaryColor, .08);
+    border: 1px solid rgba($primaryColor, .18);
+    padding: 7px 14px;
+    border-radius: 100px;
+
+    svg { flex-shrink: 0; }
+  }
+
+  // Button row
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+  }
+
+  // Right column — image frame
+  &__right {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__frame {
+    position: relative;
+    width: 100%;
+    max-width: 540px;
+    border-radius: var(--es-radius, 14px);
+    overflow: visible; // allow the floating badge to overflow the frame edge
+    box-shadow: var(--es-shadow, 0 8px 30px rgba($titleColor, .08));
+    aspect-ratio: 4 / 3;
+
+    // the <img> is rounded via its own border-radius, so the frame does NOT
+    // need overflow:hidden (which would clip the badge).
+    picture {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: var(--es-radius, 14px);
+  }
+
+  // Floating badge chip
+  &__badge {
+    position: absolute;
+    bottom: -14px;
+    left: 24px;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font: 700 12px/1 $bodyfont;
+    letter-spacing: .04em;
+    color: $whiteColor;
+    background: $primaryColor;
+    padding: 10px 16px;
+    border-radius: 100px;
+    box-shadow: 0 6px 20px rgba($primaryColor, .4);
+    white-space: nowrap;
+    z-index: 2;
+
+    svg { flex-shrink: 0; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+}
+
+// ── 2. BODY SECTION — main content + sticky sidebar ──────────────────────────
+.svc-body-section {
+  padding-top: clamp(40px, 6vw, 80px);
+}
+
+.svc-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: start;
+
+  @media (min-width: 992px) {
+    grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
+    gap: 48px;
+  }
+}
+
+// Main content column
+.svc-main {
+  min-width: 0; // prevent grid blowout
+}
+
+// Generic content block inside .svc-main
+.svc-block {
+  margin-bottom: clamp(48px, 6vw, 72px);
+
+  &:last-child { margin-bottom: 0; }
+}
+
+// ── Offerings grid ────────────────────────────────────────────────────────────
+.svc-offerings-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+
+  @media (min-width: 640px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.svc-offering-card {
+  position: relative;
+  background: $whiteColor;
+  border: 1px solid $hairline;
+  border-left: 4px solid $primaryColor;
+  border-radius: var(--es-radius, 14px);
+  padding: clamp(20px, 2.5vw, 32px) clamp(20px, 2.5vw, 28px);
+  box-shadow: var(--es-shadow, 0 8px 30px rgba($titleColor, .08));
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-left-color 0.3s ease;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 40px rgba($primaryColor, .14);
+    border-left-color: $accentColor;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+    &:hover { transform: none; }
+  }
+}
+
+.svc-offering-num {
+  display: block;
+  font: 800 clamp(32px, 4vw, 44px)/1 $titlefont;
+  letter-spacing: -.04em;
+  color: rgba($primaryColor, .12);
+  margin-bottom: 12px;
+  transition: color 0.3s ease;
+
+  .svc-offering-card:hover & { color: rgba($accentColor, .18); }
+}
+
+.svc-offering-title {
+  font: 600 clamp(16px, 1.6vw, 19px)/1.35 $titlefont;
+  color: $titleColor;
+  margin: 0 0 10px;
+  transition: color 0.25s ease;
+
+  .svc-offering-card:hover & { color: $primaryColor; }
+}
+
+.svc-offering-desc {
+  font: 400 clamp(14px, 1.3vw, 15.5px)/1.7 $bodyfont;
+  color: $bodyColor;
+  margin: 0;
+}
+
+// ── Types / paper types grid ──────────────────────────────────────────────────
+.svc-types-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+
+  @media (min-width: 480px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.svc-type-tile {
+  background: $surfaceColor;
+  border: 1px solid $hairline;
+  border-top: 3px solid $primaryColor;
+  border-radius: var(--es-radius, 14px);
+  padding: clamp(16px, 2vw, 24px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-top-color 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba($primaryColor, .12);
+    border-top-color: $accentColor;
+    background: $whiteColor;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+    &:hover { transform: none; }
+  }
+}
+
+.svc-type-name {
+  display: block;
+  font: 600 clamp(14px, 1.4vw, 16px)/1.3 $titlefont;
+  color: $titleColor;
+  margin-bottom: 8px;
+}
+
+.svc-type-desc {
+  font: 400 clamp(13px, 1.2vw, 14px)/1.6 $bodyfont;
+  color: $bodyColor;
+  margin: 0;
+}
+
+// ── Why Choose Us grid ────────────────────────────────────────────────────────
+.svc-reasons-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+
+  @media (min-width: 640px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.svc-reason-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: $whiteColor;
+  border: 1px solid $hairline;
+  border-radius: var(--es-radius, 14px);
+  padding: clamp(18px, 2vw, 28px);
+  box-shadow: var(--es-shadow, 0 8px 30px rgba($titleColor, .08));
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 36px rgba($primaryColor, .13);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+    &:hover { transform: none; }
+  }
+}
+
+.svc-reason-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba($primaryColor, .1);
+  color: $primaryColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, color 0.3s ease;
+
+  .svc-reason-card:hover & {
+    background: $primaryColor;
+    color: $whiteColor;
+  }
+}
+
+.svc-reason-body { flex: 1; min-width: 0; }
+
+.svc-reason-title {
+  font: 600 clamp(15px, 1.5vw, 17px)/1.3 $titlefont;
+  color: $titleColor;
+  margin: 0 0 6px;
+}
+
+.svc-reason-desc {
+  font: 400 clamp(13px, 1.3vw, 14.5px)/1.6 $bodyfont;
+  color: $bodyColor;
+  margin: 0;
+}
+
+// ── 2b. STICKY SIDEBAR ────────────────────────────────────────────────────────
+.svc-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  // Sticky behaviour on desktop — sidebar stacks below on mobile (grid order)
+  @media (min-width: 992px) {
+    position: sticky;
+    top: 96px;
+    align-self: start;
+  }
+}
+
+// CTA gradient card
+.svc-sidebar__cta {
+  background: linear-gradient(160deg, $primaryColor 0%, $titleColor 100%);
+  border-radius: var(--es-radius, 14px);
+  padding: clamp(24px, 3vw, 36px);
+  color: $whiteColor;
+  text-align: center;
+}
+
+.svc-sidebar__cta-label {
+  font: 700 11px/1 $bodyfont;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba($whiteColor, .7);
+  margin: 0 0 8px;
+}
+
+.svc-sidebar__cta-headline {
+  font: 700 clamp(18px, 2vw, 22px)/1.2 $titlefont;
+  color: $whiteColor;
+  margin: 0 0 20px;
+}
+
+.svc-sidebar__cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font: 600 14px/1 $bodyfont;
+  background: $whiteColor;
+  color: $primaryColor;
+  padding: 12px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: $transition;
+
+  &:hover,
+  &:focus-visible {
+    background: rgba($whiteColor, .9);
+    color: $titleColor;
+  }
+
+  @media (prefers-reduced-motion: reduce) { transition: none; }
+}
+
+// White bordered info/contact widgets
+.svc-sidebar__widget {
+  background: $whiteColor;
+  border: 1px solid $hairline;
+  border-radius: var(--es-radius, 14px);
+  padding: clamp(20px, 2.5vw, 28px);
+  box-shadow: var(--es-shadow, 0 8px 30px rgba($titleColor, .08));
+}
+
+.svc-sidebar__widget-title {
+  font: 600 clamp(16px, 1.5vw, 18px)/1.3 $titlefont;
+  color: $titleColor;
+  margin: 0 0 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid $hairline;
+}
+
+// Service info rows
+.svc-info-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.svc-info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid $hairline;
+
+  &:last-child { border-bottom: none; }
+}
+
+.svc-info-label {
+  font: 400 13.5px/1.4 $bodyfont;
+  color: $bodyColor;
+}
+
+.svc-info-value {
+  font: 600 13.5px/1.4 $bodyfont;
+  color: $primaryColor;
+  text-align: right;
+}
+
+// Quick Contact rows
+.svc-contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.svc-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid $hairline;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.2s ease;
+  border-radius: 8px;
+
+  &:last-child { border-bottom: none; }
+
+  &:hover .svc-contact-icon {
+    background: $primaryColor;
+    color: $whiteColor;
+  }
+
+  @media (prefers-reduced-motion: reduce) { transition: none; }
+}
+
+.svc-contact-icon {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba($primaryColor, .1);
+  color: $primaryColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.svc-contact-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.svc-contact-label {
+  font: 500 11px/1 $bodyfont;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: $bodyColor;
+}
+
+.svc-contact-value {
+  font: 600 13.5px/1.3 $bodyfont;
+  color: $titleColor;
+  word-break: break-all;
+}
+
+// ── 3. CTA BAND ───────────────────────────────────────────────────────────────
+// Contained as a bold rounded brand panel (no bleed trick — avoids overflow risk)
+.svc-cta-band {
+  padding: clamp(32px, 5vw, 64px) 0;
+}
+
+.svc-cta-band__panel {
+  background: linear-gradient(120deg, $titleColor 0%, $primaryColor 100%);
+  border-radius: var(--es-radius, 14px);
+  padding: clamp(48px, 6vw, 80px) clamp(24px, 4vw, 64px);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  // Subtle decorative circle
+  &::before {
+    content: '';
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    background: rgba($whiteColor, .04);
+    pointer-events: none;
+  }
+}
+
+.svc-cta-band__title {
+  font: 700 clamp(24px, 3vw, 38px)/1.2 $titlefont;
+  letter-spacing: -.02em;
+  color: $whiteColor;
+  margin: 0 0 16px;
+}
+
+.svc-cta-band__text {
+  font: 400 clamp(15px, 1.5vw, 17px)/1.7 $bodyfont;
+  color: rgba($whiteColor, .85);
+  max-width: 62ch;
+  margin: 0 auto 32px;
+}
+
+.svc-cta-band__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font: 600 15px/1 $bodyfont;
+  background: $whiteColor;
+  color: $primaryColor;
+  padding: 14px 28px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: $transition;
+
+  &:hover,
+  &:focus-visible {
+    background: rgba($whiteColor, .9);
+    color: $titleColor;
+  }
+
+  @media (prefers-reduced-motion: reduce) { transition: none; }
+}
+
+// ── 4. RELATED SERVICES ───────────────────────────────────────────────────────
+.svc-related-section {
+  background: $surfaceColor;
+}
+
+.svc-related-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+
+  @media (min-width: 576px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: 992px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  // Equal-height cards
+  .es-svc-card {
+    height: 100%;
+  }
+}
+
+// Home page service section link overrides (keep scoped, teal only)
 .react_popular_topics {
-    .item__inner {
-        .react-content {
-            .view-details-btn {
-                display: inline-flex;
-                align-items: center;
-                gap: 8px;
-                padding: 0;
-                background: none;
-                color: #3270FC !important;
-                text-decoration: none;
-                border: none;
-                font-weight: 500;
-                font-size: 14px;
-                transition: all 0.3s ease;
-                outline: none;
-                cursor: pointer;
-                
-                &:hover {
-                    color: #2B5FD9 !important;
-                    text-decoration: none;
-                }
-                
-                svg {
-                    width: 16px;
-                    height: 16px;
-                    transition: transform 0.3s ease;
-                }
-                
-                &:hover svg {
-                    transform: translateX(3px);
-                }
-            }
-        }
-    }
-}
+  .item__inner {
+    .react-content {
+      .view-details-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: none;
+        color: $primaryColor;
+        text-decoration: none;
+        border: none;
+        font: 500 14px/1 $bodyfont;
+        transition: $transition;
+        cursor: pointer;
 
-// Responsive adjustments
-@media (max-width: 1199px) {
-    .services-intro__area {
-        .intro-content .intro-title {
-            font-size: 36px;
-        }
-    }
-    
-    .main-services__area,
-    .detailed-offerings__area {
-        .section-title .title {
-            font-size: 32px;
-        }
-    }
-    
-    .service-details__area {
-        .service-hero {
-            padding: 60px 40px;
-            
-            .hero-title {
-                font-size: 36px;
-            }
-        }
-        
-        .service-details__content {
-            .section-title {
-                font-size: 28px;
-            }
-        }
-    }
-}
+        &:hover { color: darken($primaryColor, 10%); }
 
-@media (max-width: 991px) {
-    .services-intro__area {
-        .intro-content .intro-title {
-            font-size: 32px;
+        svg {
+          width: 15px;
+          height: 15px;
+          transition: transform 0.3s ease;
         }
-    }
-    
-    .main-services__area,
-    .detailed-offerings__area {
-        .section-title .title {
-            font-size: 28px;
-        }
-        
-        .service-card,
-        .offering-card {
-            margin-bottom: 20px;
-        }
-    }
-    
-    .service-details__area {
-        .service-hero {
-            padding: 50px 30px;
-            margin-bottom: 60px;
-            
-            .hero-title {
-                font-size: 30px;
-            }
-        }
-        
-        .service-details__content {
-            .section-title {
-                font-size: 26px;
-                margin-bottom: 30px;
-            }
-            
-            .service-offerings,
-            .service-types,
-            .why-choose-us {
-                margin-bottom: 60px;
-            }
-            
-            .service-offerings {
-                .offerings-grid {
-                    .offering-item {
-                        flex-direction: column;
-                        text-align: center;
-                        padding: 25px;
-                        
-                        .offering-icon {
-                            margin: 0 auto 20px;
-                        }
-                    }
-                }
-            }
-            
-            .service-cta {
-                padding: 50px 30px;
-                
-                .cta-title {
-                    font-size: 28px;
-                }
-                
-                .cta-text {
-                    font-size: 18px;
-                }
-            }
-        }
-        
-        .service-sidebar {
-            margin-top: 50px;
-            
-            .sidebar-widget {
-                padding: 25px;
-                margin-bottom: 25px;
-            }
-        }
-        
-        .related-services {
-            margin-top: 80px;
-            
-            .section-title {
-                font-size: 28px;
-            }
-        }
-    }
-}
 
-@media (max-width: 767px) {
-    .services-intro__area {
-        .intro-content {
-            .intro-title {
-                font-size: 28px;
-            }
-            
-            .intro-description {
-                font-size: 16px;
-            }
-        }
+        &:hover svg { transform: translateX(3px); }
+      }
     }
-    
-    .main-services__area,
-    .detailed-offerings__area {
-        .section-title .title {
-            font-size: 24px;
-        }
-        
-        .service-card,
-        .offering-card {
-            .service-content,
-            .offering-content {
-                padding: 20px;
-            }
-            
-            .service-title {
-                font-size: 18px;
-            }
-            
-            .offering-title {
-                font-size: 16px;
-            }
-            
-            .service-description {
-                font-size: 16px;
-            }
-            
-            .offering-description {
-                font-size: 15px;
-            }
-        }
-    }
-    
-    .service-details__area {
-        .service-hero {
-            padding: 40px 25px;
-            
-            .hero-title {
-                font-size: 26px;
-                margin-bottom: 20px;
-            }
-            
-            .hero-description {
-                font-size: 18px;
-            }
-        }
-        
-        .service-details__content {
-            .section-title {
-                font-size: 24px;
-                margin-bottom: 25px;
-            }
-            
-            .service-offerings,
-            .service-types,
-            .why-choose-us {
-                margin-bottom: 50px;
-            }
-            
-            .service-offerings {
-                .offerings-grid {
-                    .offering-item {
-                        padding: 20px;
-                        margin-bottom: 20px;
-                        
-                        .offering-icon {
-                            .icon-number {
-                                width: 50px;
-                                height: 50px;
-                                font-size: 18px;
-                            }
-                        }
-                        
-                        .offering-content {
-                            .offering-title {
-                                font-size: 20px;
-                            }
-                        }
-                    }
-                }
-            }
-            
-            .service-cta {
-                padding: 40px 25px;
-                
-                .cta-title {
-                    font-size: 24px;
-                }
-                
-                .cta-text {
-                    font-size: 16px;
-                }
-                
-                .contact-btn {
-                    padding: 15px 30px;
-                    font-size: 16px;
-                }
-            }
-        }
-        
-        .related-services {
-            margin-top: 60px;
-            
-            .section-title {
-                font-size: 24px;
-            }
-        }
-    }
-}
-
-@media (max-width: 575px) {
-    .services-intro__area {
-        .intro-content .intro-title {
-            font-size: 24px;
-        }
-    }
-    
-    .main-services__area,
-    .detailed-offerings__area {
-        .section-title .title {
-            font-size: 22px;
-        }
-    }
-    
-    .service-details__area {
-        .service-hero {
-            padding: 30px 20px;
-            
-            .hero-title {
-                font-size: 22px;
-            }
-        }
-        
-        .service-details__content {
-            .section-title {
-                font-size: 20px;
-            }
-        }
-        
-        .related-services {
-            .section-title {
-                font-size: 22px;
-            }
-        }
-    }
+  }
 }

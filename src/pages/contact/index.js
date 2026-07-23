@@ -1,9 +1,9 @@
 import React from 'react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-import Breadcrumb from '../../components/Breadcrumb';
 import ScrollToTop from '../../components/ScrollTop';
 import ContactMain from './ContactMain';
+import Seo from '../../components/Seo';
 
 import footerLogo from '../../assets/logo.png';
 
@@ -11,6 +11,12 @@ const Contact = () => {
 
     return (
         <>
+            <Seo
+                title="Contact Us | Explore S Research Solutions"
+                description="Get in touch with Explore S Research Solutions for PhD research assistance, thesis writing, dissertation help, and paper publication services. Call or email us today."
+                path="/contact"
+                keywords="contact Explore S Research Solutions, PhD research help contact, thesis writing inquiry, research support India"
+            />
             <Header
                 parentMenu='home'
                 topbarEnable='enable'
@@ -19,7 +25,6 @@ const Contact = () => {
             <div className="react-wrapper">
                 <div className="react-wrapper-inner">
                     
-                    <Breadcrumb pageTitle="Contact Us" />
 
                     <ContactMain />
 

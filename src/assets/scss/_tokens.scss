@@ -1,0 +1,19 @@
+// Explore S design tokens — single source of truth for color/type.
+// SCSS vars for stylesheets + CSS custom properties for JS/runtime.
+
+:root {
+  --es-primary:      #0B3C91; /* royal blue (aimlay-style) */
+  --es-primary-dark: #082C6B; /* deep navy blue for bands/bars */
+  --es-primary-soft: #EAF1FB; /* light blue surface */
+  --es-ink:          #0A2540;
+  --es-body:         #454F5B;
+  --es-surface:      #F5F8FC;
+  --es-white:        #FFFFFF;
+  --es-accent:       #FDB714; /* signature yellow */
+  --es-accent-dark:  #E5A200;
+  --es-yellow:       #FDB714;
+  --es-red:          #E00112; /* kept for occasional highlights */
+  --es-hairline:     #E3E8EF;
+  --es-radius:       14px;
+  --es-shadow:       0 8px 30px rgba(10, 37, 64, 0.08);
+}

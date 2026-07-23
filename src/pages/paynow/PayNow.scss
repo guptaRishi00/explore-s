@@ -1,346 +1,647 @@
-.paynow-page {
-    .hero-banner.paynow-hero {
-        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                    url('https://plus.unsplash.com/premium_photo-1681928677639-44267dea6af7?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        min-height: 500px;
-        display: flex;
-        align-items: center;
-        position: relative;
-        
-        .hero-content {
-            padding: 80px 0;
-            
-            .payment-badge {
-                display: inline-block;
-                background: rgba(0, 0, 0, 0.8);
-                color: white;
-                padding: 12px 24px;
-                border-radius: 25px;
-                margin-bottom: 30px;
-                font-weight: 500;
-                font-size: 16px;
-            }
-            
-            .hero-title {
-                color: white;
-                font-size: 3.5rem;
-                font-weight: 700;
-                margin-bottom: 25px;
-                line-height: 1.2;
-            }
-            
-            .hero-description {
-                color: white;
-                font-size: 1.2rem;
-                line-height: 1.6;
-                opacity: 0.9;
-                max-width: 600px;
-                margin: 0 auto;
-            }
-        }
+// PayNow.scss — Pay Now page styles
+// Mobile-first; tokens from _variables.scss + _tokens.scss
+// NO hardcoded colours — use $primaryColor, $titleColor, $bodyColor, $surfaceColor, $hairline, $whiteColor
+
+// ── Hero banner — slim navy strip, ghost ₹ watermark ─────────────────────────
+.pn-hero {
+  position: relative;
+  padding: clamp(56px, 8vw, 96px) 0 clamp(48px, 6vw, 72px);
+  background: linear-gradient(135deg, $primaryColor, $primaryDark);
+  text-align: center;
+  overflow: hidden;
+
+  // ghost rupee watermark, bleeding off the right edge
+  &::after {
+    content: '₹';
+    position: absolute;
+    right: -0.12em;
+    top: 50%;
+    transform: translateY(-50%);
+    font: 800 clamp(220px, 30vw, 420px) / 1 $titlefont;
+    color: rgba($whiteColor, 0.05);
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__eyebrow {
+    display: inline-block;
+    font: 800 12px / 1 $bodyfont;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: $whiteColor;
+    background: $ctaRed;
+    border-radius: 999px;
+    padding: 6px 14px;
+    margin-bottom: 16px;
+  }
+
+  &__title {
+    font: 800 clamp(28px, 4.6vw, 48px) / 1.1 $titlefont;
+    letter-spacing: -0.02em;
+    color: $whiteColor;
+    margin: 0 0 14px;
+  }
+
+  &__subtitle {
+    font: 400 clamp(14px, 1.5vw, 17px) / 1.65 $bodyfont;
+    color: rgba($whiteColor, 0.85);
+    max-width: 56ch;
+    margin: 0 auto clamp(20px, 3vw, 28px);
+  }
+
+  // trust chips
+  &__trust {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    li {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font: 600 12.5px / 1 $bodyfont;
+      color: rgba($whiteColor, 0.92);
+      background: rgba($whiteColor, 0.1);
+      border: 1px solid rgba($whiteColor, 0.18);
+      border-radius: 999px;
+      padding: 8px 14px;
+
+      svg {
+        width: 14px;
+        height: 14px;
+        flex-shrink: 0;
+      }
     }
-    
-    .payment-methods-section {
-        padding: 80px 0;
-        background: #f8f9fa;
-        
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #2c3e50;
-            margin-bottom: 20px;
-        }
-        
-        .section-description {
-            font-size: 1.1rem;
-            color: #6c757d;
-            margin-bottom: 50px;
-        }
-        
-        .payment-methods-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-            
-            .payment-method-card {
-                background: white;
-                padding: 40px 30px;
-                border-radius: 15px;
-                text-align: center;
-                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-                transition: all 0.3s ease;
-                cursor: pointer;
-                border: 3px solid transparent;
-                
-                &:hover {
-                    transform: translateY(-5px);
-                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-                }
-                
-                &.selected {
-                    border-color: #007bff;
-                    background: #f8f9ff;
-                }
-                
-                .method-icon {
-                    font-size: 3rem;
-                    margin-bottom: 20px;
-                }
-                
-                .method-name {
-                    font-size: 1.3rem;
-                    font-weight: 600;
-                    color: #2c3e50;
-                    margin-bottom: 15px;
-                }
-                
-                .method-description {
-                    color: #6c757d;
-                    font-size: 0.95rem;
-                    line-height: 1.5;
-                }
-            }
-        }
-    }
-    
-    .payment-process-section {
-        padding: 80px 0;
-        background: white;
-        
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #2c3e50;
-            margin-bottom: 20px;
-        }
-        
-        .section-description {
-            font-size: 1.1rem;
-            color: #6c757d;
-            margin-bottom: 40px;
-        }
-        
-        .process-steps {
-            .process-step {
-                display: flex;
-                align-items: flex-start;
-                margin-bottom: 40px;
-                
-                .step-number {
-                    background: #007bff;
-                    color: white;
-                    width: 60px;
-                    height: 60px;
-                    border-radius: 50%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    font-size: 1.5rem;
-                    font-weight: 700;
-                    margin-right: 25px;
-                    flex-shrink: 0;
-                }
-                
-                .step-content {
-                    .step-title {
-                        font-size: 1.4rem;
-                        font-weight: 600;
-                        color: #2c3e50;
-                        margin-bottom: 10px;
-                    }
-                    
-                    .step-description {
-                        color: #6c757d;
-                        font-size: 1rem;
-                        line-height: 1.5;
-                    }
-                }
-            }
-        }
-        
-        .process-illustration {
-            .illustration-container {
-                position: relative;
-                height: 400px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                
-                .payment-illustration {
-                    max-width: 100%;
-                    height: auto;
-                    border-radius: 15px;
-                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-                    transition: transform 0.3s ease;
-                    
-                    &:hover {
-                        transform: scale(1.02);
-                    }
-                }
-            }
-        }
-    }
-    
-    // Bank Transfer Modal Styles
-    .modal-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.5);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 9999;
-        padding: 20px;
-        transform: translateZ(0);
-    }
-    
-    .modal-content {
-        background: white;
-        border-radius: 15px;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        max-width: 500px;
-        width: 100%;
-        max-height: 90vh;
-        overflow: hidden;
-        animation: modalSlideIn 0.3s ease-out;
-        position: relative;
-        z-index: 10000;
-        margin: auto;
-        transform: translateY(0);
-    }
-    
-    .modal-header {
-        padding: 25px 30px 20px;
-        border-bottom: 1px solid #e9ecef;
-        
-        .modal-title {
-            margin: 0;
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #2c3e50;
-        }
-    }
-    
-    .modal-body {
-        padding: 30px;
-        
-        .bank-details {
-            .detail-row {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 15px 0;
-                border-bottom: 1px solid #f8f9fa;
-                
-                &:last-child {
-                    border-bottom: none;
-                }
-                
-                .detail-label {
-                    font-weight: 600;
-                    color: #2c3e50;
-                    font-size: 1rem;
-                }
-                
-                .detail-value {
-                    color: #6c757d;
-                    font-size: 1rem;
-                    font-family: 'Courier New', monospace;
-                    background: #f8f9fa;
-                    padding: 8px 12px;
-                    border-radius: 6px;
-                    border: 1px solid #e9ecef;
-                }
-            }
-        }
-    }
-    
-    .modal-footer {
-        padding: 20px 30px 25px;
-        border-top: 1px solid #e9ecef;
-        text-align: center;
-        
-        .close-button {
-            background: #dc3545;
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 25px;
-            font-size: 1rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            
-            &:hover {
-                background: #c82333;
-                transform: translateY(-2px);
-                box-shadow: 0 5px 15px rgba(220, 53, 69, 0.3);
-            }
-        }
-    }
-    
-    @keyframes modalSlideIn {
-        from {
-            opacity: 0;
-            transform: translateY(-50px) scale(0.9);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-        }
-    }
-    
-    // Ensure modal appears above all elements
-    .modal-overlay,
-    .modal-content {
-        will-change: transform;
-        backface-visibility: hidden;
-    }
+  }
 }
 
-// Responsive Design
-@media (max-width: 768px) {
-    .paynow-page {
-        .hero-banner.paynow-hero {
-            .hero-content {
-                .hero-title {
-                    font-size: 2.5rem;
-                }
-                
-                .hero-description {
-                    font-size: 1rem;
-                }
-            }
-        }
-        
-        .payment-methods-section,
-        .payment-process-section {
-            padding: 60px 0;
-            
-            .section-title {
-                font-size: 2rem;
-            }
-        }
-        
-        .payment-methods-grid {
-            grid-template-columns: 1fr;
-            gap: 20px;
-        }
-        
-        .process-steps .process-step {
-            .step-number {
-                width: 50px;
-                height: 50px;
-                font-size: 1.2rem;
-                margin-right: 20px;
-            }
-        }
+// ── Payment Methods — minimal cards, icon chip floats out of the card ─────────
+.pn-methods {
+  background: $surfaceColor;
+
+  &__head {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  &__lead {
+    font: 400 clamp(15px, 1.5vw, 17px) / 1.6 $bodyfont;
+    color: $bodyColor;
+    margin: 0;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 52px 20px; // extra row gap for the overhanging chips
+    margin: 0;
+    padding: clamp(48px, 5vw, 60px) 0 0;
+
+    @media (min-width: 480px) {
+      grid-template-columns: 1fr 1fr;
     }
+
+    @media (min-width: 992px) {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 52px 24px;
+    }
+  }
+
+  &__card {
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+    background: $whiteColor;
+    border: 1px solid $hairline;
+    border-radius: 20px;
+    padding: 48px 20px 24px;
+    transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+
+    &:hover {
+      transform: translateY(-6px);
+      border-color: rgba($primaryColor, 0.3);
+      box-shadow: 0 26px 48px -26px rgba($titleColor, 0.22);
+    }
+
+    &:focus-visible {
+      outline: 2px solid $primaryColor;
+      outline-offset: 3px;
+    }
+
+    &--selected {
+      border-color: $primaryColor;
+      box-shadow: 0 0 0 3px rgba($primaryColor, 0.15);
+
+      // red check dot on the chip
+      .pn-methods__chip::after {
+        content: '✓';
+        position: absolute;
+        right: -2px;
+        top: -2px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: $ctaRed;
+        color: $whiteColor;
+        font: 800 11px / 20px $bodyfont;
+        text-align: center;
+        box-shadow: 0 2px 8px rgba($titleColor, 0.3);
+      }
+    }
+  }
+
+  // icon chip floats half above the card's top edge
+  &__chip {
+    position: absolute;
+    top: -32px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, $primaryColor, $primaryDark);
+    color: $whiteColor;
+    border: 4px solid $surfaceColor;
+    box-shadow: 0 14px 28px -12px rgba($primaryDark, 0.5);
+    transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
+
+    svg {
+      width: 26px;
+      height: 26px;
+    }
+  }
+
+  &__card:hover &__chip {
+    transform: translateX(-50%) translateY(-4px);
+  }
+
+  &__name {
+    font: 700 15px / 1.35 $titlefont;
+    color: $titleColor;
+    margin: 0 0 6px;
+  }
+
+  &__desc {
+    font: 400 13px / 1.5 $bodyfont;
+    color: $bodyColor;
+    margin: 0;
+  }
+}
+
+// ── Payment Process — horizontal timeline ─────────────────────────────────────
+.pn-process {
+  background: $whiteColor;
+
+  &__head {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto clamp(36px, 5vw, 56px);
+  }
+
+  &__steps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+  }
+
+  &__step {
+    position: relative;
+    text-align: center;
+    padding: 0 12px;
+
+    // dashed connector between steps (desktop only)
+    @media (min-width: 768px) {
+      &:not(:first-child)::before {
+        content: '';
+        position: absolute;
+        top: 26px;
+        right: calc(50% + 44px);
+        left: calc(-50% + 44px);
+        border-top: 2px dashed $hairline;
+      }
+    }
+  }
+
+  &__badge {
+    position: relative;
+    width: 52px;
+    height: 52px;
+    margin: 0 auto 16px;
+    border-radius: 50%;
+    background: $whiteColor;
+    border: 2px solid $primaryColor;
+    color: $primaryColor;
+    font: 700 15px / 1 $titlefont;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.04em;
+  }
+
+  &__step-title {
+    font: 700 clamp(15px, 1.55vw, 17px) / 1.3 $titlefont;
+    color: $titleColor;
+    margin: 0 0 6px;
+  }
+
+  &__step-desc {
+    font: 400 clamp(13px, 1.3vw, 15px) / 1.6 $bodyfont;
+    color: $bodyColor;
+    margin: 0;
+  }
+}
+
+// ── Modals ────────────────────────────────────────────────────────────────────
+.pn-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba($titleColor, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 20px;
+}
+
+.pn-modal {
+  background: $whiteColor;
+  border-radius: var(--es-radius, 14px);
+  box-shadow: 0 24px 64px rgba($titleColor, 0.22);
+  max-width: 520px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 28px 20px;
+    border-bottom: 1px solid $hairline;
+  }
+
+  &__title {
+    margin: 0;
+    font: 700 clamp(17px, 1.6vw, 20px) / 1.2 $titlefont;
+    color: $titleColor;
+  }
+
+  &__close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1.5px solid $hairline;
+    background: transparent;
+    color: $bodyColor;
+    cursor: pointer;
+    transition: $transition;
+    padding: 0;
+
+    &:hover {
+      background: $surfaceColor;
+      border-color: $primaryColor;
+      color: $primaryColor;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $primaryColor;
+      outline-offset: 2px;
+    }
+  }
+
+  &__body {
+    padding: 24px 28px;
+
+    &--center {
+      text-align: center;
+    }
+  }
+
+  &__footer {
+    padding: 20px 28px 24px;
+    border-top: 1px solid $hairline;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+// ── Bank details table ────────────────────────────────────────────────────────
+.pn-bank {
+  margin: 0;
+  padding: 0;
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid $hairline;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__label {
+    font: 600 clamp(13px, 1.3vw, 15px) / 1.4 $bodyfont;
+    color: $titleColor;
+    flex-shrink: 0;
+  }
+
+  &__value {
+    font: 400 clamp(13px, 1.3vw, 15px) / 1.4 $bodyfont;
+    font-family: 'Courier New', $bodyfont;
+    color: $bodyColor;
+    background: $surfaceColor;
+    border: 1px solid $hairline;
+    border-radius: 6px;
+    padding: 6px 10px;
+    word-break: break-all;
+    text-align: right;
+  }
+}
+
+// ── GPay scanner ─────────────────────────────────────────────────────────────
+.pn-gpay {
+  &__scanner {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: var(--es-shadow, 0 8px 30px rgba(10, 37, 64, 0.08));
+    display: block;
+    margin: 0 auto 16px;
+  }
+
+  &__upi {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    margin-top: 12px;
+  }
+
+  &__upi-label {
+    font: 700 12px / 1 $bodyfont;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $bodyColor;
+  }
+
+  &__upi-id {
+    font: 600 clamp(15px, 1.6vw, 17px) / 1 $bodyfont;
+    font-family: 'Courier New', $bodyfont;
+    color: $primaryColor;
+    background: rgba($primaryColor, 0.06);
+    border: 1px solid rgba($primaryColor, 0.2);
+    border-radius: 8px;
+    padding: 10px 18px;
+    letter-spacing: 0.02em;
+  }
+}
+
+// ── Razorpay Pay Online card ──────────────────────────────────────────────────
+.pn-rzp {
+  margin-top: clamp(28px, 4vw, 48px);
+
+  &__inner {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: clamp(24px, 3.5vw, 40px) clamp(20px, 3vw, 36px);
+    background: $whiteColor;
+    border: 1px solid $hairline;
+    border-radius: 20px;
+    box-shadow: 0 30px 60px -34px rgba($titleColor, 0.28);
+    text-align: left;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: clamp(20px, 2.5vw, 28px);
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    color: $primaryColor;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__title {
+    font: 700 clamp(17px, 1.7vw, 20px) / 1.2 $titlefont;
+    color: $titleColor;
+    margin: 0 0 4px;
+  }
+
+  &__subtitle {
+    font: 400 clamp(13px, 1.2vw, 14px) / 1.4 $bodyfont;
+    color: $bodyColor;
+    margin: 0;
+  }
+
+  // Form layout
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: clamp(20px, 2.5vw, 28px);
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  &__field--amount {
+    // Amount is always the first and most prominent field
+  }
+
+  &__optionals {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+
+    @media (min-width: 560px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__label {
+    font: 600 clamp(12px, 1.1vw, 13px) / 1.3 $bodyfont;
+    color: $titleColor;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  &__required {
+    color: $ctaRed;
+    margin-left: 2px;
+  }
+
+  // quick-amount chips under the amount field
+  &__presets {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  &__preset {
+    font: 600 13px / 1 $bodyfont;
+    color: $primaryColor;
+    background: none;
+    border: 1.5px solid rgba($primaryColor, 0.35);
+    border-radius: 999px;
+    padding: 8px 14px;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+
+    &:hover {
+      border-color: $primaryColor;
+      background: rgba($primaryColor, 0.06);
+    }
+
+    &--on {
+      background: $primaryColor;
+      border-color: $primaryColor;
+      color: $whiteColor;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $primaryColor;
+      outline-offset: 2px;
+    }
+  }
+
+  &__optional-tag {
+    font-weight: 400;
+    color: $bodyColor;
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 0.9em;
+  }
+
+  &__input-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  &__currency {
+    position: absolute;
+    left: 12px;
+    font: 600 clamp(15px, 1.5vw, 17px) / 1 $bodyfont;
+    color: $titleColor;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  &__input {
+    width: 100%;
+    border: 1.5px solid $hairline;
+    border-radius: var(--es-radius, 10px);
+    background: $whiteColor;
+    color: $titleColor;
+    font: 400 clamp(14px, 1.4vw, 16px) / 1.4 $bodyfont;
+    padding: 10px 14px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    appearance: none;
+    -moz-appearance: textfield;
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      opacity: 0.5;
+    }
+
+    &::placeholder {
+      color: rgba($bodyColor, 0.55);
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $primaryColor;
+      box-shadow: 0 0 0 3px rgba($primaryColor, 0.12);
+    }
+  }
+
+  // Amount input gets left padding for the ₹ symbol
+  &__field--amount &__input {
+    padding-left: 28px;
+    font: 600 clamp(16px, 1.6vw, 20px) / 1 $titlefont;
+  }
+
+  &__cta {
+    width: 100%;
+    justify-content: center;
+    font-size: clamp(14px, 1.4vw, 16px);
+    padding: 14px 24px;
+    background: $ctaRed;
+
+    &:hover {
+      background: darken($ctaRed, 9%);
+    }
+
+    &:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $primaryColor;
+      outline-offset: 3px;
+    }
+  }
+
+  &__note {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    margin: 14px 0 0;
+    font: 400 clamp(12px, 1.1vw, 13px) / 1.5 $bodyfont;
+    color: $bodyColor;
+
+    svg {
+      color: $primaryColor;
+    }
+  }
+}
+
+// ── Reduced-motion: disable hero parallax (background-attachment) ─────────────
+@media (prefers-reduced-motion: reduce) {
+  .pn-hero {
+    background-attachment: scroll;
+  }
 }

@@ -27,20 +27,32 @@
 14.shop
 
 -----------------------------------------------------------------------------------*/
+@import 'tokens';
+@import 'variables';
 @import 'animations';
 @import 'keyframes';
 @import 'menu';
+@import 'header';
 @import 'design';
 @import 'contact';
 @import 'contact-page';
 @import 'footer-fixes';
+@import 'footer';
+@import 'whatsapp';
 @import 'mission-vision';
 @import 'services';
 @import 'domains';
 @import 'responsive';
 @import 'custom-spacing';
+@import 'home';
+@import 'programs';
+@import 'modal';
+@import 'experts';
+@import 'community';
+@import 'legal';
 @import '../../pages/paynow/PayNow';
 @import '../fonts/flaticon';
-@import '../fonts/elegant-icon'; 
+@import '../fonts/elegant-icon';
+@import 'es-redesign';
 
 

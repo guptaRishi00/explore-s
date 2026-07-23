@@ -1,0 +1,348 @@
+// =============================================================================
+// Programs Sections: Admissions, AI Courses, Digital Marketing
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// Shared accent button modifier
+// -----------------------------------------------------------------------------
+.es-btn--accent {
+  background: $accentColor;
+  color: $whiteColor;
+
+  &:hover {
+    background: darken($accentColor, 8%);
+    color: $whiteColor;
+  }
+}
+
+// =============================================================================
+// Admissions Section
+// =============================================================================
+.es-adm {
+  background: $whiteColor;
+
+  &__intro {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 56px;
+  }
+
+  &__lead {
+    font: 400 17px/1.6 $bodyfont;
+    color: $bodyColor;
+    margin: 16px 0 0;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    @media (min-width: 600px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 992px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__card {
+    background: $whiteColor;
+    border: 1px solid $hairline;
+    border-radius: var(--es-radius);
+    padding: 32px 28px;
+    box-shadow: var(--es-shadow);
+    transition: $transition;
+    display: flex;
+    flex-direction: column;
+
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+    }
+  }
+
+  &__chip {
+    width: 52px;
+    height: 52px;
+    background: rgba($primaryColor, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    svg {
+      width: 28px;
+      height: 28px;
+      stroke: $primaryColor;
+    }
+  }
+
+  &__title {
+    font: 700 20px/1.2 $titlefont;
+    color: $titleColor;
+    margin: 16px 0 4px;
+  }
+
+  &__tagline {
+    font-style: italic;
+    color: $bodyColor;
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+
+  &__points {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px;
+    flex-grow: 1;
+
+    li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      padding: 6px 0;
+      border-bottom: 1px solid $hairline;
+      font-size: 14px;
+      color: $bodyColor;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+
+  &__point-icon {
+    stroke: $primaryColor;
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+
+  // Push enroll button to bottom of card
+  .es-btn {
+    margin-top: auto;
+    align-self: flex-start;
+  }
+}
+
+// =============================================================================
+// AI Courses Section
+// =============================================================================
+.es-course {
+  background: $surfaceColor;
+
+  &__intro {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 56px;
+  }
+
+  &__lead {
+    font: 400 17px/1.6 $bodyfont;
+    color: $bodyColor;
+    margin: 16px 0 0;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    @media (min-width: 600px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 992px) {
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    }
+  }
+
+  &__card {
+    background: $whiteColor;
+    border: 1px solid $hairline;
+    border-radius: var(--es-radius);
+    padding: 28px 24px;
+    box-shadow: var(--es-shadow);
+    display: flex;
+    flex-direction: column;
+    transition: $transition;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+    }
+  }
+
+  &__chip {
+    width: 48px;
+    height: 48px;
+    background: $primaryColor;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font: 700 16px/1 $titlefont;
+    color: $whiteColor;
+    flex-shrink: 0;
+  }
+
+  &__title {
+    font: 700 18px/1.2 $titlefont;
+    color: $titleColor;
+    margin: 14px 0 8px;
+  }
+
+  &__blurb {
+    color: $bodyColor;
+    font-size: 14px;
+    line-height: 1.6;
+    flex-grow: 1;
+    margin-bottom: 16px;
+  }
+
+  &__pills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+
+  &__pill {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+    background: rgba($primaryColor, 0.08);
+    color: $primaryColor;
+
+    &--level {
+      background: rgba($primaryColor, 0.08);
+      color: $primaryColor;
+    }
+
+    &--duration {
+      background: rgba($accentColor, 0.1);
+      color: $accentColor;
+    }
+  }
+
+  // Push enroll button to bottom
+  .es-btn {
+    margin-top: auto;
+    align-self: flex-start;
+  }
+}
+
+// =============================================================================
+// Digital Marketing Section
+// =============================================================================
+.es-dm {
+  background: $whiteColor;
+
+  &__intro {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 56px;
+  }
+
+  &__lead {
+    font: 400 17px/1.6 $bodyfont;
+    color: $bodyColor;
+    margin: 16px 0 0;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    @media (min-width: 600px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 992px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__card {
+    background: $surfaceColor;
+    border-radius: 12px;
+    padding: 24px 20px;
+    border: 1px solid $hairline;
+    transition: $transition;
+
+    &:hover {
+      background: $whiteColor;
+      box-shadow: var(--es-shadow);
+      transform: translateY(-4px);
+    }
+  }
+
+  &__icon {
+    width: 40px;
+    height: 40px;
+    background: rgba($accentColor, 0.1);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      width: 24px;
+      height: 24px;
+      stroke: $accentColor;
+    }
+  }
+
+  &__mod-title {
+    font: 700 16px/1.2 $titlefont;
+    color: $titleColor;
+    margin: 12px 0 6px;
+  }
+
+  &__blurb {
+    color: $bodyColor;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  &__cta {
+    margin-top: 60px;
+    border-radius: var(--es-radius);
+    background: linear-gradient(135deg, $primaryColor 0%, darken($primaryColor, 10%) 100%);
+    padding: clamp(40px, 6vw, 72px) clamp(24px, 5vw, 80px);
+    text-align: center;
+    color: $whiteColor;
+  }
+
+  &__cta-title {
+    font: 700 clamp(22px, 3vw, 32px)/1.2 $titlefont;
+    margin: 0 0 10px;
+    color: $whiteColor;
+  }
+
+  &__cta-sub {
+    font: 400 16px/1.6 $bodyfont;
+    color: rgba($whiteColor, 0.82);
+    margin: 0 0 32px;
+  }
+
+  &__cta-btns {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
