@@ -1,0 +1,648 @@
+// _domain-picker.scss
+// Styles for the homepage DomainPickerSection + DomainDetailPage.
+// Tokens from _variables.scss; section helpers from _es-redesign.scss.
+
+// ════════════════════════════════════════════════════════════════════════════
+//  DOMAIN PICKER — homepage grid section
+// ════════════════════════════════════════════════════════════════════════════
+
+.dp-section {
+  background: $surfaceColor;
+  padding-top: clamp(56px, 7vw, 96px);
+  padding-bottom: clamp(56px, 7vw, 96px);
+}
+
+// ── Header ──────────────────────────────────────────────────────────────────
+.dp-header {
+  text-align: center;
+  margin-bottom: clamp(36px, 5vw, 60px);
+}
+
+.dp-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  font: 700 12px/1 $bodyfont;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 7px 20px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, $primaryColor 0%, $ctaRed 100%);
+  color: $whiteColor;
+  margin-bottom: 20px;
+}
+
+.dp-title {
+  font: 800 clamp(28px, 4vw, 48px)/1.15 $titlefont;
+  color: $titleColor;
+  margin-bottom: 14px;
+
+  &__blue { color: $primaryColor; }
+  &__red  { color: $ctaRed; }
+}
+
+.dp-subtitle {
+  font: 400 clamp(14px, 1.4vw, 16px)/1.7 $bodyfont;
+  color: $bodyColor;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+// ── Domain card grid ─────────────────────────────────────────────────────────
+.dp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  @media (min-width: 480px)  { grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  @media (min-width: 640px)  { grid-template-columns: repeat(5, 1fr); }
+  @media (min-width: 860px)  { grid-template-columns: repeat(6, 1fr); }
+  @media (min-width: 1100px) { grid-template-columns: repeat(9, 1fr); gap: 16px; }
+}
+
+// ── Single card ──────────────────────────────────────────────────────────────
+.dp-grid > li {
+  display: flex;
+}
+
+.dp-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 120px;
+  background: $whiteColor;
+  border: 1.5px solid $hairline;
+  border-radius: 14px;
+  padding: 22px 10px 18px;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.28s cubic-bezier(.34,1.56,.64,1),
+              box-shadow 0.28s ease,
+              border-color 0.25s ease;
+
+  // Red accent bar at the bottom — slides up on hover
+  .dp-card__bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, $primaryColor 0%, $ctaRed 100%);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.32s ease;
+    border-radius: 0 0 14px 14px;
+  }
+
+  &:hover,
+  &:focus-visible {
+    transform: translateY(-7px) scale(1.03);
+    box-shadow: 0 14px 40px rgba($primaryColor, 0.13), 0 4px 12px rgba($ctaRed, 0.08);
+    border-color: rgba($primaryColor, 0.25);
+    text-decoration: none;
+
+    .dp-card__bar {
+      transform: scaleX(1);
+    }
+
+    .dp-card__icon-wrap {
+      background: $primaryColor;
+      color: $whiteColor;
+      transform: rotate(4deg) scale(1.1);
+    }
+
+    .dp-card__name {
+      color: $primaryColor;
+    }
+  }
+
+  &:focus-visible {
+    outline: 3px solid $primaryColor;
+    outline-offset: 2px;
+  }
+}
+
+// ── Icon circle ───────────────────────────────────────────────────────────────
+.dp-card__icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: $primarySoft;
+  color: $primaryColor;
+  transition: background 0.28s ease, color 0.28s ease, transform 0.28s cubic-bezier(.34,1.56,.64,1);
+  flex-shrink: 0;
+
+  svg {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+// ── Domain label ──────────────────────────────────────────────────────────────
+.dp-card__name {
+  font: 600 12px/1.3 $bodyfont;
+  color: $titleColor;
+  text-align: center;
+  transition: color 0.25s ease;
+
+  @media (min-width: 640px) { font-size: 13px; }
+}
+
+// ── Bottom "not sure" CTA band ────────────────────────────────────────────────
+.dp-footer-cta {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  background: $whiteColor;
+  border: 1.5px solid $hairline;
+  border-radius: 16px;
+  padding: 20px 28px;
+  margin-top: 40px;
+  box-shadow: 0 4px 18px rgba($primaryColor, 0.06);
+
+  @media (max-width: 640px) {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: $primarySoft;
+    color: $primaryColor;
+    flex-shrink: 0;
+
+    svg { width: 24px; height: 24px; }
+  }
+
+  &__copy {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+
+    strong {
+      font: 700 15px/1.3 $bodyfont;
+      color: $titleColor;
+    }
+
+    span {
+      font: 400 13px/1.5 $bodyfont;
+      color: $bodyColor;
+    }
+  }
+
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: $primaryColor;
+    color: $whiteColor;
+    font: 700 14px/1 $bodyfont;
+    padding: 13px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.22s ease, transform 0.22s ease;
+
+    &:hover {
+      background: $ctaRed;
+      transform: translateX(3px);
+      text-decoration: none;
+      color: $whiteColor;
+    }
+  }
+}
+
+
+// ════════════════════════════════════════════════════════════════════════════
+//  DOMAIN DETAIL PAGE  (/domain/:slug)
+// ════════════════════════════════════════════════════════════════════════════
+
+.dd-page {
+  background: $whiteColor;
+  min-height: 80vh;
+  padding: clamp(40px, 6vw, 80px) 0 clamp(56px, 7vw, 100px);
+}
+
+// ── Two-column layout ────────────────────────────────────────────────────────
+.dd-layout {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 4vw, 40px);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: start;
+
+  @media (min-width: 960px) {
+    grid-template-columns: 1fr 420px;
+    gap: 48px;
+  }
+}
+
+// ── Left content ─────────────────────────────────────────────────────────────
+.dd-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.dd-breadcrumb {
+  font: 400 13px/1 $bodyfont;
+  color: $bodyColor;
+  margin-bottom: 20px;
+
+  a {
+    color: $bodyColor;
+    text-decoration: none;
+
+    &:hover { color: $primaryColor; text-decoration: underline; }
+  }
+
+  span { color: $titleColor; }
+}
+
+.dd-tagline {
+  font: 700 11px/1 $bodyfont;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $ctaRed;
+  margin: 0 0 12px;
+}
+
+.dd-headline {
+  font: 800 clamp(26px, 4vw, 44px)/1.15 $titlefont;
+  color: $titleColor;
+  margin: 0 0 16px;
+  display: flex;
+  flex-direction: column;
+
+  &__line {
+    display: block;
+  }
+
+  &__accent {
+    color: $primaryColor;
+  }
+}
+
+.dd-subtitle {
+  font: 400 clamp(14px, 1.3vw, 16px)/1.7 $bodyfont;
+  color: $bodyColor;
+  margin: 0 0 28px;
+  max-width: 600px;
+}
+
+// ── Feature chips ────────────────────────────────────────────────────────────
+.dd-features {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+.dd-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: $surfaceColor;
+  border: 1px solid $hairline;
+  border-radius: 10px;
+  padding: 12px 16px;
+  flex: 1;
+  min-width: 160px;
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: $primarySoft;
+    color: $primaryColor;
+    flex-shrink: 0;
+
+    svg { width: 17px; height: 17px; }
+  }
+
+  &__title {
+    display: block;
+    font: 700 13px/1.3 $bodyfont;
+    color: $titleColor;
+    margin-bottom: 3px;
+  }
+
+  &__desc {
+    display: block;
+    font: 400 12px/1.4 $bodyfont;
+    color: $bodyColor;
+  }
+}
+
+// ── Programs section ──────────────────────────────────────────────────────────
+.dd-programs {
+  margin-bottom: 28px;
+
+  &__label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font: 700 11px/1 $bodyfont;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $primaryColor;
+    margin: 0 0 18px;
+  }
+
+  &__arrow {
+    color: $primaryColor;
+    font-size: 15px;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+
+    @media (min-width: 640px) { grid-template-columns: 1fr 1fr; gap: 0 16px; }
+  }
+
+  &__col {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+// ── Single program item ───────────────────────────────────────────────────────
+.dd-program-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid $hairline;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background: $whiteColor;
+  transition: box-shadow 0.22s ease, border-color 0.22s ease;
+  cursor: default;
+
+  &:hover {
+    box-shadow: 0 4px 16px rgba($primaryColor, 0.1);
+    border-color: rgba($primaryColor, 0.3);
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: $primarySoft;
+    color: $primaryColor;
+    flex-shrink: 0;
+  }
+
+  &__name {
+    display: block;
+    font: 600 13px/1.3 $bodyfont;
+    color: $titleColor;
+    margin-bottom: 3px;
+  }
+
+  &__dur {
+    display: block;
+    font: 400 12px/1 $bodyfont;
+    color: $bodyColor;
+  }
+
+  &__arrow {
+    margin-left: auto;
+    font-size: 18px;
+    color: $primaryColor;
+    flex-shrink: 0;
+  }
+}
+
+// ── Bottom CTA box ────────────────────────────────────────────────────────────
+.dd-cta-box {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: $surfaceColor;
+  border: 1px solid $hairline;
+  border-radius: 14px;
+  padding: 18px 20px;
+  flex-wrap: wrap;
+
+  @media (max-width: 480px) { flex-direction: column; text-align: center; }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: $primarySoft;
+    color: $primaryColor;
+    flex-shrink: 0;
+
+    svg { width: 22px; height: 22px; }
+  }
+
+  &__note {
+    flex: 1;
+    font: 500 14px/1.5 $bodyfont;
+    color: $titleColor;
+  }
+
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: $primaryColor;
+    color: $whiteColor;
+    font: 700 13px/1 $bodyfont;
+    padding: 11px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.22s ease, transform 0.22s ease;
+
+    &:hover {
+      background: $ctaRed;
+      transform: translateX(2px);
+      text-decoration: none;
+      color: $whiteColor;
+    }
+  }
+}
+
+// ── Right — form panel ────────────────────────────────────────────────────────
+.dd-form-panel {
+  position: sticky;
+  top: 100px;
+}
+
+.dd-form-card {
+  background: $primaryColor;
+  border-radius: 18px;
+  padding: 28px 28px 32px;
+  color: $whiteColor;
+  box-shadow: 0 20px 60px rgba($primaryColor, 0.3);
+
+  &__title {
+    font: 800 clamp(20px, 2vw, 26px)/1.2 $titlefont;
+    color: $whiteColor;
+    margin: 0 0 6px;
+  }
+
+  &__sub {
+    font: 400 13px/1.5 $bodyfont;
+    color: rgba($whiteColor, 0.78);
+    margin: 0 0 22px;
+  }
+
+  &__success {
+    background: rgba($whiteColor, 0.12);
+    border-radius: 10px;
+    padding: 28px 20px;
+    text-align: center;
+    color: $whiteColor;
+
+    span { font-size: 32px; display: block; margin-bottom: 12px; }
+    p { font: 500 14px/1.6 $bodyfont; margin: 0; }
+  }
+}
+
+// ── Form fields ───────────────────────────────────────────────────────────────
+.dd-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    label {
+      font: 600 12px/1 $bodyfont;
+      color: rgba($whiteColor, 0.85);
+      letter-spacing: 0.02em;
+    }
+
+    input,
+    select {
+      background: rgba($whiteColor, 0.1);
+      border: 1.5px solid rgba($whiteColor, 0.2);
+      border-radius: 8px;
+      color: $whiteColor;
+      font: 400 14px/1 $bodyfont;
+      padding: 11px 14px;
+      outline: none;
+      transition: border-color 0.22s ease, background 0.22s ease;
+      width: 100%;
+      appearance: none;
+      -webkit-appearance: none;
+
+      &::placeholder { color: rgba($whiteColor, 0.45); }
+
+      &:focus {
+        border-color: rgba($whiteColor, 0.7);
+        background: rgba($whiteColor, 0.15);
+      }
+
+      option { background: $primaryDark; color: $whiteColor; }
+    }
+  }
+
+  &__field--mode {
+    gap: 8px;
+  }
+
+  &__mode-label {
+    font: 600 12px/1 $bodyfont;
+    color: rgba($whiteColor, 0.85);
+    letter-spacing: 0.02em;
+  }
+
+  &__radios {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  &__radio {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    font: 400 13px/1 $bodyfont;
+    color: $whiteColor;
+
+    input[type="radio"] {
+      width: 15px;
+      height: 15px;
+      accent-color: $accentColor;
+      flex-shrink: 0;
+      padding: 0;
+      border: none;
+    }
+  }
+
+  &__submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: $ctaRed;
+    color: $whiteColor;
+    font: 700 15px/1 $bodyfont;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.22s ease, transform 0.22s ease;
+    margin-top: 4px;
+
+    &:hover {
+      background: darken($ctaRed, 8%);
+      transform: translateY(-2px);
+    }
+
+    &:active { transform: translateY(0); }
+  }
+
+  &__trust {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font: 400 12px/1 $bodyfont;
+    color: rgba($whiteColor, 0.65);
+    margin: 4px 0 0;
+
+    svg { flex-shrink: 0; fill: rgba($whiteColor, 0.55); }
+  }
+}

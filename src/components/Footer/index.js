@@ -84,8 +84,8 @@ const Footer = (props) => {
                             <h3 className="es-footer__title">Services</h3>
                             <ul className="es-footer__links">
                                 <li><Link to="/services">PhD Assistance</Link></li>
-                                <li><Link to="/services">Thesis &amp; Dissertation Writing</Link></li>
-                                <li><Link to="/services">Research Paper Writing</Link></li>
+                                <li><Link to="/services">Thesis &amp; Dissertation Guidance</Link></li>
+                                <li><Link to="/services">Research Paper Guidance</Link></li>
                                 <li><Link to="/services">Journal Publication</Link></li>
                                 <li><Link to="/services">Plagiarism Removal</Link></li>
                                 <li><Link to="/services">AI &amp; Machine Learning</Link></li>

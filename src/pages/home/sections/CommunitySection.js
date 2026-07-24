@@ -6,7 +6,7 @@ const Card = ({ person }) => (
   <li className="es-community__card">
     <div className="es-community__avatar" aria-hidden="true">
       {person.image
-        ? <img src={person.image} alt="" loading="lazy" width="46" height="46" />
+        ? <img src={person.image} alt="" loading="lazy" width="62" height="62" />
         : person.name.split(' ').slice(-1)[0].charAt(0)}
     </div>
     <div className="es-community__info">

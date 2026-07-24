@@ -59,7 +59,8 @@ const EventsSection = () => {
                     </span>
                   </button>
                 ) : (
-                  <img className="es-events__img" src={item.src} alt={item.alt} loading="lazy" />
+                  <img className="es-events__img" src={item.src} alt={item.alt} loading="lazy"
+                    style={item.objectPosition ? { objectPosition: item.objectPosition } : undefined} />
                 )}
               </li>
             );

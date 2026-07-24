@@ -53,7 +53,7 @@ const homeContent = {
       {
         icon: "guidance",
         title: "Expert-Led Academic Guidance",
-        desc: "We match you with seasoned researchers, data analysts, and domain experts who guide you through every stage of your academic milestones—from synopsis drafting and comprehensive thesis writing to top-tier journal publication support.",
+        desc: "We match you with seasoned researchers, data analysts, and domain experts who guide you through every stage of your academic milestones—from synopsis drafting and comprehensive thesis guidance to top-tier journal publication support.",
       },
       {
         icon: "global",
@@ -79,7 +79,7 @@ const homeContent = {
     subtitle: "Get Expert Consultation",
     services: [
       "PhD & Higher Education Admissions",
-      "Thesis, Dissertation & Research Writing",
+      "Thesis, Dissertation & Research Guidance",
       "Data Analysis (SPSS / R / Python)",
       "AI, Machine Learning & Tech Courses",
       "Digital Marketing Masterclass",
@@ -124,6 +124,10 @@ const homeContent = {
       { name: "Ansh", image: "/community/ansh.webp" },
       { name: "Anjali Gautam", image: "/community/anjali-gautam.webp" },
       { name: "Aditya Pal", image: "/community/aditya-pal.webp" },
+      { name: "Rohil R-Dass", image: "/community/rohil-r-dass.webp" },
+      { name: "Lovely", image: "/community/lovely.webp" },
+      { name: "Rahul Sharma", image: "/community/rahul-sharma.webp" },
+
     ],
   },
 
@@ -142,17 +146,17 @@ const homeContent = {
     cards: [
       {
         tag: "Research & Editorial Support",
-        title: "End-to-End Thesis & Synopsis Solutions",
+        title: "Thesis & Synopsis Guidance",
         points: [
-          "Masterful Thesis, Synopsis & Dissertation Writing",
-          "Advanced Literature Review & Research Proposal Drafting",
-          "Complete Plagiarism Checking & Removal via Turnitin",
+          "Expert Guidance for Thesis, Synopsis & Dissertation",
+          "Advanced Literature Review & Research Proposal Guidance",
+          "Plagiarism Review & Similarity Analysis via Turnitin",
         ],
         cta: { label: "Enroll Now", to: "/contact" },
       },
       {
         tag: "Publication Guidance",
-        title: "Research Paper Writing & Data Analysis",
+        title: "Research Publication & Data Analysis Support",
         points: [
           "High-Impact Data Analysis using SPSS, R, and Python",
           "Fast-Track Support for Scopus, UGC Care, WOS & IEEE Journals",
@@ -357,38 +361,32 @@ const homeContent = {
     ],
     // Mosaic gallery — `wide` tiles span 2 columns (landscape), `tall` tiles
     // span 2 rows (portrait). Videos play in place on click.
+    // 6-tile alternating mosaic — 3 cols, consistent row height, no tall tiles.
+    // Pattern: [wide 2col | 1col] / [1col | wide 2col] / [wide 2col | 1col]
     gallery: [
       {
         type: "image",
         src: "/initiatives/event-photo-1.webp",
         alt: "Explore S team at an academic initiative event",
         wide: true,
+        objectPosition: "center top",
       },
       {
         type: "video",
         src: "/initiatives/event-reel-1.mp4",
         poster: "/initiatives/event-reel-1.jpg",
         alt: "Event highlights reel",
-        tall: true,
       },
       {
         type: "image",
         src: "/initiatives/event-photo-3.webp",
         alt: "Scholars connecting at an Explore S event",
-        tall: true,
       },
       {
         type: "image",
         src: "/initiatives/event-photo-2.webp",
         alt: "Explore S community gathering",
         wide: true,
-      },
-      {
-        type: "video",
-        src: "/testimonials/testimonial-1.mp4",
-        poster: "/testimonials/testimonial-1.jpg",
-        alt: "Scholar sharing their Explore S experience",
-        tall: true,
       },
       {
         type: "image",
@@ -401,7 +399,6 @@ const homeContent = {
         src: "/initiatives/event-reel-2.mp4",
         poster: "/initiatives/event-reel-2.jpg",
         alt: "Community event moments",
-        tall: true,
       },
     ],
     cta: { label: "Discover More", to: "/contact" },

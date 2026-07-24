@@ -31,9 +31,9 @@ const ScrollToTop = (props) => {
 
   	return (
 		<div id="backscrollUp" className={ scrollClassName ? scrollClassName : "react__up___scroll"}>
-			{isVisible && (
+			{/* {isVisible && (
 				<span className="arrow_carrot-up" onClick={scrollToTop}></span>
-			)}
+			)} */}
 		</div>
   	);
 }
