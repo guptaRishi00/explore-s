@@ -3,6 +3,9 @@ import ScrollToTop from '../../components/ScrollTop';
 import HeroSection from './sections/HeroSection';
 import CounterBar from './sections/CounterBar';
 import AboutPillars from './sections/AboutPillars';
+import DomainPickerSection from './sections/DomainPickerSection';
+import AdmissionTicker from './sections/AdmissionTicker';
+import CompanyLogosSection from './sections/CompanyLogosSection';
 import CommunitySection from './sections/CommunitySection';
 import BootcampSection from './sections/BootcampSection';
 import ServicesSection from './sections/ServicesSection';
@@ -24,6 +27,9 @@ const HomeMain = () => {
 				<HeroSection />
 				<CounterBar />
 				<AboutPillars />
+				<AdmissionTicker />
+				<DomainPickerSection />
+				<CompanyLogosSection />
 				<CommunitySection />
 				<BootcampSection />
 				<ServicesSection />

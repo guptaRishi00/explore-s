@@ -33,8 +33,8 @@ const ServiceDetails = () => {
         const contentMap = {
             'paper-writing': {
                 introduction: {
-                    title: "Paper Writing Assistance – Learn, Grow & Excel!",
-                    description: "Writing a high-quality academic paper requires in-depth research, strong analytical skills, and precise formatting. Whether you are a student, researcher, or professional, our Paper Writing Assistance service is designed to help you craft well-structured, original, and compelling papers that meet academic and professional standards."
+                    title: "Research Paper Guidance & Mentorship – Learn, Grow & Excel!",
+                    description: "Getting your research paper right requires in-depth expertise, strong analytical skills, and precise formatting. Whether you are a student, researcher, or professional, our Research Paper Guidance & Mentorship service is designed to help you craft well-structured, original, and compelling papers that meet academic and professional standards."
                 },
                 offerings: {
                     title: "What We Offer",
@@ -87,7 +87,7 @@ const ServiceDetails = () => {
                     ]
                 },
                 whyChooseUs: {
-                    title: "Why Choose Our Paper Writing Assistance?",
+                    title: "Why Choose Our Research Paper Guidance?",
                     reasons: [
                         {
                             title: "Subject-Matter Experts",
@@ -112,7 +112,7 @@ const ServiceDetails = () => {
                     ]
                 },
                 cta: {
-                    title: "Get Professional Paper Writing Assistance Today!",
+                    title: "Get Professional Research Paper Guidance Today!",
                     text: "Let us help you achieve academic and professional excellence with a well-researched, high-quality paper. Contact us now to discuss your requirements and get expert guidance tailored to your needs!",
                     button: {
                         text: "Contact us now"
@@ -121,8 +121,8 @@ const ServiceDetails = () => {
             },
             'thesis-writing': {
                 introduction: {
-                    title: "Thesis Writing Assistance – Your Path to Academic Success!",
-                    description: "Completing a thesis is a significant milestone in your academic journey. Our comprehensive Thesis Writing Assistance service provides expert guidance, research support, and professional writing assistance to help you create a compelling, well-structured thesis that meets the highest academic standards."
+                    title: "Thesis Guidance & Consultation – Your Path to Academic Success!",
+                    description: "Completing a thesis is a significant milestone in your academic journey. Our comprehensive Thesis Guidance & Consultation service provides expert guidance, research support, and mentorship to help you create a compelling, well-structured thesis that meets the highest academic standards."
                 },
                 offerings: {
                     title: "What We Offer",
@@ -140,7 +140,7 @@ const ServiceDetails = () => {
                             description: "Expert assistance in data collection, statistical analysis, and interpretation to support your thesis arguments with solid evidence."
                         },
                         {
-                            title: "Thesis Writing & Structuring",
+                            title: "Thesis Guidance & Structuring",
                             description: "Professional writing support with proper academic structure, clear arguments, and compelling conclusions that meet university requirements."
                         }
                     ]
@@ -175,7 +175,7 @@ const ServiceDetails = () => {
                     ]
                 },
                 whyChooseUs: {
-                    title: "Why Choose Our Thesis Writing Assistance?",
+                    title: "Why Choose Our Thesis Guidance & Consultation?",
                     reasons: [
                         {
                             title: "PhD-Level Expertise",
@@ -201,7 +201,7 @@ const ServiceDetails = () => {
                 },
                 cta: {
                     title: "Start Your Thesis Journey with Expert Guidance!",
-                    text: "Don't let thesis writing challenges hold you back. Our expert team is here to guide you through every step of your thesis journey, from research design to final submission. Contact us today!",
+                    text: "Don't let thesis challenges hold you back. Our expert team is here to guide you through every step of your thesis journey, from research design to final submission. Contact us today!",
                     button: {
                         text: "Get Started Today"
                     }

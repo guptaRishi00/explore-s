@@ -13,9 +13,9 @@ const Services = () => {
         <>
             <Seo
                 title="Research & Academic Services | Explore S Research Solutions"
-                description="Comprehensive academic services: thesis & dissertation writing, research paper writing, paper publication, synopsis writing, plagiarism removal, and data analysis (SPSS/R)."
+                description="Comprehensive academic services: thesis & dissertation guidance, research paper guidance, paper publication, synopsis guidance, plagiarism removal, and data analysis (SPSS/R)."
                 path="/services"
-                keywords="thesis writing, dissertation help, paper writing, paper publication, synopsis writing, plagiarism removal, data analysis, academic writing services India"
+                keywords="thesis guidance, dissertation guidance, paper guidance, paper publication, synopsis guidance, plagiarism removal, data analysis, academic research services India"
             />
             <Header
                 parentMenu='home'

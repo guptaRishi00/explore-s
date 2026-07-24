@@ -4,10 +4,9 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import ScrollToTop from '../../components/ScrollTop';
 import Seo from '../../components/Seo';
-import homeContent from '../../data/homeContent';
+import { ALL_BLOGS } from '../../data/blogs/index';
 
 const Blogs = () => {
-  const { blog } = homeContent;
   return (
     <>
       <Seo
@@ -26,22 +25,25 @@ const Blogs = () => {
               <h1 className="es-svc-banner__h1">
                 Our <span className="es-svc-banner__accent">Blogs</span>
               </h1>
-              <p className="es-svc-banner__lead">{blog.subtitle}</p>
+              <p className="es-svc-banner__lead">
+                Expert insights on research, thesis writing, AI, data analysis and more.
+              </p>
             </div>
           </section>
 
           <section className="es-section es-blog">
             <div className="container">
               <ul className="es-blog__grid" role="list">
-                {blog.cards.map((c) => (
-                  <li key={c.headline} className="es-blog__card">
+                {ALL_BLOGS.map(({ meta: c }) => (
+                  <li key={c.slug} className="es-blog__card">
                     <div className="es-blog__media" aria-hidden="true">
                       <span className="es-blog__cat">{c.category}</span>
                       <span className="es-blog__headline">{c.headline}</span>
                     </div>
                     <div className="es-blog__body">
                       <h3 className="es-blog__title">{c.title}</h3>
-                      <Link to="/contact" className="es-blog__link">Read Article ➔</Link>
+                      {c.excerpt && <p className="es-blog__excerpt">{c.excerpt}</p>}
+                      <Link to={`/blogs/${c.slug}`} className="es-blog__link">Read Article ➔</Link>
                     </div>
                   </li>
                 ))}

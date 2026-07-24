@@ -1,21 +1,21 @@
 {
-  "introduction": "Explore S Research Solutions is committed to providing the best research writing assistance to help you achieve your academic goals. Our team of experts has years of experience in the field and is dedicated to providing personalized assistance to each client.",
+  "introduction": "Explore S Research Solutions is committed to providing the best research guidance to help you achieve your academic goals. Our team of experts has years of experience in the field and is dedicated to providing personalized assistance to each client.",
   "mainServices": [
     {
       "id": "thesis-writing",
-      "title": "Thesis Writing Assistance",
+      "title": "Thesis Guidance & Consultation",
       "description": "Comprehensive solutions to assist research scholars and students in successfully completing their thesis projects.",
       "image": "https://images.unsplash.com/photo-1744807868759-b0be87385602?q=80&w=1113&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       "id": "paper-writing",
-      "title": "Paper Writing Assistance",
+      "title": "Research Paper Guidance & Mentorship",
       "description": "Services designed to help students, researchers, and professionals in crafting high-quality academic or research papers.",
       "image": "https://images.unsplash.com/photo-1654022963276-ef761eac346e?q=80&w=1219&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       "id": "paper-publication",
-      "title": "Paper Publication Assistance",
+      "title": "Journal Publication Support",
       "description": "Designed to help researchers, scholars, and authors navigate the complex process of getting their work published in reputable academic journals or publications.",
       "image": "https://images.unsplash.com/photo-1504465039710-0f49c0a47eb7?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     }
@@ -47,8 +47,8 @@
     },
     {
       "id": "proposal-writing",
-      "title": "Proposal Writing Services",
-      "description": "Support for crafting research proposals, including developing research questions, justifying significance, outlining methodologies, and creating timelines.",
+      "title": "Research Proposal Guidance",
+      "description": "Expert support for crafting research proposals, including developing research questions, justifying significance, outlining methodologies, and creating timelines.",
       "image": "https://plus.unsplash.com/premium_photo-1683491155621-cd42e847d646?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
@@ -89,25 +89,25 @@
     },
     {
       "id": "dissertation-writing",
-      "title": "Dissertation Writing",
-      "description": "Assisting in the complete writing process of a dissertation, from introduction and literature review to methodology, results, and conclusion.",
+      "title": "Dissertation Consultation",
+      "description": "Expert guidance through the complete dissertation process, from introduction and literature review to methodology, results, and conclusion.",
       "image": "https://plus.unsplash.com/premium_photo-1661542868188-12ea250ed513?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       "id": "synopsis-proposal",
-      "title": "Synopsis / Research Proposal Writing",
+      "title": "Synopsis / Research Proposal Guidance",
       "description": "Crafting concise and compelling synopses or research proposals that outline the objectives, methodology, and significance of a research project.",
       "image": "https://images.unsplash.com/photo-1637231366032-23b435d997c6?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       "id": "pg-report",
-      "title": "PG Report Writing",
-      "description": "Providing guidance and support in writing postgraduate reports, ensuring clarity, coherence, and adherence to academic standards.",
+      "title": "PG Report Guidance",
+      "description": "Expert guidance and support for postgraduate reports, ensuring clarity, coherence, and adherence to academic standards.",
       "image": "https://plus.unsplash.com/premium_photo-1706544427215-4cbc984e3bb0?q=80&w=1187&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       "id": "research-paper-ugc",
-      "title": "Research Paper Writing (UGC/SCOPUS/SCI)",
+      "title": "Research Paper Guidance (UGC/SCOPUS/SCI)",
       "description": "Assisting in preparing research papers for publication in reputed journals indexed by UGC, SCOPUS, or SCI.",
       "image": "https://images.unsplash.com/photo-1589828994446-72390edc2143?q=80&w=1212&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     }

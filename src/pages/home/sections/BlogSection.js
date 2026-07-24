@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
 import homeContent from '../../../data/homeContent';
+import { ALL_BLOGS } from '../../../data/blogs/index';
 
 const BlogSection = () => {
   const { blog } = homeContent;
+  const displayBlogs = ALL_BLOGS.slice(0, 3);
 
   return (
     <section className="es-section es-blog" aria-label="Latest articles">
@@ -19,15 +21,15 @@ const BlogSection = () => {
         </div>
 
         <ul className="es-blog__grid" role="list">
-          {blog.cards.map((c) => (
-            <li key={c.headline} className="es-blog__card">
+          {displayBlogs.map(({ meta: c }) => (
+            <li key={c.slug} className="es-blog__card">
               <div className="es-blog__media" aria-hidden="true">
                 <span className="es-blog__cat">{c.category}</span>
                 <span className="es-blog__headline">{c.headline}</span>
               </div>
               <div className="es-blog__body">
                 <h3 className="es-blog__title">{c.title}</h3>
-                <Link to={blog.viewAll.to} className="es-blog__link">
+                <Link to={`/blogs/${c.slug}`} className="es-blog__link">
                   Read Article ➔
                 </Link>
               </div>

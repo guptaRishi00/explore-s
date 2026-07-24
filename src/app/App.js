@@ -9,6 +9,7 @@ import About from '../pages/about';
 import Services from '../pages/services';
 import ServiceDetails from '../pages/services/service-details';
 import Domain from '../pages/domain';
+import DomainDetailPage from '../pages/domain/DomainDetailPage';
 import Contact from '../pages/contact';
 import PayNow from '../pages/paynow';
 import PrivacyPolicy from '../pages/legal/PrivacyPolicy';
@@ -19,6 +20,7 @@ import AcademicIntegrity from '../pages/legal/AcademicIntegrity';
 import BecomeAPartner from '../pages/become-a-partner';
 import Career from '../pages/career';
 import Blogs from '../pages/blogs';
+import BlogDetail from '../pages/blogs/BlogDetail';
 import Error from '../pages/404';
 import LoadTop from '../components/ScrollTop/LoadTop'
 import ScrollToHash from '../components/ScrollTop/ScrollToHash'
@@ -50,6 +52,7 @@ const App = () => {
                     <Route path="/services" element={<Services />} />
                     <Route path="/service/:serviceId" element={<ServiceDetails />} />
                     <Route path="/domain" element={<Domain />} />
+                    <Route path="/domain/:slug" element={<DomainDetailPage />} />
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/paynow" element={<PayNow />} />
                     <Route path="/privacy-policy" element={<PrivacyPolicy />} />
@@ -60,6 +63,7 @@ const App = () => {
                     <Route path="/become-a-partner" element={<BecomeAPartner />} />
                     <Route path="/career" element={<Career />} />
                     <Route path="/blogs" element={<Blogs />} />
+                    <Route path="/blogs/:slug" element={<BlogDetail />} />
                     <Route path='*' element={<Error />} />
                 </Routes>
                 <WhatsAppButton />
